@@ -13,6 +13,8 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
+import { useState } from "react"
+
 // react-router-dom components
 import { Link } from "react-router-dom";
 
@@ -32,7 +34,29 @@ import CoverLayout from "layouts/authentication/components/CoverLayout";
 // Images
 import bgImage from "assets/images/bg-sign-up-cover.jpeg";
 
+import useSignUp from "./hooks/useSignUp"
+
 function Cover() {
+
+  const { signUp } = useSignUp()
+  
+  const [formDetails, setFormDetails] = useState({
+    name: "",
+    email: "",
+    password: "",
+  })
+  
+  function onChange(event) {
+    const { name, value } = event.target;
+  
+   setFormDetails((prevForm) => {
+     return {
+       ...prevForm,
+       [name]: value
+     }
+   })
+  }
+
   return (
     <CoverLayout image={bgImage}>
       <Card>
@@ -57,13 +81,37 @@ function Cover() {
         <MDBox pt={4} pb={3} px={3}>
           <MDBox component="form" role="form">
             <MDBox mb={2}>
-              <MDInput type="text" label="Name" variant="standard" fullWidth />
+              <MDInput 
+                type="text" 
+                label="Name" 
+                variant="standard" 
+                name="name" 
+                value={formDetails.name}
+                onChange={onChange}
+                fullWidth 
+              />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="email" label="Email" variant="standard" fullWidth />
+              <MDInput 
+                type="email" 
+                label="Email" 
+                variant="standard" 
+                name="email" 
+                value={formDetails.email}
+                onChange={onChange}
+                fullWidth 
+              />
             </MDBox>
             <MDBox mb={2}>
-              <MDInput type="password" label="Password" variant="standard" fullWidth />
+              <MDInput 
+                type="password" 
+                label="Password" 
+                variant="standard" 
+                name="password" 
+                value={formDetails.password}
+                onChange={onChange}
+                fullWidth 
+              />
             </MDBox>
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Checkbox />
@@ -87,7 +135,12 @@ function Cover() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth>
+              <MDButton 
+                variant="gradient" 
+                color="info" 
+                onClick={() => signUp(formDetails.email, formDetails.password)}
+                fullWidth
+              >
                 sign in
               </MDButton>
             </MDBox>

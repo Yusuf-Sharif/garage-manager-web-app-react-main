@@ -41,9 +41,11 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 // Images
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
-import authUser from "./authUser.js";
+import useSignIn from "./hooks/useSignIn.js";
 
 function Basic() {
+  const { signIn } = useSignIn()
+
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
@@ -136,7 +138,7 @@ function Basic() {
                 variant="gradient" 
                 color="info" 
                 fullWidth
-                onClick={() => authUser(formDetails.email, formDetails.password)}
+                onClick={() => signIn(formDetails.email, formDetails.password)}
               >
                 sign in
               </MDButton>
