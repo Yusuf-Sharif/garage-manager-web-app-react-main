@@ -33,11 +33,26 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
 import Projects from "layouts/dashboard/components/Projects";
-import OrdersOverview from "layouts/dashboard/components/OrdersOverview";
+import OrdersOverview from "layouts/dashboard/components/OrdersOverview"
+
+// import useIsUserLoggedIn from "../hooks/useIsUserLoggedIn.js"
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
 
+  // const { authStatus } = useIsUserLoggedIn()
+
+  const context = useContext(AuthContext)
+  console.log("Dashboard, Context value is:")
+  console.log(context)
+
+  // if (!context.user) {
+  //   console.log("Error: not signed in. Redirecting to login page")
+  //   navigate("/authentication/sign-up")
+  // }
+  
   return (
     <DashboardLayout>
       <DashboardNavbar />

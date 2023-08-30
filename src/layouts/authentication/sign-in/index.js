@@ -42,8 +42,18 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 import useSignIn from "./hooks/useSignIn.js";
+import { auth } from "../../../config/firebase.js";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../../../AuthContext/AuthContext.js"
 
 function Basic() {
+
+  // auth.signOut().then( () => console.log("signed out successfully"))
+
+  const { currentUser } = useContext(AuthContext)
+  const navigate = useNavigate()
+
   const { signIn } = useSignIn()
 
   const [rememberMe, setRememberMe] = useState(false);
@@ -64,6 +74,13 @@ function Basic() {
         [name]: value
       }
     })
+  }
+
+  // (after AuthProviderContext component re-renders from currentUser state change), 
+  // if user is signed in, then redirect to dashboard 
+
+  if (currentUser) {
+    navigate("/dashboard")
   }
 
   return (

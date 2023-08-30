@@ -9,4 +9,4 @@ const app = initializeApp(firebaseConfig);
 // Get a reference to authentication for This app
 const auth = getAuth(app);
 
-export { auth };
+export { app, auth };
