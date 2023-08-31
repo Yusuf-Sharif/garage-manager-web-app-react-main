@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react"
 import { AuthContext } from "./AuthContext.js"
 import { auth } from "../config/firebase.js"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useLocation } from "react-router-dom"
 
 export default function AuthProvider( { children } ) {
     const [currentUser, setCurrentUser] = useState(null)
     const [loading, setLoading] = useState(true)
-    
+    const navigate = useNavigate()
+    const location = useLocation()
+
     console.log("AuthContextProvider Render")
 
     // set up listener for logged in change 
@@ -24,6 +26,19 @@ export default function AuthProvider( { children } ) {
       // Cleanup the listener on unmount
       return () => unsubscribe();
     }, []);
+
+  // This useEffect will run whenever `currentUser` changes.
+  // If user is logged in, and on sign in/sign up pages, redirect them to Dashboard page
+  useEffect(() => {
+    if (currentUser) {
+      // Add logic for detecting if the current URL is the sign in or sign up page.
+      // If true, navigate to dashboard.
+      if (location.pathname === "/authentication/sign-up" || location.pathname === "/authentication/sign-in") {
+        console.log("user is logged in and I am ready to redirect them to dashboard!")
+        navigate("/dashboard");
+      }
+    }
+  }, [currentUser, location.pathname]);
 
     console.log("AuthContextProvider, Current User:")
     console.log(currentUser)

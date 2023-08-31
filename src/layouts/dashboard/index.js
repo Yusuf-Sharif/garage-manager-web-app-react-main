@@ -35,23 +35,28 @@ import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview"
 
-// import useIsUserLoggedIn from "../hooks/useIsUserLoggedIn.js"
+// Importing 'Current User' Context
 import { useContext } from "react"
 import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
 
-  // const { authStatus } = useIsUserLoggedIn()
-
-  const context = useContext(AuthContext)
+  const { currentUser } = useContext(AuthContext)
   console.log("Dashboard, Context value is:")
-  console.log(context)
+  console.log(currentUser)
 
-  // if (!context.user) {
-  //   console.log("Error: not signed in. Redirecting to login page")
-  //   navigate("/authentication/sign-up")
-  // }
+  // registering useEffect
+  useNavigateToSignInPage()
+  // 
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
   
   return (
     <DashboardLayout>

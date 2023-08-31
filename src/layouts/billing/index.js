@@ -32,7 +32,25 @@ import Invoices from "layouts/billing/components/Invoices";
 import BillingInformation from "layouts/billing/components/BillingInformation";
 import Transactions from "layouts/billing/components/Transactions";
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
+
 function Billing() {
+  const { currentUser } = useContext(AuthContext)
+  // registering useEffect
+  useNavigateToSignInPage()
+  // 
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
+
   return (
     <DashboardLayout>
       <DashboardNavbar absolute isMini />

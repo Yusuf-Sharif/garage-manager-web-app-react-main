@@ -51,7 +51,24 @@ import team2 from "assets/images/team-2.jpg";
 import team3 from "assets/images/team-3.jpg";
 import team4 from "assets/images/team-4.jpg";
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
 function Overview() {
+  const { currentUser } = useContext(AuthContext)
+  // registering useEffect
+  useNavigateToSignInPage()
+  // 
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
+
   return (
     <DashboardLayout>
       <DashboardNavbar />

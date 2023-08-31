@@ -26,11 +26,11 @@ const container = document.getElementById("app");
 const root = createRoot(container);
 
 root.render(
-  <AuthProvider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <AuthProvider>
       <MaterialUIControllerProvider>
         <App />
       </MaterialUIControllerProvider>
-    </BrowserRouter>
-  </AuthProvider>
+    </AuthProvider>
+  </BrowserRouter>
 );

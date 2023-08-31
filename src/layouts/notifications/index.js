@@ -31,7 +31,19 @@ import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "examples/Navbars/DashboardNavbar";
 import Footer from "examples/Footer";
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
 function Notifications() {
+  const { currentUser } = useContext(AuthContext)
+  // registering useEffect
+  useNavigateToSignInPage()
+  // 
+
   const [successSB, setSuccessSB] = useState(false);
   const [infoSB, setInfoSB] = useState(false);
   const [warningSB, setWarningSB] = useState(false);
@@ -109,6 +121,11 @@ function Notifications() {
       bgWhite
     />
   );
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
 
   return (
     <DashboardLayout>

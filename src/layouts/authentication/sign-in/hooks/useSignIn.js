@@ -1,18 +1,19 @@
 import { auth } from "../../../../config/firebase.js";
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { useNavigate } from "react-router-dom"
 
 function useSignIn() {
-    const navigate = useNavigate()
-
     const signIn = async (email, password) => {
         try {
           await signInWithEmailAndPassword(auth, email, password)
           console.log("Signed In!")
-          // navigate("/dashboard")
         }
         catch(error) {
           console.log("There was an error signing in");
+          console.log(JSON.stringify(error));
+          if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password" || error.code === "auth/user-disabled") {
+            const errorMsg = "Incorrect email or password";
+            return errorMsg;
+          }
         }
 
         // auth.onAuthStateChanged((user) => {

@@ -31,9 +31,27 @@ import DataTable from "examples/Tables/DataTable";
 import authorsTableData from "layouts/tables/data/authorsTableData";
 import projectsTableData from "layouts/tables/data/projectsTableData";
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
 function Tables() {
   const { columns, rows } = authorsTableData();
   const { columns: pColumns, rows: pRows } = projectsTableData();
+
+  const { currentUser } = useContext(AuthContext)
+  
+  // registering useEffect
+  useNavigateToSignInPage()
+  // 
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
 
   return (
     <DashboardLayout>

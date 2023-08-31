@@ -40,9 +40,21 @@ import OrdersOverview from "layouts/rtl/components/OrdersOverview";
 // Material Dashboard 2 React contexts
 import { useMaterialUIController, setDirection } from "context";
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
 function RTL() {
   const [, dispatch] = useMaterialUIController();
   const { sales, tasks } = reportsLineChartData;
+
+  const { currentUser } = useContext(AuthContext)
+  // registering useEffect
+  useNavigateToSignInPage()
+  // 
 
   // Changing the direction to rtl
   useEffect(() => {
@@ -50,6 +62,11 @@ function RTL() {
 
     return () => setDirection(dispatch, "ltr");
   }, []);
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
 
   return (
     <DashboardLayout>

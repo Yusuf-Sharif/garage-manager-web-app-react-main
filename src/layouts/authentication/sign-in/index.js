@@ -44,21 +44,24 @@ import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 import useSignIn from "./hooks/useSignIn.js";
 import { auth } from "../../../config/firebase.js";
 import { useContext } from "react";
-import { useNavigate } from "react-router-dom"
 import { AuthContext } from "../../../AuthContext/AuthContext.js"
+import { useSearchParams } from "react-router-dom"
 
 function Basic() {
 
   // auth.signOut().then( () => console.log("signed out successfully"))
 
   const { currentUser } = useContext(AuthContext)
-  const navigate = useNavigate()
+
+  const [searchParams, setSearchParams] = useSearchParams()
 
   const { signIn } = useSignIn()
 
   const [rememberMe, setRememberMe] = useState(false);
 
   const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+  const [errorMsg, setErrorMsg] = useState(searchParams.get("error") || null)
 
   const [formDetails, setFormDetails] = useState({
     email: "",
@@ -80,7 +83,7 @@ function Basic() {
   // if user is signed in, then redirect to dashboard 
 
   if (currentUser) {
-    navigate("/dashboard")
+    "User exists in context"
   }
 
   return (
@@ -138,6 +141,16 @@ function Basic() {
                 onChange={onChange}
                 fullWidth />
             </MDBox>
+            
+            { errorMsg && <p style={{
+              fontSize: "14px", 
+              color: "red",
+              textTransform: "capitalize",
+              }}
+            >
+              {errorMsg}
+            </p> }
+
             <MDBox display="flex" alignItems="center" ml={-1}>
               <Switch checked={rememberMe} onChange={handleSetRememberMe} />
               <MDTypography
@@ -155,7 +168,14 @@ function Basic() {
                 variant="gradient" 
                 color="info" 
                 fullWidth
-                onClick={() => signIn(formDetails.email, formDetails.password)}
+                onClick={async () => {
+                  // If theres a sign-in error, store the error message in errorMsg
+                  const errorMsg = await signIn(formDetails.email, formDetails.password)
+                  if (errorMsg) {
+                    // pass error message to state and re-render component to display error message
+                    setErrorMsg(errorMsg)
+                  }
+                }}
               >
                 sign in
               </MDButton>
