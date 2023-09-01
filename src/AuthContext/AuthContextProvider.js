@@ -50,7 +50,7 @@ export default function AuthProvider( { children } ) {
     }
     // if authStatus (currentUser) has changed and user is logged out, then redirect to sign in page. 
     // This ensures the user is redirected to sign in page after sign out button is clicked.
-    if (!currentUser) {
+    if (!currentUser && !loading) {
       navigate("/authentication/sign-in")
     }
   }, [currentUser]);
