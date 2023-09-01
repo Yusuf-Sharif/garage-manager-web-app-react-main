@@ -10,7 +10,7 @@ function useSignIn() {
         catch(error) {
           console.log("There was an error signing in");
           console.log(JSON.stringify(error));
-          if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password" || error.code === "auth/user-disabled") {
+          if (error.code === "auth/user-not-found" || error.code === "auth/wrong-password" || error.code === "auth/user-disabled" || error.code === "auth/invalid-email") {
             const errorMsg = "Incorrect email or password";
             return errorMsg;
           }
