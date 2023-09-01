@@ -37,6 +37,7 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
+import Records from "layouts/records";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
@@ -56,6 +57,14 @@ const routes = [
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
     component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "MOT Records",
+    key: "mot_records",
+    icon: <Icon fontSize="small">format_list_bulleted_icon </Icon>,
+    route: "/MOT-Records",
+    component: <Records />,
   },
   {
     type: "collapse",
@@ -98,7 +107,7 @@ const routes = [
     component: <Profile />,
   },
   {
-    type: "collapse",
+    // type: "collapse",
     name: "Sign In",
     key: "sign-in",
     icon: <Icon fontSize="small">login</Icon>,
@@ -106,7 +115,7 @@ const routes = [
     component: <SignIn />,
   },
   {
-    type: "collapse",
+    // type: "collapse",
     name: "Sign Up",
     key: "sign-up",
     icon: <Icon fontSize="small">assignment</Icon>,

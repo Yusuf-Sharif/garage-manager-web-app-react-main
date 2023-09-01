@@ -42,12 +42,14 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 import useSignIn from "./hooks/useSignIn.js";
-import { auth } from "../../../config/firebase.js";
+// import { auth } from "../../../config/firebase.js";
 import { useContext } from "react";
 import { AuthContext } from "../../../AuthContext/AuthContext.js"
 import { useSearchParams } from "react-router-dom"
 
 function Basic() {
+
+  console.log("sign in page rendering...")
 
   // auth.signOut().then( () => console.log("signed out successfully"))
 
@@ -80,7 +82,7 @@ function Basic() {
   }
 
   // (after AuthProviderContext component re-renders from currentUser state change), 
-  // if user is signed in, then redirect to dashboard 
+  // if user is signed in, then redirect to dashboard (logic is inside a useEffect in AuthContextProvider Component)
 
   if (currentUser) {
     "User exists in context"

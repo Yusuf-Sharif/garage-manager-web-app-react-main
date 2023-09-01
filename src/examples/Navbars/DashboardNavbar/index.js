@@ -53,6 +53,10 @@ import {
   setOpenConfigurator,
 } from "context";
 
+// Importing signOut function
+import { signOut } from "../../../AuthContext/AuthContextProvider.js"
+
+
 function DashboardNavbar({ absolute, light, isMini }) {
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
@@ -135,12 +139,16 @@ function DashboardNavbar({ absolute, light, isMini }) {
         </MDBox>
         {isMini ? null : (
           <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
-            <MDBox pr={1}>
+            {/* <MDBox pr={1}>
               <MDInput label="Search here" />
-            </MDBox>
+            </MDBox> */}
             <MDBox color={light ? "white" : "inherit"}>
               <Link to="/authentication/sign-in/basic">
-                <IconButton sx={navbarIconButton} size="small" disableRipple>
+                <IconButton 
+                  sx={navbarIconButton} 
+                  size="small" 
+                  disableRipple
+                >
                   <Icon sx={iconsStyle}>account_circle</Icon>
                 </IconButton>
               </Link>
@@ -175,6 +183,19 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 onClick={handleOpenMenu}
               >
                 <Icon sx={iconsStyle}>notifications</Icon>
+              </IconButton>
+              <IconButton
+                size="medium"
+                disableRipple
+                color="inherit"
+                aria-controls="sign-out"
+                aria-haspopup="false"
+                variant="contained"
+                onClick={() => signOut()}
+                
+                
+              >
+                <Icon style={{color: "gray"}}>logout_icon</Icon>
               </IconButton>
               {renderMenu()}
             </MDBox>
