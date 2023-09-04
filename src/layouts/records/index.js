@@ -2,8 +2,11 @@ import DashboardLayout from "../../examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
 import Grid from '@mui/material/Grid';
 import DataTable from "examples/Tables/DataTable";
+import { useNavigate } from "react-router-dom"
 
 export default function RecordsPage() {
+    const navigate = useNavigate()
+
     return (
         <DashboardLayout>
             <DashboardNavbar />
@@ -19,6 +22,23 @@ export default function RecordsPage() {
                                 { Header: "id", accessor: "id", width: "5%" },
                                 { Header: "Name", accessor: "name", width: "25%" },
                                 { Header: "Date Booked", accessor: "date_booked", width: "25%" },
+                                { Header: "Vehicle Make", accessor: "vehicle_make", width: "10%" },
+                                { Header: "Model", accessor: "model", width: "8%" },
+                                { Header: "Derivative", accessor: "derivative", width: "8%" },
+                                { Header: "Customer Name", accessor: "customer_name", width: "15%" },
+                                { Header: "Customer Phone", accessor: "customer_phone_number", width: "10%" },
+                                { Header: "Booking Date", accessor: "booking_date", width: "10%" },
+                                { Header: "Booking Time", accessor: "booking_time", width: "10%" },
+                                { Header: "MOT Status", accessor: "mot_status", width: "8%" },
+                                { Header: "Assigned Inspector", accessor: "assigned_inspector", width: "15%" },
+                                { Header: "Additional Work Notes", accessor: "additional_work_notes", width: "15%" },
+                                { Header: "",
+                                  accessor: "view_details", 
+                                  width: "25%", 
+                                  Cell: ( { row } ) => (
+                                    <button onClick={() => navigate(`/MOT-Records/${row.original.id}`)}>View</button>
+                                  )
+                                }
                             ],
                             rows: [
                                 { id: 1, name: "Zahid", date_booked: "10/09/2023" },

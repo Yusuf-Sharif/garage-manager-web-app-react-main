@@ -68,6 +68,14 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "MOT Records ID",
+    key: "mot_records_id",
+    icon: <Icon fontSize="small">format_list_bulleted_icon </Icon>,
+    route: "/MOT-Records/:id",
+    component: <h1>This is the Records Detail View</h1>,
+  },
+  {
+    type: "collapse",
     name: "Tables",
     key: "tables",
     icon: <Icon fontSize="small">table_view</Icon>,
