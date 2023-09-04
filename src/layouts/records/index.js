@@ -19,7 +19,7 @@ export default function RecordsPage() {
                         noEndBorder
                         table={{
                             columns: [
-                                { Header: "id", accessor: "id", width: "5%" },
+                                { Header: "id", accessor: "id", width: "10%" },
                                 { Header: "Name", accessor: "name", width: "25%" },
                                 { Header: "Date Booked", accessor: "date_booked", width: "25%" },
                                 { Header: "Vehicle Make", accessor: "vehicle_make", width: "10%" },

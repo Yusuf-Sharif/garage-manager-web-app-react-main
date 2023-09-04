@@ -38,6 +38,7 @@ Coded by www.creative-tim.com
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
 import Records from "layouts/records";
+import RecordDetails from "layouts/records/record-details/index.js";
 import Tables from "layouts/tables";
 import Billing from "layouts/billing";
 import RTL from "layouts/rtl";
@@ -72,7 +73,7 @@ const routes = [
     key: "mot_records_id",
     icon: <Icon fontSize="small">format_list_bulleted_icon </Icon>,
     route: "/MOT-Records/:id",
-    component: <h1>This is the Records Detail View</h1>,
+    component: <RecordDetails />,
   },
   {
     type: "collapse",
