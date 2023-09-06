@@ -1,14 +1,29 @@
 import React, { useState } from "react"
 import DashboardLayout from "../../../examples/LayoutContainers/DashboardLayout";
+import DashboardNavbar from "../../../examples/Navbars/DashboardNavbar";
 import { Tabs, Tab, Box } from "@mui/material"
 import Grid from '@mui/material/Grid';
-import { vehicleIdentificationData, 
-        vehicleIdentificationDetails,
-        vehicleSpecsData,
-        vehicleSpecsDetails } from "./data.js"
+import { customers } from "./customers.js"
+import { useParams } from "react-router-dom"
+import "./selected-tab.css"
 
 export default function RecordDetails() {
+    const { id } = useParams()
     const [value, setValue] = useState(0)
+
+    const { customerDetails,
+            vehicleIdentification,
+            vehicleDetails,
+            motTestDetails,
+            testResultsAndAdvisories,
+            emissionDetails,
+            previousTestResults,
+            inspectorsNotes,
+            additionalWorkDone,
+            costsAndBilling,
+           } = customers[id]
+
+
 
     const handleChange = (event, newValue) => {
         setValue(newValue);
@@ -21,8 +36,9 @@ export default function RecordDetails() {
           </p>
         ));
       }
-
+      
       const boxStyles = {
+        fontSize: "15px",
         marginTop: "20px",
         padding: "20px",
         border: "1px solid #e0e0e0", // subtle border
@@ -38,37 +54,42 @@ export default function RecordDetails() {
             marginRight: "10px" // spacing between the label and value
           }
         },
-        "&:last-child": { // target the last <p> element
+        "& > p:last-child": { // target the last <p> element
           marginBottom: "0px" // remove the bottom margin for the last element
+        },
+        "& > h2": {
+          marginBottom: "5px",
+          textDecoration: "underline"
         }
       };
       
-      
-      
-
-     
-    
 
     return (
         <DashboardLayout>
+            <DashboardNavbar />
             <Grid container>
                 <Grid item xs={12}>
                     <Tabs value={value} onChange={handleChange}>
-                        <Tab label="Customer Details"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="Vehicle Identification" sx={{ fontSize: '0.9rem'}} />
-                        <Tab label="Vehicle Specs"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="MOT Test Overview"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="Test Results & Advisories"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="Emissions"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="Historical Records" sx={{ fontSize: '0.9rem'}} />
-                        <Tab label="Maintenance & Repairs"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="Billing & Costs"  sx={{ fontSize: '0.9rem'}}/>
-                        <Tab label="Future Recommendations"  sx={{ fontSize: '0.9rem'}}/>
+                        <Tab label="Customer"  sx={{ fontSize: '0.8rem'}}/>
+                        <Tab label="Vehicle ID" sx={{ fontSize: '0.8rem'}} />
+                        <Tab label="Vehicle Specs"  sx={{ fontSize: '0.8rem'}}/>
+                        <Tab label="MOT Test Overview"  sx={{ fontSize: '0.8rem'}}/>
+                        <Tab label="Test Results & Advisories"  sx={{ fontSize: '0.8rem'}}/>
+                        <Tab label="Historical Records" sx={{ fontSize: '0.8rem'}} />
+                        <Tab label="Maintenance & Repairs"  sx={{ fontSize: '0.8rem'}}/>
+                        <Tab label="Billing & Costs"  sx={{ fontSize: '0.8rem'}}/>
                     </Tabs>
 
-                    {value === 0 && <Box>Customer details...</Box>}
-                    {value === 1 && <Box sx={boxStyles}>{renderTabDetails(vehicleIdentificationDetails)}</Box>}
-                    {value === 2 && <Box>{renderTabDetails(vehicleSpecsDetails)}</Box>}
+                    {value === 0 && <Box sx={boxStyles}><h2>Customer Details</h2>{renderTabDetails(customerDetails)}</Box>}
+                    {value === 1 && <Box sx={boxStyles}><h2>Vehicle ID</h2>{renderTabDetails(vehicleIdentification)}</Box>}
+                    {value === 2 && <Box sx={boxStyles}><h2>Vehicle Specs</h2>{renderTabDetails(vehicleDetails)}</Box>}
+                    {value === 3 && <Box sx={boxStyles}><h2>MOT Test Overview</h2>{renderTabDetails(motTestDetails)}</Box>}
+                    {value === 4 && <Box sx={boxStyles}><h2>Test Results & Advisories</h2>{renderTabDetails(testResultsAndAdvisories)}</Box>}
+                    {value === 5 && <Box sx={boxStyles}><h2>Historical Records</h2>{renderTabDetails(previousTestResults)}</Box>}
+                    {value === 6 && <Box sx={boxStyles}><h2>Maintenance & Repairs</h2>{renderTabDetails(additionalWorkDone)}</Box>}
+                    {value === 7 && <Box sx={boxStyles}><h2>Billing & Costs</h2>{renderTabDetails(costsAndBilling)}</Box>}
+                    
+                    
                 </Grid>
             </Grid>
         </DashboardLayout>

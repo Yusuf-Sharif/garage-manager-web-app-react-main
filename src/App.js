@@ -56,7 +56,14 @@ import brandDark from "assets/images/logo-ct-dark.png";
 // Import Dashboard
 import Dashboard from "./layouts/dashboard/index.js"
 
+// Import Authentication Context
+import { AuthContext } from "./AuthContext/AuthContext.js"
+import { useContext } from "react"
+
 export default function App() {
+  // consume Authentication Context
+  const { currentUser }  = useContext(AuthContext)
+
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
@@ -177,7 +184,7 @@ export default function App() {
   ) : (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
-      {layout === "dashboard" && (
+      {layout === "dashboard" && currentUser && (
         <>
           <Sidenav
             color={sidenavColor}
