@@ -68,7 +68,6 @@ const routes = [
     component: <Records />,
   },
   {
-    type: "collapse",
     name: "MOT Records ID",
     key: "mot_records_id",
     icon: <Icon fontSize="small">format_list_bulleted_icon </Icon>,
