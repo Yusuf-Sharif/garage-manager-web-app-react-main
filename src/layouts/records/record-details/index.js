@@ -28,14 +28,23 @@ export default function RecordDetails() {
 
     useEffect( () => {
       const recordEditIcons = Array.from(document.getElementsByClassName("record-edit-icon"))
+      console.log(recordEditIcons)
 
       recordEditIcons.forEach( icon => {
         icon.addEventListener("click", event => {
+
+          const latestRecordEditIconsList = Array.from(document.getElementsByClassName("record-edit-icon"))
+          
           const iconClicked = event.currentTarget
-          const iconClickedIndex = recordEditIcons.indexOf(iconClicked)
+
+          const iconClickedIndex = latestRecordEditIconsList.indexOf(iconClicked)
           
           const span = document.getElementsByClassName("value")[iconClickedIndex] 
           const value = span.textContent
+ 
+          const tickIcon = document.createElement("span")
+          tickIcon.textContent = "tick icon"
+          iconClicked.parentNode.replaceChild(tickIcon, iconClicked)
 
           const inputBox = document.createElement("input")
           inputBox.value = value;
