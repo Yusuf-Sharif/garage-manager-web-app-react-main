@@ -12,6 +12,7 @@ import "./selected-tab.css"
 export default function RecordDetails() {
     const { id } = useParams()
     const [value, setValue] = useState(0)
+    const [customersArray, setCustomersArray] = useState(customers)
 
     const { customerDetails,
             vehicleIdentification,
@@ -23,33 +24,65 @@ export default function RecordDetails() {
             inspectorsNotes,
             additionalWorkDone,
             costsAndBilling,
-           } = customers[id]
+           } = customersArray[id]
+
+
+    const handleFormUpdate = () => {
+      const inputBox = document.getElementsByClassName("edit-input-box")[0]
+      const labelText = inputBox.parentNode.querySelector("span")
+      console.log(labelText.textContent)
+    }
 
 
     useEffect( () => {
       const recordEditIcons = Array.from(document.getElementsByClassName("record-edit-icon"))
-      console.log(recordEditIcons)
 
+      // Handling visual changes when edit pencil icon is clicked 
       recordEditIcons.forEach( icon => {
         icon.addEventListener("click", event => {
+          // Before proceeding with visual changes, make sure there are no input fields currently "open".
+          // This is so I can easily target the label whoose value is being modified.
+          const noOfInputBoxes = document.getElementsByClassName("edit-input-box").length
+          console.log(noOfInputBoxes)
 
-          const latestRecordEditIconsList = Array.from(document.getElementsByClassName("record-edit-icon"))
-          
-          const iconClicked = event.currentTarget
+          if (noOfInputBoxes === 0) {
+            // Targetting the correct span tag in order to replace it with input box.
+            const latestRecordEditIconsList = Array.from(document.getElementsByClassName("record-edit-icon"))
+            const iconClicked = event.currentTarget
+            const iconClickedIndex = latestRecordEditIconsList.indexOf(iconClicked)
+            const span = document.getElementsByClassName("value")[iconClickedIndex] 
+            
+            // Saving current value of span
+            const value = span.textContent
+  
+            // Creating input box
+            const inputBox = document.createElement("input")
+            inputBox.setAttribute("class", "edit-input-box")
+            inputBox.value = value;
+  
+            // Replacing span tag with input box
+            span.parentNode.replaceChild(inputBox, span)
+  
+            // Creating 'check' button
+            const tickIcon = document.createElement("span")
+            tickIcon.setAttribute("class", "material-icons-round notranslate MuiIcon-root MuiIcon-fontSizeSmall css-19llp29-MuiIcon-root")
+            tickIcon.textContent = "check_icon"
+            tickIcon.style.position = "relative"
+            tickIcon.style.top = "3px"
+            tickIcon.style.left = "3px"
+            tickIcon.style.cursor = "pointer"
+            tickIcon.addEventListener("click", handleFormUpdate)
+  
+            // Replacing 'edit icon' button with 'check' button
+            iconClicked.parentNode.replaceChild(tickIcon, iconClicked)          
 
-          const iconClickedIndex = latestRecordEditIconsList.indexOf(iconClicked)
-          
-          const span = document.getElementsByClassName("value")[iconClickedIndex] 
-          const value = span.textContent
- 
-          const tickIcon = document.createElement("span")
-          tickIcon.textContent = "tick icon"
-          iconClicked.parentNode.replaceChild(tickIcon, iconClicked)
+          }
 
-          const inputBox = document.createElement("input")
-          inputBox.value = value;
+          // If there is an input field currently "open", warn the user via a console log
+          else {
+            console.log("Error: You must first save your changes before editing another value.")
+          }
 
-          span.parentNode.replaceChild(inputBox, span)
         })
       })
 
@@ -85,7 +118,7 @@ export default function RecordDetails() {
       function renderTabDetails(details) {
         return details.map(detail => (
             <p key={detail.label}>
-              <strong>{detail.label}:</strong> <span className="value">{detail.value}</span>
+              <span><strong>{detail.label}</strong></span>:<span className="value">{detail.value}</span>
               <Icon 
                 fontSize="small" 
                 sx={{marginLeft: "10px", visibility: "hidden", cursor: "pointer"}}
