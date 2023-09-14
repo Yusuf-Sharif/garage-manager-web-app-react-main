@@ -12,79 +12,20 @@ import "./selected-tab.css"
 export default function RecordDetails() {
     const { id } = useParams()
     const [value, setValue] = useState(0)
-    const [customerObj, setCustomerObj] = useState(customers[id])
-
-    // create a counter, if counter = 5
-    // then return a different JSX to the screen 
-    // incremenet counter when updating customerObj in saveChanges fn
-
-    const [count, setCount] = useState(0)
-
-    console.log(count)
-
-    console.log("Record Details page rendered")
+    const [customersArray, setCustomersArray] = useState(customers)
 
     const { customerDetails,
             vehicleIdentification,
             vehicleDetails,
             motTestDetails,
             testResultsAndAdvisories,
+            emissionDetails,
             previousTestResults,
+            inspectorsNotes,
             additionalWorkDone,
             costsAndBilling,
-           } = customerObj
+           } = customersArray[id]
 
-
-    
-        const saveChanges = (arrayName) => {
-        // grab the paragraphs of the form currently displayed
-        const labelsAndValues = Array.from(document.getElementsByClassName("p-label-and-value"))
-
-
-        // inputbox.value is there the value is stored
-
-          // For each label/value pair (each paragraph) store it inside an object 
-
-        // with an array of paragraphs, 
-                // map over each paragraph, 
-                // returning an object in lablel : value format
-        const newArray = labelsAndValues.map( paragraph => {
-            const label = paragraph.children[0]
-            const inputBox = paragraph.children[1]
-
-            return {
-                label: label.textContent,
-                value: inputBox.value
-            }
-        })     
-        
-        // insert that array into a new object using name and array from previous 2 steps
-        // update state with new object 
-    
-
-        const newCustomerObject = {
-            // bring in arrays from customer Object
-            customerDetails,
-            vehicleIdentification,
-            vehicleDetails,
-            motTestDetails,
-            testResultsAndAdvisories,
-            previousTestResults,
-            additionalWorkDone,
-            costsAndBilling,
-            [arrayName]: newArray
-        }
-
-        console.log("newCustomerObject:")
-        console.log(newCustomerObject)
-
-        // update customerObj in state
-        setCustomerObj(newCustomerObject)
-        // then try using previousState to fill in rest of object
-
-        // increment count
-        setCount(prevState => prevState + 1)
-    }
 
     const handleFormUpdate = () => {
       const inputBox = document.getElementsByClassName("edit-input-box")[0]
@@ -175,28 +116,18 @@ export default function RecordDetails() {
 
 
       function renderTabDetails(details) {
-      console.log("render tab details is running!")
-
-        const returnedJsx = details.map(detail => (
-            <p key={detail.label} className="p-label-and-value">
+        return details.map(detail => (
+            <p key={detail.label}>
               <span><strong>{detail.label}</strong></span>:<span className="value">{detail.value}</span>
+              <Icon 
+                fontSize="small" 
+                sx={{marginLeft: "10px", visibility: "hidden", cursor: "pointer"}}
+                className="record-edit-icon"
+              >
+                edit_icon
+              </Icon>
             </p>
         ));
-
-        console.log(returnedJsx)
-
-        if (count < 6) {
-          return returnedJsx
-        }
-
-        else {
-          console.log("bout to return a h1")
-          return (
-            <>
-              <h1>Testing. Am I overwriting the form content with this h1?</h1>
-            </>
-          )
-        }
       }
       
       const boxStyles = {
@@ -249,7 +180,7 @@ export default function RecordDetails() {
                         <Tab label="Billing & Costs"  sx={{ fontSize: '0.8rem'}}/>
                     </Tabs>
 
-                    {value === 0 && <Box sx={boxStyles}><h2>Customer Details</h2>{renderTabDetails(customerDetails)}<EditButton sx={editButtonStyles} arrayName="customerDetails" saveChanges={saveChanges} /></Box>}
+                    {value === 0 && <Box sx={boxStyles}><h2>Customer Details</h2>{renderTabDetails(customerDetails)}<EditButton sx={editButtonStyles} /></Box>}
                     {value === 1 && <Box sx={boxStyles}><h2>Vehicle ID</h2>{renderTabDetails(vehicleIdentification)}<EditButton sx={editButtonStyles} /></Box>}
                     {value === 2 && <Box sx={boxStyles}><h2>Vehicle Specs</h2>{renderTabDetails(vehicleDetails)}</Box>}
                     {value === 3 && <Box sx={boxStyles}><h2>MOT Test Overview</h2>{renderTabDetails(motTestDetails)}</Box>}

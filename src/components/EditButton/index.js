@@ -1,16 +1,29 @@
 import React, { useState } from "react"
 import MDButton from "../MDButton/index.js"
 
-export default function EditButton( { sx } ) {
+export default function EditButton( { sx, arrayName, saveChanges  } ) {
 
     const [editMode, setEditMode] = useState(false)
-
+       
     const toggleEditMode = () => {
-        const icons = Array.from(document.getElementsByClassName("record-edit-icon"))
-        icons.forEach( icon => {
-            icon.style.visibility = editMode ? "hidden" : "visible"
-        })
 
+        // if I am in edit mode, and button clicked, that must mean, computer is saving...
+            // so, run 'save' fn when 'save' clicked 
+        if (editMode) {
+            saveChanges(arrayName)
+        }
+        
+        else {
+            // Turn all values into input boxes so as to be edited
+            const valueSpansArray = Array.from(document.getElementsByClassName("value"))
+            valueSpansArray.forEach(value => {
+                const valueText = value.textContent
+                const textBox = document.createElement("input")
+                textBox.value = valueText
+                value.parentNode.replaceChild(textBox, value)
+            });
+        }
+        
         setEditMode(prevState => !prevState)
     }
 
@@ -31,7 +44,7 @@ export default function EditButton( { sx } ) {
 
     return (
         <div>
-            <MDButton sx={sx} onClick={toggleEditMode}>{ editMode ? "View" : "Edit" }</MDButton>
+            <MDButton sx={sx} onClick={toggleEditMode}>{ editMode ? "Save" : "Edit" }</MDButton>
         </div>
     )
 }

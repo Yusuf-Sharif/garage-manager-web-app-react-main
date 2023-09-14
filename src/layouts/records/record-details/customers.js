@@ -444,19 +444,19 @@ export const customers = [
             { label: "Inspector's Name", value: "Sarah Green" },
             { label: "Additional Work Notes", value: "Exterior in pristine condition" },
             ],
-        
+            
             testResultsAndAdvisories: [
             { label: "Categories of defects", value: "Major" },
             { label: "Recommendations", value: "Replace tires" },
             { label: "Next Service Date", value: "30/06/2024" },
             { label: "Future Maintenance Tips", value: "Regular oil changes every 5000 miles" }
             ],
-            
+
             emissionDetails: [
             { label: "CO2 Emissions", value: "120 g/km" },
             { label: "Emission Test Results", value: "Pass" }
             ],    
-            
+
             inspectorsNotes: [
             { label: "Personal Observations", value: "Exterior in pristine condition" },
             { label: "Tester's Name and Signature", value: "Sarah Green" }
