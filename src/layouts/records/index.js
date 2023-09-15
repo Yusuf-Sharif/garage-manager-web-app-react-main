@@ -53,7 +53,10 @@ export default function RecordsPage() {
                                   className: "no-filter-icon",
                                   width: "5%", 
                                   Cell: ( { row } ) => (
-                                    <button style={{padding: "5px"}} onClick={() => navigate(`/MOT-Records/${row.original.id}`)}>View</button>
+                                    <>
+                                        <button style={{padding: "3px", fontSize: "11px", marginRight: "10px"}} onClick={() => navigate(`/MOT-Records/${row.original.id}?editMode=true`)}>EDIT</button>
+                                        <button style={{padding: "3px", fontSize: "11px"}} onClick={() => navigate(`/MOT-Records/${row.original.id}`)}>VIEW</button>
+                                    </>
                                   )
                                 }
                             ],

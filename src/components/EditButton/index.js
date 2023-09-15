@@ -1,10 +1,7 @@
 import React, { useState } from "react"
 import MDButton from "../MDButton/index.js"
 
-export default function EditButton( { sx, arrayName, saveChanges  } ) {
-
-    const [editMode, setEditMode] = useState(false)
-       
+export default function EditButton( { sx, arrayName, saveChanges, editMode, setEditMode  } ) {
     const toggleEditMode = () => {
 
         // if I am in edit mode, and button clicked, that must mean, computer is saving...
@@ -15,17 +12,15 @@ export default function EditButton( { sx, arrayName, saveChanges  } ) {
         
         else {
             // Turn all values into input boxes so as to be edited
-            const valueSpansArray = Array.from(document.getElementsByClassName("value"))
-            valueSpansArray.forEach(value => {
-                const valueText = value.textContent
-                const textBox = document.createElement("input")
-                textBox.value = valueText
-                value.parentNode.replaceChild(textBox, value)
-            });
+                // const valueSpansArray = Array.from(document.getElementsByClassName("value"))
+                // valueSpansArray.forEach(value => {
+                //     const valueText = value.textContent
+                //     const textBox = document.createElement("input")
+                //     textBox.value = valueText
+                //     value.parentNode.replaceChild(textBox, value)
+            }
+            setEditMode(prevState => !prevState)
         }
-        
-        setEditMode(prevState => !prevState)
-    }
 
     // toggle edit icons
     
@@ -36,11 +31,6 @@ export default function EditButton( { sx, arrayName, saveChanges  } ) {
             // set visibility to "hidden",
 
         // else set visibility to "block" (or its equivilant)
-
-    
-    
-
-
 
     return (
         <div>
