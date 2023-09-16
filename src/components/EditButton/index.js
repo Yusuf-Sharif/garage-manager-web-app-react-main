@@ -1,40 +1,32 @@
 import React, { useState } from "react"
 import MDButton from "../MDButton/index.js"
 
-export default function EditButton( { sx, arrayName, saveChanges, editMode, setEditMode  } ) {
+export default function EditButton( { saveChanges, setterFn, editMode, setEditMode  } ) {
     const toggleEditMode = () => {
+
+        const setCustomerObj = setterFn
 
         // if I am in edit mode, and button clicked, that must mean, computer is saving...
             // so, run 'save' fn when 'save' clicked 
         if (editMode) {
-            saveChanges(arrayName)
+            saveChanges(setCustomerObj)
         }
         
-        else {
-            // Turn all values into input boxes so as to be edited
-                // const valueSpansArray = Array.from(document.getElementsByClassName("value"))
-                // valueSpansArray.forEach(value => {
-                //     const valueText = value.textContent
-                //     const textBox = document.createElement("input")
-                //     textBox.value = valueText
-                //     value.parentNode.replaceChild(textBox, value)
-            }
-            setEditMode(prevState => !prevState)
+        setEditMode(prevState => !prevState)
+
         }
 
-    // toggle edit icons
     
-    // map over each icon with className "record-edit-icon"
-
-        // if editMode is true, 
-
-            // set visibility to "hidden",
-
-        // else set visibility to "block" (or its equivilant)
+    const editButtonStyles = {
+        position: "absolute", 
+        top: "20px",
+        right: "20px",
+        color: editMode ? "red" : "",
+        }
 
     return (
         <div>
-            <MDButton sx={sx} onClick={toggleEditMode}>{ editMode ? "Save" : "Edit" }</MDButton>
+            <MDButton sx={editButtonStyles} onClick={toggleEditMode}>{ editMode ? "Save" : "Edit" }</MDButton>
         </div>
     )
 }
