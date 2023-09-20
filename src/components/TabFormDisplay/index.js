@@ -1,5 +1,6 @@
 import React from "react"
 import { Box } from "@mui/material"
+import Grid from '@mui/material/Grid';
 import { renderTabDetails } from "../../utils.js"
 
 export default function TabFormDisplay( { title, detailsArray, editMode } ) {
@@ -31,10 +32,38 @@ export default function TabFormDisplay( { title, detailsArray, editMode } ) {
         }
       };
 
+    // Manually implementing columns. 
+    // Suggestion from chat gpt. 
+    // chat: https://chat.openai.com/c/f2ae662c-fb92-45b6-92ae-5a8f34fa4c63
+
+    const maxHeight = title === "Customer Details" ? 200 : 400; // Define your max height
+    const averageItemHeight = 50; // An estimated average height for each item (including margin, padding, etc.)
+
+    const splitIndex = Math.floor(maxHeight / averageItemHeight);
+
+    const leftColumnDetails = detailsArray.slice(0, splitIndex);
+    const rightColumnDetails = detailsArray.slice(splitIndex);
+
     return (
         <Box sx={boxStyles}>
-            <h2>{title}</h2>
-            {renderTabDetails(detailsArray, editMode)}
+            <h2 style={{marginBottom: "20px"}}>{title}</h2>
+            <Grid container>
+              <Grid item xs={6}>
+                {renderTabDetails(leftColumnDetails, editMode, title)}
+              </Grid>
+
+              <Grid item xs={6}>
+                {renderTabDetails(rightColumnDetails, editMode, title)}
+              </Grid>
+            </Grid>
         </Box>
     )
 }
+
+
+{/* <Box sx={boxStyles}>
+<h2>{title}</h2>
+<div style={{ columnWidth: "100vw", maxHeight: "500px", overflow: "auto"}}>
+  {renderTabDetails(detailsArray, editMode, title)}
+</div>
+</Box> */}

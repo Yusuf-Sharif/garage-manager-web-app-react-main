@@ -15,12 +15,11 @@ export default function EditButton( { saveChanges, setterFn, editMode, setEditMo
         setEditMode(prevState => !prevState)
 
         }
-
     
     const editButtonStyles = {
         position: "absolute", 
         top: "20px",
-        right: "20px",
+        right: editMode ? "130px" : "20px",
         color: editMode ? "red" : "",
         }
 

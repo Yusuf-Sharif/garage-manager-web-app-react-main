@@ -4,7 +4,9 @@ export const customers = [
             { label: "Name", value: "Robert Smith" },
             { label: "Address", value: "123 Main St, Springfield" },
             { label: "Email", value: "robertsmith@email.com" },
-            { label: "Phone", value: "020 7946 0958" }
+            { label: "Phone", value: "020 7946 0958" },
+            { label: "Historical Data", value: "Pass on 15/09/2022 with no advisories" },
+            { label: "Retests", value: "No retests" },
           ],
         
         appointmentDetails: [
@@ -14,12 +16,14 @@ export const customers = [
       
         motStatus: "Passed",
         
-        vehicleIdentification: [
-            { label: "Vehicle Identification Number (VIN)", value: "1HGCM82633A004352" },
-            { label: "Registration Number (License Plate)", value: "ABC-1234" }
-          ],
+        // vehicleIdentification: [
+        //     { label: "V.I.N", value: "1HGCM82633A004352" },
+        //     { label: "License Plate", value: "ABC-1234" }
+        //   ],
           
           vehicleDetails: [
+            { label: "V.I.N", value: "1HGCM82633A004352" },
+            { label: "License Plate", value: "ABC-1234" },
             { label: "Year of Manufacture", value: 2020 },
             { label: "Manufacturer", value: "Toyota" },
             { label: "Model", value: "Camry" },
@@ -39,32 +43,37 @@ export const customers = [
             { label: "Expiry Date", value: "15/09/2024" },
             { label: "Date of Test", value: "03/09/2023" },
             { label: "MOT Test Number", value: "MOT12345678" },
-            { label: "Reasons for Failure", value: "" },
+            { label: "Reasons for Failure", value: "N/A" },
             { label: "Advisory Notes", value: "Tire tread nearing minimum limit" },
             { label: "Inspector's Name", value: "John Doe" },
             { label: "Additional Work Notes", value: "Vehicle well-maintained" },
-          ],
-      
-          testResultsAndAdvisories: [
             { label: "Categories of defects", value: "Minor" },
             { label: "Recommendations", value: "Safe to drive" },
             { label: "Next Service Date", value: "15/03/2024" },
-            { label: "Future Maintenance Tips", value: "Consider tire replacement in the next 5000 miles" }
+            { label: "Maintenance & Repairs", value: "Oil Change, Brake pad replacement" },
+            { label: "Future Maintenance Tips", value: "Consider tire replacement in the next 5000 miles" },
           ],
+      
+        //   testResultsAndAdvisories: [
+        //     { label: "Categories of defects", value: "Minor" },
+        //     { label: "Recommendations", value: "Safe to drive" },
+        //     { label: "Next Service Date", value: "15/03/2024" },
+        //     { label: "Future Maintenance Tips", value: "Consider tire replacement in the next 5000 miles" }
+        //   ],
           
           emissionDetails: [
             { label: "CO2 Emissions", value: "120 g/km" },
             { label: "Emission Test Results", value: "Pass" }
           ],    
           
-          inspectorsNotes: [
-            { label: "Personal Observations", value: "Vehicle well-maintained" },
-            { label: "Tester's Name and Signature", value: "John Doe" }
-          ],
+        //   inspectorsNotes: [
+        //     { label: "Personal Observations", value: "Vehicle well-maintained" },
+        //     { label: "Tester's Name and Signature", value: "John Doe" }
+        //   ],
       
-          additionalWorkDone: [
-            { label: "Details", value: "Oil Change, Brake pad replacement" }
-          ],    
+        //   additionalWorkDone: [
+        //     { label: "Details", value: "Oil Change, Brake pad replacement" }
+        //   ],    
           
           costsAndBilling: [
             { label: "Test Cost", value: "$50" },
@@ -73,10 +82,10 @@ export const customers = [
             { label: "Payment Status", value: "Paid" }
           ],    
           
-          previousTestResults: [
-            { label: "Historical Data", value: "Pass on 15/09/2022 with no advisories" },
-            { label: "Retests", value: "No retests" }
-          ],
+        //   previousTestResults: [
+        //     { label: "Historical Data", value: "Pass on 15/09/2022 with no advisories" },
+        //     { label: "Retests", value: "No retests" }
+        //   ],
         },
 
     {
@@ -95,8 +104,8 @@ export const customers = [
         motStatus: "Failed",
         
         vehicleIdentification: [
-            { label: "Vehicle Identification Number (VIN)", value: "2JGKD92645B005768" },
-            { label: "Registration Number (License Plate)", value: "XYZ-5678" }
+            { label: "V.I.N", value: "2JGKD92645B005768" },
+            { label: "License Plate", value: "XYZ-5678" }
             ],
             
             vehicleDetails: [
@@ -175,8 +184,8 @@ export const customers = [
         motStatus: "Passed",
         
         vehicleIdentification: [
-            { label: "Vehicle Identification Number (VIN)", value: "3LZKD94756C006981" },
-            { label: "Registration Number (License Plate)", value: "LMN-9101" }
+            { label: "V.I.N", value: "3LZKD94756C006981" },
+            { label: "License Plate", value: "LMN-9101" }
             ],
             
             vehicleDetails: [
@@ -255,8 +264,8 @@ export const customers = [
         motStatus: "Failed",
         
         vehicleIdentification: [
-            { label: "Vehicle Identification Number (VIN)", value: "4MZXG05867D007392" },
-            { label: "Registration Number (License Plate)", value: "OPQ-3456" }
+            { label: "V.I.N", value: "4MZXG05867D007392" },
+            { label: "License Plate", value: "OPQ-3456" }
             ],
             
             vehicleDetails: [
@@ -335,8 +344,8 @@ export const customers = [
         motStatus: "Passed",
         
         vehicleIdentification: [
-            { label: "Vehicle Identification Number (VIN)", value: "5PRHG07878E018203" },
-            { label: "Registration Number (License Plate)", value: "XYZ-7890" }
+            { label: "V.I.N", value: "5PRHG07878E018203" },
+            { label: "License Plate", value: "XYZ-7890" }
             ],
             
             vehicleDetails: [
@@ -415,8 +424,8 @@ export const customers = [
         motStatus: "Failed",
         
         vehicleIdentification: [
-            { label: "Vehicle Identification Number (VIN)", value: "6ADLW12345F098456" },
-            { label: "Registration Number (License Plate)", value: "ABCD-1234" }
+            { label: "V.I.N", value: "6ADLW12345F098456" },
+            { label: "License Plate", value: "ABCD-1234" }
             ],
             
             vehicleDetails: [
