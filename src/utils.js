@@ -1,7 +1,6 @@
 import React, { useRef, useEffect, useState } from "react"
 import Grid from '@mui/material/Grid';
 import MDInput from "./components/MDInput/index.js"
-import "./labelUnderlineStyle.css"
 
 function renderTabDetails(details, editMode, title) {
 

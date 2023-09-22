@@ -66,10 +66,10 @@ export const customers = [
             { label: "Emission Test Results", value: "Pass" }
           ],    
           
-        //   inspectorsNotes: [
-        //     { label: "Personal Observations", value: "Vehicle well-maintained" },
-        //     { label: "Tester's Name and Signature", value: "John Doe" }
-        //   ],
+          inspectorsNotes: [
+            { label: "Personal Observations", value: "Vehicle well-maintained" },
+            { label: "Tester's Name and Signature", value: "John Doe" }
+          ],
       
         //   additionalWorkDone: [
         //     { label: "Details", value: "Oil Change, Brake pad replacement" }

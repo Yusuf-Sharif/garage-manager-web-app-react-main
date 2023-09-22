@@ -9,16 +9,19 @@ import CancelButton from "../../../components/CancelButton/index.js"
 import TabFormDisplay from "../../../components/TabFormDisplay/index.js"
 import Icon from "@mui/material/Icon";
 import { customers } from "./customers.js"
-import { useParams, useSearchParams } from "react-router-dom"
+import { useParams, useSearchParams, useLocation } from "react-router-dom"
 import { saveChanges } from "../../../utils.js"
 import "./selected-tab.css"
 
 export default function RecordDetails() {
     const { id } = useParams()
     const [searchParams, setSearchParams] = useSearchParams()
+    const location = useLocation()
     const [value, setValue] = useState(0)
     const [editMode, setEditMode] = useState(searchParams.has("editMode"))
-    const [customerObj, setCustomerObj] = useState(customers[id])
+
+    // If customersArray has been passed from Record page, through navigate state, then set it as default value
+    const [customerObj, setCustomerObj] = useState(location.state?.customerObj || null)
 
     const { customerDetails,
             vehicleIdentification,
@@ -44,7 +47,7 @@ export default function RecordDetails() {
     return (
         <DashboardLayout>
             <DashboardNavbar />
-            <Grid container>
+            { customerObj && <Grid container>
                 <Grid item xs={12}>
                     <Tabs value={value} onChange={handleChange}>
                         <Tab label="Customer"  sx={{ fontSize: '0.8rem'}}/>
@@ -63,7 +66,8 @@ export default function RecordDetails() {
                   </div>
                     
                 </Grid>
-            </Grid>
+            </Grid> 
+          }
         </DashboardLayout>
     )
 }

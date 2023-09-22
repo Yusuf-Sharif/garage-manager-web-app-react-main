@@ -11,7 +11,7 @@ export const customer1 = {
       { label: "Booking Time", value: "14:30" }
     ],
 
-  motStatus: "Passed",
+  motStatus: "failed",
   
   vehicleIdentification: [
       { label: "Vehicle Identification Number (VIN)", value: "1HGCM82633A004352" },
