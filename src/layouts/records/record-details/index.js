@@ -31,7 +31,7 @@ export default function RecordDetails() {
             previousTestResults,
             additionalWorkDone,
             costsAndBilling,
-           } = customerObj
+           } = customerObj || {} // In case customerObj hasnt been recevied in location.state, fall back to empty object to prevent onscreen error
 
     const handleChange = (event, newValue) => {
         // If in editmode, when I go to another tab, save edits to state (but dont update the servers object as user hasnt clicked save yet)

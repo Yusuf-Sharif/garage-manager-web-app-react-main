@@ -26,8 +26,6 @@ export default function RecordsPage() {
      // Map over each customer and return a row object 
      // update 'rows:' property's value to customersRowsArray variable
     if (customersArray) {
-        console.log("customersArray")
-        console.log(customersArray[0].data())
 
         customersRowsArray = customersArray.map( (customer, index) => {
             const { customerDetails,
