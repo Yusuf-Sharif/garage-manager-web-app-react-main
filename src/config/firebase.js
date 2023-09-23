@@ -1,7 +1,7 @@
 import firebaseConfig from "./firebaseConfig.js";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { getFirestore, collection, getDocs, query, limit, addDoc } from "firebase/firestore"
+import { getFirestore, collection, getDocs, query, limit, addDoc, doc, updateDoc } from "firebase/firestore"
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -13,4 +13,4 @@ const auth = getAuth(app);
 // Initialise firestore and get a reference to my firetore database
 const db = getFirestore(app)
 
-export { app, auth, db, collection, getDocs, query, limit, addDoc };
+export { app, auth, db, collection, getDocs, query, limit, addDoc, doc, updateDoc };

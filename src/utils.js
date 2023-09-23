@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react"
 import Grid from '@mui/material/Grid';
 import MDInput from "./components/MDInput/index.js"
+import { db, doc, updateDoc, addDoc, collection } from "./config/firebase.js"
 
 function renderTabDetails(details, editMode, title) {
 
@@ -51,11 +52,12 @@ function renderTabDetails(details, editMode, title) {
   }
 
 
-  const saveChanges = (setCustomerObj) => {
+  const saveChanges = (setCustomerObj, updateFirestore, docId, setError, setSuccess, addDocToCollection) => {
     // Overview - Save user's edits across re-renders:
       // Grab labels and input box values, 
       // Store them in an array, 
       // Update customerObj state with array, overwriting previous array
+
 
   // grab the grids containers of the form currently displayed
   const labelsAndValues = Array.from(document.getElementsByClassName("grid-label-and-value"))
@@ -92,7 +94,7 @@ function renderTabDetails(details, editMode, title) {
     else if (firstLabel === "Vehicle Identification Number (VIN)") {
       return "vehicleIdentification"
     }
-    else if (firstLabel === "Year of Manufacture") {
+    else if (firstLabel === "V.I.N") {
       return "vehicleDetails"
     }
     else if (firstLabel === "Test Result") {
@@ -114,11 +116,71 @@ function renderTabDetails(details, editMode, title) {
 
   const objPropertyToUpdate = getObjPropertyToUpdate(newArray)
 
+
+
   // update state with updated array 
-  setCustomerObj(prevObject => ({
-    ...prevObject,
-    [objPropertyToUpdate]: newArray
-  }))
+  setCustomerObj(prevObject => {
+    const updatedObject = {
+      ...prevObject,
+      [objPropertyToUpdate]: newArray
+    }
+
+    // if 'addDocToCollection' is present as an argument when saveChanges is called, 
+    // then add the updated Object to the collection in firestore
+
+    if (addDocToCollection) {
+        addDoc(collection(db, "customers"), updatedObject)
+        .then(() => {
+          console.log("Record created successfully!")
+          // use setSuccess function, passed to saveChanges as a parameter, to update the success state
+          // in RecordDetails component, and so render the success paragraph element.
+          setSuccess(true)
+  
+          setTimeout(() => setSuccess(false), 3000)
+  
+        })
+        .catch(error => {
+          console.log("Error updating document: " + error)
+  
+          // Use setError function, passed to saveChanges as a parameter, to update the error state 
+          // in RecordDetails component, and so render the error paragraph element.
+          setError(error)
+          
+        })
+    }
+
+    // If user isnt creating a new record 
+    // and the second parameter of 'saveChanges' is true (updateFirestore), 
+    // then update firestore with updated customerObj 
+
+    else if (updateFirestore) {
+      const customerObjRef = doc(db, "customers", docId)
+      updateDoc(customerObjRef, updatedObject)
+      .then(() => {
+        console.log("Document updated successfully!")
+        // use setSuccess function, passed to saveChanges as a parameter, to update the success state
+        // in RecordDetails component, and so render the success paragraph element.
+        setSuccess(true)
+
+        setTimeout(() => setSuccess(false), 3000)
+
+      })
+      .catch(error => {
+        console.log("Error updating document: " + error)
+
+        // Use setError function, passed to saveChanges as a parameter, to update the error state 
+        // in RecordDetails component, and so render the error paragraph element.
+        setError(error)
+        
+      })
+    }
+
+    return updatedObject
+
+  })
+
+  
+
 }
 
 

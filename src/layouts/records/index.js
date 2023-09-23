@@ -31,7 +31,7 @@ export default function RecordsPage() {
             const { customerDetails,
                     vehicleDetails,
                     appointmentDetails,
-                    motStatus,
+                    motTestDetails,
                     inspectorsNotes
                 } = customer.data()
 
@@ -44,7 +44,7 @@ export default function RecordsPage() {
             customer_phone_number: customerDetails[3].value,
             booking_date: appointmentDetails[0].value,
             booking_time: appointmentDetails[1].value,
-            mot_status: motStatus,
+            mot_status: motTestDetails[0].value,
             assigned_inspector: inspectorsNotes[1].value,
             additional_work_notes: inspectorsNotes[0].value
            }
@@ -68,7 +68,9 @@ export default function RecordsPage() {
     return (    
         <DashboardLayout>
             <DashboardNavbar />
-            <button onClick={() => addCustomer()}>add customer</button>
+            <button onClick={() => addCustomer()}>add dummy customer</button>
+            <button onClick={() => navigate("/MOT-Records/new?newRecord=true&editMode=true")}>Add Record</button>
+            <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button>
             { customersArray && <Grid 
                 container 
             >
@@ -97,7 +99,7 @@ export default function RecordsPage() {
                                         <button 
                                             style={{padding: "3px", fontSize: "11px", marginRight: "10px"}} 
                                             onClick={() => {
-                                                    navigate(`/MOT-Records/${row.original.id}?editMode=true`, { state: { customerObj: customersArray[row.original.id].data() } })
+                                                    navigate(`/MOT-Records/${row.original.id}?editMode=true`)
                                                 }
                                             }
                                         >
@@ -106,10 +108,7 @@ export default function RecordsPage() {
                                         <button 
                                             style={{padding: "3px", fontSize: "11px"}} 
                                             onClick={() => {
-                                                // Passing the details of the selected customer to RecordDetails page
-                                                // ( selected customer only, rather than passing the entire customersArray array via navigate state, as that was causing problems 
-                                                // as that data was too large it seems. )
-                                                navigate(`/MOT-Records/${row.original.id}`, { state: { customerObj: customersArray[row.original.id].data() } })}}
+                                                navigate(`/MOT-Records/${row.original.id}`)}}
                                         >
                                             VIEW
                                         </button>

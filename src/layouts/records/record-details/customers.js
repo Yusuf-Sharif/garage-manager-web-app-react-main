@@ -13,8 +13,6 @@ export const customers = [
             { label: "Booking Date", value: "10/09/2023" },
             { label: "Booking Time", value: "14:30" }
           ],
-      
-        motStatus: "Passed",
         
         // vehicleIdentification: [
         //     { label: "V.I.N", value: "1HGCM82633A004352" },
@@ -88,6 +86,93 @@ export const customers = [
         //   ],
         },
 
+    {
+        customerDetails: [
+            { label: "Name", value: "" },
+            { label: "Address", value: "" },
+            { label: "Email", value: "" },
+            { label: "Phone", value: "" },
+            { label: "Historical Data", value: "" },
+            { label: "Retests", value: "" },
+            ],
+        
+        appointmentDetails: [
+            { label: "Booking Date", value: "" },
+            { label: "Booking Time", value: "" }
+            ],
+        
+        // vehicleIdentification: [
+        //     { label: "V.I.N", value: "1HGCM82633A004352" },
+        //     { label: "License Plate", value: "ABC-1234" }
+        //   ],
+            
+            vehicleDetails: [
+            { label: "V.I.N", value: "" },
+            { label: "License Plate", value: "" },
+            { label: "Year of Manufacture", value: "" },
+            { label: "Manufacturer", value: "" },
+            { label: "Model", value: "" },
+            { label: "Derivative", value: "" }, 
+            { label: "Fuel Type", value: "" },
+            { label: "Vehicle Category", value: "" },
+            { label: "Vehicle Color", value: "" },
+            { label: "Engine Size", value: "" },
+            { label: "Drive Type", value: "" },
+            { label: "Body Type", value: "" },
+            { label: "Number of Doors", value: "" },
+            { label: "Number of Seats", value: "" }
+            ],
+            
+            motTestDetails: [
+            { label: "Test Result", value: "" },
+            { label: "Expiry Date", value: "" },
+            { label: "Date of Test", value: "" },
+            { label: "MOT Test Number", value: "" },
+            { label: "Reasons for Failure", value: "" },
+            { label: "Advisory Notes", value: "" },
+            { label: "Inspector's Name", value: "" },
+            { label: "Additional Work Notes", value: "" },
+            { label: "Categories of defects", value: "" },
+            { label: "Recommendations", value: "" },
+            { label: "Next Service Date", value: "" },
+            { label: "Maintenance & Repairs", value: "" },
+            { label: "Future Maintenance Tips", value: "" },
+            ],
+        
+        //   testResultsAndAdvisories: [
+        //     { label: "Categories of defects", value: "Minor" },
+        //     { label: "Recommendations", value: "Safe to drive" },
+        //     { label: "Next Service Date", value: "15/03/2024" },
+        //     { label: "Future Maintenance Tips", value: "Consider tire replacement in the next 5000 miles" }
+        //   ],
+            
+            emissionDetails: [
+            { label: "CO2 Emissions", value: "" },
+            { label: "Emission Test Results", value: "" }
+            ],    
+            
+            inspectorsNotes: [
+            { label: "Personal Observations", value: "" },
+            { label: "Tester's Name and Signature", value: "" }
+            ],
+        
+        //   additionalWorkDone: [
+        //     { label: "Details", value: "Oil Change, Brake pad replacement" }
+        //   ],    
+            
+            costsAndBilling: [
+            { label: "Test Cost", value: "" },
+            { label: "Repair Costs", value: "" },
+            { label: "Total Bill", value: "" },
+            { label: "Payment Status", value: "" }
+            ],    
+            
+        //   previousTestResults: [
+        //     { label: "Historical Data", value: "Pass on 15/09/2022 with no advisories" },
+        //     { label: "Retests", value: "No retests" }
+        //   ],
+        }, 
+              
     {
         customerDetails: [
             { label: "Name", value: "John Doe" },
