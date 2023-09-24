@@ -15,6 +15,9 @@ import { db, collection, getDocs } from "../../../config/firebase.js"
 import "./selected-tab.css"
 
 export default function RecordDetails() {
+
+    console.log("Record Details Page rendering...")
+
     const { id } = useParams()
     const [searchParams, setSearchParams] = useSearchParams()
     const location = useLocation()
@@ -121,6 +124,7 @@ export default function RecordDetails() {
                       editMode={editMode} 
                       setEditMode={setEditMode} 
                       docId={docId}
+                      setDocId={setDocId}
                       setError={setError}
                       setSuccess={setSuccess}
                     />

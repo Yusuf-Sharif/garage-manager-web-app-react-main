@@ -138,6 +138,8 @@ export const customers = [
             { label: "Maintenance & Repairs", value: "" },
             { label: "Future Maintenance Tips", value: "" },
             ],
+
+            displayToUser: true,
         
         //   testResultsAndAdvisories: [
         //     { label: "Categories of defects", value: "Minor" },

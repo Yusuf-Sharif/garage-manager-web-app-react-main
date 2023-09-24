@@ -52,7 +52,7 @@ function renderTabDetails(details, editMode, title) {
   }
 
 
-  const saveChanges = (setCustomerObj, updateFirestore, docId, setError, setSuccess, addDocToCollection) => {
+  const saveChanges = (setCustomerObj, updateFirestore, docId, setError, setSuccess, setDocId) => {
     // Overview - Save user's edits across re-renders:
       // Grab labels and input box values, 
       // Store them in an array, 
@@ -125,35 +125,36 @@ function renderTabDetails(details, editMode, title) {
       [objPropertyToUpdate]: newArray
     }
 
-    // if 'addDocToCollection' is present as an argument when saveChanges is called, 
-    // then add the updated Object to the collection in firestore
+    {
+      // if 'addDocToCollection' is present as an argument when saveChanges is called, 
+      // then add the updated Object to the collection in firestore
 
-    if (addDocToCollection) {
-        addDoc(collection(db, "customers"), updatedObject)
-        .then(() => {
-          console.log("Record created successfully!")
-          // use setSuccess function, passed to saveChanges as a parameter, to update the success state
-          // in RecordDetails component, and so render the success paragraph element.
-          setSuccess(true)
-  
-          setTimeout(() => setSuccess(false), 3000)
-  
-        })
-        .catch(error => {
-          console.log("Error updating document: " + error)
-  
-          // Use setError function, passed to saveChanges as a parameter, to update the error state 
-          // in RecordDetails component, and so render the error paragraph element.
-          setError(error)
-          
-        })
+      // if (addDocToCollection) {
+      //     addDoc(collection(db, "customers"), updatedObject)
+      //     .then(() => {
+      //       console.log("Record created successfully!")
+      //       // use setSuccess function, passed to saveChanges as a parameter, to update the success state
+      //       // in RecordDetails component, and so render the success paragraph element.
+      //       setSuccess(true)
+    
+      //       setTimeout(() => setSuccess(false), 3000)
+    
+      //     })
+      //     .catch(error => {
+      //       console.log("Error updating document: " + error)
+    
+      //       // Use setError function, passed to saveChanges as a parameter, to update the error state 
+      //       // in RecordDetails component, and so render the error paragraph element.
+      //       setError(error)
+            
+      //     })
+      // }
     }
 
-    // If user isnt creating a new record 
-    // and the second parameter of 'saveChanges' is true (updateFirestore), 
+    // If docId exists, and the second parameter of 'saveChanges' is true (updateFirestore), 
     // then update firestore with updated customerObj 
 
-    else if (updateFirestore) {
+    if (updateFirestore && docId) {
       const customerObjRef = doc(db, "customers", docId)
       updateDoc(customerObjRef, updatedObject)
       .then(() => {
@@ -173,6 +174,35 @@ function renderTabDetails(details, editMode, title) {
         setError(error)
         
       })
+    }
+
+    // if docId doesnt exist and updateFirestore is true,
+    // then create the document in firestore  
+    else if (updateFirestore && !docId) {
+      addDoc(collection(db, "customers"), updatedObject)
+        .then(newDocumentRef => {
+          console.log("Document created successfully!")
+          const newDocumentId = newDocumentRef.id
+
+          // Set docId to newDocumentId so that the user can make edits straight away after saving..
+          // ...fixing the bug of a new record being created when editing and saving again.
+          setDocId(newDocumentId)
+
+          // use setSuccess function, passed to saveChanges as a parameter, to update the success state
+          // in RecordDetails component, and so render the success paragraph element.
+          setSuccess(true)
+  
+          setTimeout(() => setSuccess(false), 3000)
+  
+        })
+        .catch(error => {
+          console.log("Error creating document: " + error)
+  
+          // Use setError function, passed to saveChanges as a parameter, to update the error state 
+          // in RecordDetails component, and so render the error paragraph element.
+          setError(error)
+          
+        })
     }
 
     return updatedObject
