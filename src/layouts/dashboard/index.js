@@ -36,11 +36,14 @@ import Projects from "layouts/dashboard/components/Projects";
 import OrdersOverview from "layouts/dashboard/components/OrdersOverview"
 
 // Importing 'Current User' Context
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../../AuthContext/AuthContext.js"
 
 // Hook to protect non-signed-in access
 import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
+// Importing firebase dependencies
+import { collection, getDocs, db } from "../../config/firebase.js"
 
 function Dashboard() {
   const { sales, tasks } = reportsLineChartData;
@@ -52,6 +55,87 @@ function Dashboard() {
   // registering useEffect
   useNavigateToSignInPage()
   // 
+
+  const [currentWeekAppointments, setCurrentWeekAppointments] = useState("Loading...")
+
+  // 'This Week's Appointments' count logic
+    // download all records 
+    // filter to keep only displayToUser true records (i.e only records that havent been soft deleted)
+    // filter to keep only records where appointment date is this week 
+  
+  // Get the number of appointments for the current week
+  useEffect(() => {
+    async function getThisWeeksAppointmentsCount() {
+      // download all records 
+        const querySnapshot = await getDocs(collection(db, "customers"))
+    
+      // filter to keep only displayToUser true records
+      const getNonDeletedRecords = () => {
+    
+        // Filter out docs which are soft deleted
+        const filteredRecords = querySnapshot.docs.filter( doc => {
+        const docData = doc.data()
+        return docData.displayToUser   
+      })
+    
+      // Extract the actual customer objects from the (filtered) docs
+      const recordDataArray = filteredRecords.map(doc => {
+        return doc.data()
+      })
+    
+      return recordDataArray
+    
+    }
+      
+    
+      // filter to keep only records where appointment date is this week 
+      
+      // Function to determine the start and end of the current week
+      const getStartAndEndOfWeek = (date) => {
+        const start = new Date(date);
+        start.setHours(0, 0, 0, 0);
+        start.setDate(start.getDate() - start.getDay());
+    
+        const end = new Date(date);
+        end.setHours(23, 59, 59, 999);
+        end.setDate(end.getDate() + (6 - end.getDay()));
+    
+        return { start, end };
+      };
+    
+      const currentDate = new Date();
+      const { start, end } = getStartAndEndOfWeek(currentDate);
+    
+      // Function to convert "DD-MM-YYYY" string to a Date object
+      const stringToDate = (dateStr) => {
+        const [day, month, year] = dateStr.split("/").map(Number);
+        return new Date(year, month - 1, day);
+      };
+    
+      // Filter the array based on start and end dates
+      const nonDeletedRecords = getNonDeletedRecords()
+      console.log("nonDeletedRecords:")
+      console.log(nonDeletedRecords)
+    
+      const currentWeekAppointments = nonDeletedRecords.filter(record => {
+    
+      const stringBookingDate = record.customerDetails[4].value
+      console.log(stringBookingDate)
+    
+        const bookingDate = stringToDate(stringBookingDate);  // Convert the string to a Date object
+        console.log(bookingDate >= start && bookingDate <= end ? "True" : "False")
+        return bookingDate >= start && bookingDate <= end;
+      });
+    
+      console.log(currentWeekAppointments);  // Customers with bookings in the current week
+      const count = currentWeekAppointments.length
+      setCurrentWeekAppointments(count)
+    }
+
+    getThisWeeksAppointmentsCount()
+  }, [])
+
+
 
   if (!currentUser) {
     console.log("Error: not signed in. Redirecting to login page")
@@ -68,8 +152,8 @@ function Dashboard() {
               <ComplexStatisticsCard
                 color="dark"
                 icon="weekend"
-                title="Bookings"
-                count={281}
+                title="Current Week Appointments"
+                count={currentWeekAppointments}
                 percentage={{
                   color: "success",
                   amount: "+55%",

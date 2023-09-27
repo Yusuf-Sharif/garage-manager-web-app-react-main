@@ -14,7 +14,7 @@ import Alert from '@mui/material/Alert';
 
 
 async function addCustomer() {
-    addDoc(collection(db, "customers"), customers[1])
+    addDoc(collection(db, "customers"), customers[0])
 }
 
 export default function RecordsPage() {
@@ -63,7 +63,6 @@ export default function RecordsPage() {
 
             const { customerDetails,
                     vehicleDetails,
-                    appointmentDetails,
                     motTestDetails,
                     inspectorsNotes, 
                     displayToUser
@@ -78,8 +77,8 @@ export default function RecordsPage() {
                  model: vehicleDetails[4].value,
                  derivative: vehicleDetails[3].value,
                  customer_phone_number: customerDetails[3].value,
-                 booking_date: appointmentDetails[0].value,
-                 booking_time: appointmentDetails[1].value,
+                 booking_date: customerDetails[4].value,
+                 booking_time: customerDetails[5].value,
                  mot_status: motTestDetails[0].value,
                  assigned_inspector: inspectorsNotes[1].value,
                  additional_work_notes: inspectorsNotes[0].value

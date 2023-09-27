@@ -62,6 +62,10 @@ export default function RecordDetails() {
       async function getRecordTemplate() {
         const recordTemplateFirestoreObject = await getDocs(collection(db, "record-template"))
         const recordTemplateObject = recordTemplateFirestoreObject.docs[0].data()
+
+        console.log("Record Template:")
+        console.log(recordTemplateFirestoreObject.docs[0].data())
+
         setCustomerObj(recordTemplateObject)
       }
       
@@ -77,8 +81,6 @@ export default function RecordDetails() {
         }
 
   }, [])
-
-    // If customersArray has been passed from Record page, through navigate state, then set it as default value
 
     const { customerDetails,
             vehicleIdentification,
