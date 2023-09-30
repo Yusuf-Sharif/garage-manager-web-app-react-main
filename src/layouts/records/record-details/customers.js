@@ -195,7 +195,7 @@ export const customers = [
                 "label": "Booking Time"
             }
         ]
-        }, // Dummy data 
+        }, // Template Dummy data 
 
     {
         "customerDetails": [
@@ -394,5 +394,206 @@ export const customers = [
             }
         ]
         }, // Template customer object for 'Add Record' feature 
+
+        {
+            "customerDetails": [
+                {
+                    "label": "Name",
+                    "value": "Jane Doe"
+                },
+                {
+                    "label": "Address",
+                    "value": "456 Oak St, Greenview"
+                },
+                {
+                    "label": "Email",
+                    "value": "janedoe@example.com"
+                },
+                {
+                    "label": "Phone",
+                    "value": "+1 987-654-3210"
+                },
+                {
+                    "label": "Booking Date",
+                    "value": "25/09/2023"
+                },
+                {
+                    "label": "Booking Time",
+                    "value": "2:00 PM"
+                },
+                {
+                    "label": "Historical Data",
+                    "value": "Returning customer"
+                },
+                {
+                    "label": "Retests",
+                    "value": "Once in 2021"
+                }
+            ],
+            "vehicleDetails": [
+                {
+                    "label": "V.I.N",
+                    "value": "1GCHR24U51G654321"
+                },
+                {
+                    "label": "License Plate",
+                    "value": "XYZ 456"
+                },
+                {
+                    "label": "Year of Manufacture",
+                    "value": "2019"
+                },
+                {
+                    "label": "Manufacturer",
+                    "value": "Toyota"
+                },
+                {
+                    "label": "Model",
+                    "value": "Camry"
+                },
+                {
+                    "label": "Derivative",
+                    "value": "SE"
+                },
+                {
+                    "label": "Fuel Type",
+                    "value": "Petrol"
+                },
+                {
+                    "label": "Vehicle Category",
+                    "value": "Sedan"
+                },
+                {
+                    "label": "Vehicle Color",
+                    "value": "Blue"
+                },
+                {
+                    "label": "Engine Size",
+                    "value": "2.5L"
+                },
+                {
+                    "label": "Drive Type",
+                    "value": "FWD"
+                },
+                {
+                    "label": "Body Type",
+                    "value": "Sedan"
+                },
+                {
+                    "label": "Number of Doors",
+                    "value": "4"
+                },
+                {
+                    "label": "Number of Seats",
+                    "value": "5"
+                }
+            ],
+            "motTestDetails": [
+                {
+                    "label": "Test Result",
+                    "value": "Passed"
+                },
+                {
+                    "label": "Expiry Date",
+                    "value": "25/09/2024"
+                },
+                {
+                    "label": "Date of Test",
+                    "value": "25/09/2023"
+                },
+                {
+                    "label": "MOT Test Number",
+                    "value": "MOT98765432"
+                },
+                {
+                    "label": "Reasons for Failure",
+                    "value": "N/A"
+                },
+                {
+                    "label": "Advisory Notes",
+                    "value": "Replace wiper blades"
+                },
+                {
+                    "label": "Inspector's Name",
+                    "value": "Inspector Bob"
+                },
+                {
+                    "label": "Additional Work Notes",
+                    "value": "Oil change"
+                },
+                {
+                    "label": "Categories of defects",
+                    "value": "Wipers"
+                },
+                {
+                    "label": "Recommendations",
+                    "value": "Schedule next oil change in 5000 miles"
+                },
+                {
+                    "label": "Next Service Date",
+                    "value": "20/06/2024"
+                },
+                {
+                    "label": "Maintenance & Repairs",
+                    "value": "Oil change, wiper replacement"
+                },
+                {
+                    "label": "Future Maintenance Tips",
+                    "value": "Check brake pads"
+                }
+            ],
+            "costsAndBilling": [
+                {
+                    "label": "Test Cost",
+                    "value": "$110"
+                },
+                {
+                    "label": "Repair Costs",
+                    "value": "$45"
+                },
+                {
+                    "label": "Total Bill",
+                    "value": "$155"
+                },
+                {
+                    "label": "Payment Status",
+                    "value": "Paid"
+                }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+                {
+                    "label": "CO2 Emissions",
+                    "value": "185g/km"
+                },
+                {
+                    "label": "Emission Test Results",
+                    "value": "Pass"
+                }
+            ],
+            "inspectorsNotes": [
+                {
+                    "label": "Personal Observations",
+                    "value": "Vehicle in good condition"
+                },
+                {
+                    "label": "Tester's Name and Signature",
+                    "value": "Bob Smith, Signature: BS"
+                }
+            ],
+            "appointmentDetails": [
+                {
+                    "label": "Booking Date",
+                    "value": "25/09/2023"
+                },
+                {
+                    "label": "Booking Time",
+                    "value": "2:00 PM"
+                }
+            ]
+        }
+        
+        
+            // Dummy data to fill in records page
               
 ]

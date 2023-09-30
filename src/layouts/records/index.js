@@ -14,7 +14,7 @@ import Alert from '@mui/material/Alert';
 
 
 async function addCustomer() {
-    addDoc(collection(db, "customers"), customers[0])
+    addDoc(collection(db, "customers"), customers[2])
 }
 
 export default function RecordsPage() {
