@@ -90,6 +90,13 @@ export default function Appointments() {
 
 
     function handleSlotSelect(slotInfo) {
+      // Overview: 
+        // Format date and start time to record form format
+
+        // Navigate to record creation page
+
+        // Pass date and start time via naviagate state to record creation page
+
 
       // format date and start time to record form format  
       function formatDate(date) {
@@ -118,8 +125,6 @@ export default function Appointments() {
 
       navigate("/MOT-Records/new?newRecord=true&editMode=true", { state: { dateRecordFormat, timeRecordFormat }  })
       
-
-
     }
 
   useEffect(() => {
