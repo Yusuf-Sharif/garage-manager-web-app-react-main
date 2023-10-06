@@ -65,7 +65,8 @@ export default function RecordsPage() {
                     vehicleDetails,
                     motTestDetails,
                     inspectorsNotes, 
-                    displayToUser
+                    displayToUser,
+                    costsAndBilling
                 } = customer.data()
 
             return { 
@@ -80,6 +81,7 @@ export default function RecordsPage() {
                  booking_date: customerDetails[4].value,
                  booking_time: customerDetails[5].value,
                  mot_status: motTestDetails[0].value,
+                 payment: costsAndBilling[3].value,
                  assigned_inspector: inspectorsNotes[1].value,
                  additional_work_notes: inspectorsNotes[0].value
                 }
@@ -110,9 +112,7 @@ export default function RecordsPage() {
     return (    
         <DashboardLayout>
             <DashboardNavbar />
-            <button onClick={() => addCustomer()}>add dummy customer</button>
             <Icon fontSize="large" title="Add Record" style={{cursor: "pointer", position: "absolute", right: "50%", top: "150px"}} onClick={() => navigate("/MOT-Records/new?newRecord=true&editMode=true")}>add_circle_icon</Icon>
-            <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button>
             { customersArray && <Grid 
                 container 
             >
@@ -123,11 +123,12 @@ export default function RecordsPage() {
                         table={{
                             columns: [
                                 { Header: "Customer Name", accessor: "customer_name", width: "5%" },
-                                { Header: "Vehicle Make", accessor: "vehicle_make", width: "11%" },
+                                { Header: "Vehicle Make", accessor: "vehicle_make", width: "8%" },
                                 { Header: "Model", accessor: "model", width: "3%" },
                                 { Header: "Booking Date", accessor: "booking_date", width: "6.5%" },
-                                { Header: "Booking Time", accessor: "booking_time", width: "10.5%" },
-                                { Header: "MOT Status", accessor: "mot_status", width: "9.9%" },
+                                { Header: "Booking Time", accessor: "booking_time", width: "8%" },
+                                { Header: "MOT Status", accessor: "mot_status", width: "7%" },
+                                { Header: "Payment", accessor: "payment", width: "9.9%" },
                                 // { Header: "Assigned Inspector", accessor: "assigned_inspector", width: "9.9%" },
                                 // { Header: "Additional Work Notes", accessor: "additional_work_notes", width: "9.9%" },
                                 { Header: "",
@@ -175,6 +176,8 @@ export default function RecordsPage() {
                 </Snackbar>
             </Grid>
         }
+        <button onClick={() => addCustomer()}>add dummy customer</button>
+        <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button>
     </DashboardLayout>        
     )
 }

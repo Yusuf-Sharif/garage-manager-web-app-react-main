@@ -18,6 +18,14 @@ const localizer = momentLocalizer(moment);  // or globalizeLocalizer
 export default function Appointments() {
     const [allNonDeletedRecords, setAllNonDeletedRecords] = useState(null)
 
+    const CustomDateCellWrapper = ({ children }) => {
+      return React.cloneElement(React.Children.only(children), {
+        title: "Create Booking",
+      });
+    };   
+    
+    
+
     // convert date string to javasript date object
     function stringToDateTime(dateString, timeString) {
         const [day, month, year] = dateString.split('/').map(Number);
@@ -87,7 +95,6 @@ export default function Appointments() {
     })
 
     const navigate = useNavigate()
-
 
     function handleSlotSelect(slotInfo) {
       // Overview: 
@@ -170,6 +177,9 @@ export default function Appointments() {
             endAccessor="end"
             selectable="single"
             onSelectSlot={handleSlotSelect}
+            components={{
+              dateCellWrapper: CustomDateCellWrapper,
+            }}
         />
         </div>
     </DashboardLayout>

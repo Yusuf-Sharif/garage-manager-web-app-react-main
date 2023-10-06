@@ -216,11 +216,11 @@ export const customers = [
             "label": "Phone"
             },
             {
-            "value": "",
+            "value": "DD/MM/YYYY",
             "label": "Booking Date"
             },
             {
-            "value": "",
+            "value": "00:00 AM",
             "label": "Booking Time"
             },
             {
@@ -397,203 +397,91 @@ export const customers = [
 
         {
             "customerDetails": [
-                {
-                    "label": "Name",
-                    "value": "Jane Doe"
-                },
-                {
-                    "label": "Address",
-                    "value": "456 Oak St, Greenview"
-                },
-                {
-                    "label": "Email",
-                    "value": "janedoe@example.com"
-                },
-                {
-                    "label": "Phone",
-                    "value": "+1 987-654-3210"
-                },
-                {
-                    "label": "Booking Date",
-                    "value": "25/09/2023"
-                },
-                {
-                    "label": "Booking Time",
-                    "value": "2:00 PM"
-                },
-                {
-                    "label": "Historical Data",
-                    "value": "Returning customer"
-                },
-                {
-                    "label": "Retests",
-                    "value": "Once in 2021"
-                }
+                { "label": "Name", "value": "Michael Clark" },
+                { "label": "Address", "value": "789 Pine St, Rivertown" },
+                { "label": "Email", "value": "michael.clark@example.com" },
+                { "label": "Phone", "value": "+1 234-567-8934" },
+                { "label": "Booking Date", "value": "06/10/2023" },
+                { "label": "Booking Time", "value": "1:45 PM" },
+                { "label": "Historical Data", "value": "Previous booking on 12/07/2023" },
+                { "label": "Retests", "value": "None" }
             ],
             "vehicleDetails": [
-                {
-                    "label": "V.I.N",
-                    "value": "1GCHR24U51G654321"
-                },
-                {
-                    "label": "License Plate",
-                    "value": "XYZ 456"
-                },
-                {
-                    "label": "Year of Manufacture",
-                    "value": "2019"
-                },
-                {
-                    "label": "Manufacturer",
-                    "value": "Toyota"
-                },
-                {
-                    "label": "Model",
-                    "value": "Camry"
-                },
-                {
-                    "label": "Derivative",
-                    "value": "SE"
-                },
-                {
-                    "label": "Fuel Type",
-                    "value": "Petrol"
-                },
-                {
-                    "label": "Vehicle Category",
-                    "value": "Sedan"
-                },
-                {
-                    "label": "Vehicle Color",
-                    "value": "Blue"
-                },
-                {
-                    "label": "Engine Size",
-                    "value": "2.5L"
-                },
-                {
-                    "label": "Drive Type",
-                    "value": "FWD"
-                },
-                {
-                    "label": "Body Type",
-                    "value": "Sedan"
-                },
-                {
-                    "label": "Number of Doors",
-                    "value": "4"
-                },
-                {
-                    "label": "Number of Seats",
-                    "value": "5"
-                }
+                { "label": "V.I.N", "value": "4RFGT92747B234789" },
+                { "label": "License Plate", "value": "ABC 303" },
+                { "label": "Year of Manufacture", "value": "2021" },
+                { "label": "Manufacturer", "value": "Mazda" },
+                { "label": "Model", "value": "CX-5" },
+                { "label": "Derivative", "value": "Sport" },
+                { "label": "Fuel Type", "value": "Diesel" },
+                { "label": "Vehicle Category", "value": "SUV" },
+                { "label": "Vehicle Color", "value": "White" },
+                { "label": "Engine Size", "value": "2.2L" },
+                { "label": "Drive Type", "value": "AWD" },
+                { "label": "Body Type", "value": "SUV" },
+                { "label": "Number of Doors", "value": "5" },
+                { "label": "Number of Seats", "value": "5" }
             ],
             "motTestDetails": [
-                {
-                    "label": "Test Result",
-                    "value": "Passed"
-                },
-                {
-                    "label": "Expiry Date",
-                    "value": "25/09/2024"
-                },
-                {
-                    "label": "Date of Test",
-                    "value": "25/09/2023"
-                },
-                {
-                    "label": "MOT Test Number",
-                    "value": "MOT98765432"
-                },
-                {
-                    "label": "Reasons for Failure",
-                    "value": "N/A"
-                },
-                {
-                    "label": "Advisory Notes",
-                    "value": "Replace wiper blades"
-                },
-                {
-                    "label": "Inspector's Name",
-                    "value": "Inspector Bob"
-                },
-                {
-                    "label": "Additional Work Notes",
-                    "value": "Oil change"
-                },
-                {
-                    "label": "Categories of defects",
-                    "value": "Wipers"
-                },
-                {
-                    "label": "Recommendations",
-                    "value": "Schedule next oil change in 5000 miles"
-                },
-                {
-                    "label": "Next Service Date",
-                    "value": "20/06/2024"
-                },
-                {
-                    "label": "Maintenance & Repairs",
-                    "value": "Oil change, wiper replacement"
-                },
-                {
-                    "label": "Future Maintenance Tips",
-                    "value": "Check brake pads"
-                }
+                { "label": "Test Result", "value": "Passed" },
+                { "label": "Expiry Date", "value": "05/10/2024" },
+                { "label": "Date of Test", "value": "05/10/2023" },
+                { "label": "MOT Test Number", "value": "MOT12345689" },
+                { "label": "Reasons for Failure", "value": "N/A" },
+                { "label": "Advisory Notes", "value": "Recommend tire rotation" },
+                { "label": "Inspector's Name", "value": "Inspector Lisa" },
+                { "label": "Additional Work Notes", "value": "None" },
+                { "label": "Categories of defects", "value": "None" },
+                { "label": "Recommendations", "value": "N/A" },
+                { "label": "Next Service Date", "value": "10/04/2024" },
+                { "label": "Maintenance & Repairs", "value": "None" },
+                { "label": "Future Maintenance Tips", "value": "Check brake fluid regularly" }
             ],
             "costsAndBilling": [
-                {
-                    "label": "Test Cost",
-                    "value": "$110"
-                },
-                {
-                    "label": "Repair Costs",
-                    "value": "$45"
-                },
-                {
-                    "label": "Total Bill",
-                    "value": "$155"
-                },
-                {
-                    "label": "Payment Status",
-                    "value": "Paid"
-                }
+                { "label": "Test Cost", "value": "$105" },
+                { "label": "Repair Costs", "value": "$0" },
+                { "label": "Total Bill", "value": "$105" },
+                { "label": "Payment Status", "value": "Paid" }
             ],
             "displayToUser": true,
             "emissionDetails": [
-                {
-                    "label": "CO2 Emissions",
-                    "value": "185g/km"
-                },
-                {
-                    "label": "Emission Test Results",
-                    "value": "Pass"
-                }
+                { "label": "CO2 Emissions", "value": "140g/km" },
+                { "label": "Emission Test Results", "value": "Pass" }
             ],
             "inspectorsNotes": [
-                {
-                    "label": "Personal Observations",
-                    "value": "Vehicle in good condition"
-                },
-                {
-                    "label": "Tester's Name and Signature",
-                    "value": "Bob Smith, Signature: BS"
-                }
+                { "label": "Personal Observations", "value": "Vehicle in excellent condition" },
+                { "label": "Tester's Name and Signature", "value": "Lisa Martinez, Signature: LM" }
             ],
             "appointmentDetails": [
-                {
-                    "label": "Booking Date",
-                    "value": "25/09/2023"
-                },
-                {
-                    "label": "Booking Time",
-                    "value": "2:00 PM"
-                }
+                { "label": "Booking Date", "value": "05/10/2023" },
+                { "label": "Booking Time", "value": "1:45 PM" }
             ]
         }
         
         
-            // Dummy data to fill in records page
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // Dummy data to fill in records page
               
 ]

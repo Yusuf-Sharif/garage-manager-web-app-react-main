@@ -68,7 +68,7 @@ function Dashboard() {
     // filter to keep only displayToUser true records (i.e only records that havent been soft deleted)
     // filter to keep only records where appointment date is next week
   
-  // Get the number of appointments for next week
+  
   useEffect(() => {
     async function getDashboardData() {
       // download all records 
@@ -212,7 +212,9 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
 
       const a = completedServicesToday.length - completedServicesYesterday.length
       const b = a / completedServicesYesterday.length
-      const percentageChange = b * 100
+      let percentageChange = b * 100
+      percentageChange = percentageChange.toFixed(2)
+
       console.log("percentageChange:")
       console.log(percentageChange)
 

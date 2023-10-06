@@ -14,9 +14,32 @@
     font-size: 15px
 }
 
+/* In day view, make timeslots' mouse hover show mouse pointer */
+
+.rbc-events-container:hover {
+    cursor: pointer
+}
+
+.rbc-month-row:hover {
+    cursor: pointer
+}
+
 
 /* Disable time slot 'range selection' visual */
 
 .rbc-slot-selection {
     display: none !important;
+}
+
+
+/* Style the date button in month view to resemble a button */
+
+.rbc-button-link {
+    background: lightgray;
+    padding: 2px 10px;
+    border-radius: 2px
+}
+
+.rbc-button-link:hover {
+    background: darkgray;
 }
