@@ -1,0 +1,22 @@
+.rbc-event .rbc-event-content {
+    font-size: 14px; 
+}
+
+/* Styling the timebox event title in day view */
+.rbc-day-slot .rbc-event .rbc-event-content {
+    font-size: 18px; 
+    position: relative;
+    top: 4px;
+    left: 5px;
+}
+
+.rbc-show-more {
+    font-size: 15px
+}
+
+
+/* Disable time slot 'range selection' visual */
+
+.rbc-slot-selection {
+    display: none !important;
+}

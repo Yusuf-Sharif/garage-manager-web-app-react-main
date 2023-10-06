@@ -28,7 +28,6 @@ import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 
 // Data
-import reportsBarChartData from "layouts/dashboard/data/reportsBarChartData";
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
 // Dashboard components
@@ -178,7 +177,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
 
     // Step 2 
 
-      // filter to keep only those scheduled services who have "pass" or "fail - 'comppleted services"
+      // filter to keep only those scheduled services who have "pass" or "fail - 'completed services"
       const completedServices = scheduledServices.filter( record => {
         return record.motTestDetails[0].value != ""
       })
@@ -379,192 +378,6 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
 
       // For 'This Week's Revenue-Per-Day' Bar Chart component 
 
-      const getThisMondayTotalRevenue = () => {
-        // find this weeks monday date 
-        function getMondaysDate() {
-          const today = new Date();
-          
-          // The getDay() method returns the day of the week: 
-          // 0 for Sunday, 1 for Monday, etc.
-          const daysSinceMonday = (today.getDay() - 1 + 7) % 7; 
-          
-          const monday = new Date(today);
-          monday.setDate(today.getDate() - daysSinceMonday);
-          
-          const day = String(monday.getDate()).padStart(2, '0');
-          const month = String(monday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-          const year = monday.getFullYear();
-          
-          return `${day}/${month}/${year}`;
-        }
-        
-        const thisMonday = getMondaysDate()
-        const thisMondayRecords = getNonDeletedRecords().filter( record => {
-          // filter records for records of this monday
-          return record.customerDetails[4].value === thisMonday
-        })
-        
-        // filter customers to those with bills paid 
-        const thisMondayRecordsPaid = thisMondayRecords.filter( record => {
-          return record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid"
-        })
-  
-        // gather all customer bills of today into one array 
-          // map over to return just the total bill property
-          const thisMondayBillsArray = thisMondayRecordsPaid.map( record => {
-            return record.costsAndBilling[2].value
-          })
-  
-        
-          // remove $ sign 
-  
-           const thisMondayBillsArrayDollarSignRemovedArray = thisMondayBillsArray.map(item => item.substring(1));
-  
-           // convert string numbers to numbers
-           const thisMondayBillsArrayStringsToNumbers = thisMondayBillsArrayDollarSignRemovedArray.map(item => +item);
-  
-           
-   
-           // add up all numbers
-           const thisMondayTotalRevenue = thisMondayBillsArrayStringsToNumbers.reduce((accumulator, currentValue) => {
-             return accumulator + currentValue;
-           }, 0);
-
-          return thisMondayTotalRevenue
-      }
-
-      const getThisTuesdayTotalRevenue = () => {
-        // find this weeks Tuesday date 
-        function getTuesdaysDate() {
-          const today = new Date();
-          
-          // The getDay() method returns the day of the week: 
-          // 0 for Sunday, 1 for Monday, 2 for Tuesday, etc.
-          const daysSinceTuesday = (today.getDay() - 2 + 7) % 7;
-          
-          const tuesday = new Date(today);
-          tuesday.setDate(today.getDate() - daysSinceTuesday);
-          
-          const day = String(tuesday.getDate()).padStart(2, '0');
-          const month = String(tuesday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-          const year = tuesday.getFullYear();
-          
-          return `${day}/${month}/${year}`;
-        }
-               
-        
-        const thisTuesday = getTuesdaysDate()
-        const thisTuesdaysRecords = getNonDeletedRecords().filter( record => {
-          // filter records for records of this monday
-          return record.customerDetails[4].value === thisTuesday
-        })
-
-        
-        // filter customers to those with bills paid 
-        const thisTuesdayRecordsPaid = thisTuesdaysRecords.filter( record => {
-          return record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid"
-        })
-
-  
-        // gather all customer bills of today into one array 
-          // map over to return just the total bill property
-          const thisTuesdayBillsArray = thisTuesdayRecordsPaid.map( record => {
-            return record.costsAndBilling[2].value
-          })
-
-         
-  
-        
-          // remove $ sign 
-  
-           const thisTuesdayBillsArrayDollarSignRemovedArray = thisTuesdayBillsArray.map(item => item.substring(1));
-  
-           // convert string numbers to numbers
-           const thisTuesdayBillsArrayStringsToNumbers = thisTuesdayBillsArrayDollarSignRemovedArray.map(item => +item);
-          
-   
-           // add up all numbers
-           const thisTuesdayTotalRevenue = thisTuesdayBillsArrayStringsToNumbers.reduce((accumulator, currentValue) => {
-             return accumulator + currentValue;
-           }, 0);
-
-          return thisTuesdayTotalRevenue
-      }
-
-
-
-      // function 
-        // takes a dateGetter function as a parameter 
-        // returns a integer representing total revenue of that day 
-
-      function getMondaysDate() {
-        const today = new Date();
-        
-        // The getDay() method returns the day of the week: 
-        // 0 for Sunday, 1 for Monday, etc.
-        const daysSinceMonday = (today.getDay() - 1 + 7) % 7; 
-        
-        const monday = new Date(today);
-        monday.setDate(today.getDate() - daysSinceMonday);
-        
-        const day = String(monday.getDate()).padStart(2, '0');
-        const month = String(monday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-        const year = monday.getFullYear();
-        
-        return `${day}/${month}/${year}`;
-      }
-
-      function getTuesdaysDate() {
-        const today = new Date();
-        
-        // The getDay() method returns the day of the week: 
-        // 0 for Sunday, 1 for Monday, 2 for Tuesday, etc.
-        const daysSinceTuesday = (today.getDay() - 2 + 7) % 7;
-        
-        const tuesday = new Date(today);
-        tuesday.setDate(today.getDate() - daysSinceTuesday);
-        
-        const day = String(tuesday.getDate()).padStart(2, '0');
-        const month = String(tuesday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-        const year = tuesday.getFullYear();
-        
-        return `${day}/${month}/${year}`;
-      }
-
-      function getWednesdaysDate() {
-        const today = new Date();
-        
-        // The getDay() method returns the day of the week: 
-        // 0 for Sunday, 1 for Monday, 2 for Tuesday, 3 for Wednesday, etc.
-        const daysSinceWednesday = (today.getDay() - 3 + 7) % 7;
-        
-        const wednesday = new Date(today);
-        wednesday.setDate(today.getDate() - daysSinceWednesday);
-        
-        const day = String(wednesday.getDate()).padStart(2, '0');
-        const month = String(wednesday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-        const year = wednesday.getFullYear();
-        
-        return `${day}/${month}/${year}`;
-      }
-
-      function getThursdaysDate() {
-        const today = new Date();
-        
-        // The getDay() method returns the day of the week: 
-        // 0 for Sunday, 1 for Monday, 2 for Tuesday, 3 for Wednesday, 4 for Thursday, etc.
-        const daysSinceThursday = (today.getDay() - 4 + 7) % 7;
-        
-        const thursday = new Date(today);
-        thursday.setDate(today.getDate() - daysSinceThursday);
-        
-        const day = String(thursday.getDate()).padStart(2, '0');
-        const month = String(thursday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-        const year = thursday.getFullYear();
-        
-        return `${day}/${month}/${year}`;
-      }
-
       function getDateOfThisWeek(dayName) {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
         const today = new Date();
@@ -644,12 +457,66 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       const thisSaturdayTotalRevenue = getTotalRevenueOfDay(() => getDateOfThisWeek("Saturday"))
 
 
-      // Now I have the total revenue for each day of the current week
+      // Structuring the data to be used in the bar chart 
+      const dailyRevenueBarChartData = {
+        labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        datasets: { 
+          label: "Total Revenue", 
+          data: [thisSundayTotalRevenue,
+                 thisMondayTotalRevenue, 
+                 thisTuesdayTotalRevenue, 
+                 thisWednesdayTotalRevenue, 
+                 thisThursdayTotalRevenue, 
+                 thisFridayTotalRevenue, 
+                 thisSaturdayTotalRevenue] 
+                },
+      }
 
 
-     
 
-      
+
+      // For 'This Week's Services-Completed-Per-Day' Line Chart component 
+        // function that returns all completed services for any day of the current week 
+          // input: day
+          // output: number of services completed for that day 
+        
+          function getCompletedServices(day) {
+          // filter to keep only the specified day's records
+            const thisDayRecords = nonDeletedRecords.filter( record => {
+            return record.customerDetails[4].value === getDateOfThisWeek(day)
+          })
+        
+          // filter to only those where the service was completed
+            const thisDayRecordsCompletedServices = thisDayRecords.filter( record => {
+              return record.motTestDetails[0].value != ""
+            })
+
+          return thisDayRecordsCompletedServices.length
+        }
+
+        const thisSundayCompletedServices = getCompletedServices("Sunday")
+        const thisMondayCompletedServices = getCompletedServices("Monday")
+        const thisTuesdayCompletedServices = getCompletedServices("Tuesday")
+        const thisWednesdayCompletedServices = getCompletedServices("Wednesday")
+        const thisThursdayCompletedServices = getCompletedServices("Thursday")
+        const thisFridayCompletedServices = getCompletedServices("Friday")
+        const thisSaturdayCompletedServices = getCompletedServices("Saturday")
+
+        // Structuring the data to be used in the line chart 
+        const completedServicesLineChartData = {
+          labels: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+          datasets: { 
+            label: "Completed Services", 
+            data: [thisSundayCompletedServices, 
+                  thisMondayCompletedServices, 
+                  thisTuesdayCompletedServices, 
+                  thisWednesdayCompletedServices, 
+                  thisThursdayCompletedServices, 
+                  thisFridayCompletedServices, 
+                  thisSaturdayCompletedServices] 
+                },
+        }
+
 
 
 
@@ -669,7 +536,9 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
           percentageChangeYesterdayToToday,
           typeOfPercentageChangeYesterdayToToday
         },
-        unpaidInvoicesToday
+        unpaidInvoicesToday,
+        dailyRevenueBarChartData,
+        completedServicesLineChartData
       })
       )
 
@@ -766,30 +635,30 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsBarChart
-                  color="info"
-                  title="website views"
-                  description="Last Campaign Performance"
-                  date="campaign sent 2 days ago"
-                  chart={reportsBarChartData}
+                  color="success"
+                  title="Daily Revenue"
+                  description="Total revenue for each day this week"
+                  date="just updated"
+                  chart={dashboardData ? dashboardData.dailyRevenueBarChartData : {}}
                 />
               </MDBox>
             </Grid>
             <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsLineChart
-                  color="success"
-                  title="daily sales"
+                  color="info"
+                  title="daily services"
                   description={
                     <>
-                      (<strong>+15%</strong>) increase in today sales.
+                      Total services completed for each day this week
                     </>
                   }
-                  date="updated 4 min ago"
-                  chart={sales}
+                  date="just updated"
+                  chart={dashboardData ? dashboardData.completedServicesLineChartData : {}}
                 />
               </MDBox>
             </Grid>
-            <Grid item xs={12} md={6} lg={4}>
+            {/* <Grid item xs={12} md={6} lg={4}>
               <MDBox mb={3}>
                 <ReportsLineChart
                   color="dark"
@@ -799,10 +668,10 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
                   chart={tasks}
                 />
               </MDBox>
-            </Grid>
+            </Grid> */}
           </Grid>
         </MDBox>
-        <MDBox>
+        {/* <MDBox>
           <Grid container spacing={3}>
             <Grid item xs={12} md={6} lg={8}>
               <Projects />
@@ -811,7 +680,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
               <OrdersOverview />
             </Grid>
           </Grid>
-        </MDBox>
+        </MDBox> */}
       </MDBox>
       <Footer />
     </DashboardLayout>

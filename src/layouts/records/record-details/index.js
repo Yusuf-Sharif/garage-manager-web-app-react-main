@@ -24,6 +24,8 @@ export default function RecordDetails() {
     const [value, setValue] = useState(0)
     const [editMode, setEditMode] = useState(searchParams.has("editMode"))
 
+    const { dateRecordFormat, timeRecordFormat } = location.state || {}
+            
     // Steps:
       // Fetches the data
 
@@ -64,7 +66,16 @@ export default function RecordDetails() {
         const recordTemplateObject = recordTemplateFirestoreObject.docs[0].data()
 
         console.log("Record Template:")
-        console.log(recordTemplateFirestoreObject.docs[0].data())
+        console.log(recordTemplateObject)
+
+        // if date and time exists in location state then modify the template object to prefill it
+        if (dateRecordFormat && timeRecordFormat) {
+          recordTemplateObject.customerDetails[4].value = dateRecordFormat
+          
+          if (timeRecordFormat != "12:00 AM") {
+            recordTemplateObject.customerDetails[5].value = timeRecordFormat
+          }
+        }
 
         setCustomerObj(recordTemplateObject)
       }

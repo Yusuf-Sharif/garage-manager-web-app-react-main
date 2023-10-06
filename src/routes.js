@@ -37,6 +37,7 @@ Coded by www.creative-tim.com
 
 // Material Dashboard 2 React layouts
 import Dashboard from "layouts/dashboard";
+import Appointments from "layouts/appointments/index.js"
 import Records from "layouts/records";
 import RecordDetails from "layouts/records/record-details/index.js";
 import Tables from "layouts/tables";
@@ -58,6 +59,14 @@ const routes = [
     icon: <Icon fontSize="small">dashboard</Icon>,
     route: "/dashboard",
     component: <Dashboard />,
+  },
+  {
+    type: "collapse",
+    name: "Appointments",
+    key: "appointments",
+    icon: <Icon fontSize="small">calendar_month_icon </Icon>,
+    route: "/appointments",
+    component: <Appointments />,
   },
   {
     type: "collapse",
