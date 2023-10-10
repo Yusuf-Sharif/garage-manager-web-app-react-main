@@ -31,7 +31,7 @@
     "react-dom": "18.2.0",
     "react-github-btn": "1.4.0",
     "react-router-dom": "6.11.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-table": "7.8.0",
     "stylis": "4.1.4",
     "stylis-plugin-rtl": "2.1.1",
@@ -43,12 +43,6 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm start"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [
@@ -63,14 +57,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "cross-env": "^7.0.3",
-    "eslint": "8.39.0",
-    "eslint-config-prettier": "8.8.0",
-    "eslint-plugin-import": "2.27.5",
-    "eslint-plugin-jsx-a11y": "6.7.1",
-    "eslint-plugin-prettier": "4.2.1",
-    "eslint-plugin-react": "7.32.2",
-    "eslint-plugin-react-hooks": "4.6.0",
     "prettier": "2.8.8"
   },
   "overrides": {
