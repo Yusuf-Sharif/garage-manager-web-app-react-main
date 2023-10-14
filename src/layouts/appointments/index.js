@@ -8,6 +8,13 @@ import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
 // Importing firebase dependencies
 import { collection, getDocs, db } from "../../config/firebase.js"
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import "./calendar-css-edits.css"
 
@@ -16,6 +23,12 @@ const localizer = momentLocalizer(moment);  // or globalizeLocalizer
 
 
 export default function Appointments() {
+    const { currentUser } = useContext(AuthContext)
+
+    // registering useEffect
+    useNavigateToSignInPage()
+    // 
+
     const [allNonDeletedRecords, setAllNonDeletedRecords] = useState(null)
 
     const CustomDateCellWrapper = ({ children }) => {
@@ -165,6 +178,11 @@ export default function Appointments() {
     getAllNonDeletedRecords()
 
   }, [])
+
+  if (!currentUser) {
+    console.log("Error: not signed in. Redirecting to login page")
+    return null
+  }
 
   return (
     <DashboardLayout>

@@ -12,12 +12,27 @@ import Icon from "@mui/material/Icon";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
 
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../AuthContext/AuthContext.js"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
+
 
 async function addCustomer() {
     addDoc(collection(db, "customers"), customers[2])
 }
 
 export default function RecordsPage() {
+
+    // registering useEffect
+    useNavigateToSignInPage()
+    // 
+
+    const { currentUser } = useContext(AuthContext)
+
+
     console.log("Records Page rendering....")
 
     // Component Overview:
@@ -108,6 +123,11 @@ export default function RecordsPage() {
     }, [fetchAgain])
 
     const navigate = useNavigate()
+
+    if (!currentUser) {
+        console.log("Error: not signed in. Redirecting to login page")
+        return null
+    }
             
     return (    
         <DashboardLayout>

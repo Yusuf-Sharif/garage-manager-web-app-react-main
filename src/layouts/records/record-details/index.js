@@ -14,7 +14,21 @@ import { saveChanges } from "../../../utils.js"
 import { db, collection, getDocs } from "../../../config/firebase.js"
 import "./selected-tab.css"
 
+
+// Importing 'Current User' Context
+import { useContext } from "react"
+import { AuthContext } from "../../../AuthContext/AuthContext"
+
+// Hook to protect non-signed-in access
+import { useNavigateToSignInPage } from "../../authentication/hooks/useNavigateToSignInPage.js"
+
 export default function RecordDetails() {
+
+    // registering useEffect
+    useNavigateToSignInPage()
+    // 
+
+    const { currentUser } = useContext(AuthContext)
 
     console.log("Record Details Page rendering...")
 
@@ -111,7 +125,13 @@ export default function RecordDetails() {
 
         // To display the chosen tab's contents 
         setValue(newValue);
-      };     
+      };  
+      
+      
+    if (!currentUser) {
+      console.log("Error: not signed in. Redirecting to login page")
+      return null
+    }
       
 
     return (
