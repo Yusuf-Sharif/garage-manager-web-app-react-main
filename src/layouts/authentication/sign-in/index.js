@@ -16,7 +16,7 @@ Coded by www.creative-tim.com
 import { useState } from "react";
 
 // react-router-dom components
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
@@ -48,6 +48,8 @@ import { AuthContext } from "../../../AuthContext/AuthContext.js"
 import { useSearchParams } from "react-router-dom"
 
 function Basic() {
+
+  const navigate = useNavigate()
 
   console.log("sign in page rendering...")
 
@@ -86,6 +88,7 @@ function Basic() {
 
   if (currentUser) {
     "User exists in context"
+    navigate("/dashboard")
   }
 
   return (
