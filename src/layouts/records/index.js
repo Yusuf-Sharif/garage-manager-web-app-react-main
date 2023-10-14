@@ -21,7 +21,14 @@ import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSi
 
 
 async function addCustomer() {
-    addDoc(collection(db, "customers"), customers[2])
+    // get array length
+    // loop over as many times as array lenght, for each objbect, push to cloud
+
+    const customersArray = customers[3]
+    for (let i = 0; i < customersArray.length; i++) {
+        
+        await addDoc(collection(db, "customers"), customersArray[i])
+    }
 }
 
 export default function RecordsPage() {
