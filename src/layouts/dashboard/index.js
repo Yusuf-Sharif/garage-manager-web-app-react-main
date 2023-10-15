@@ -30,10 +30,6 @@ import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatist
 // Data
 import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
 
-// Dashboard components
-import Projects from "layouts/dashboard/components/Projects";
-import OrdersOverview from "layouts/dashboard/components/OrdersOverview"
-
 // Importing 'Current User' Context
 import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../../AuthContext/AuthContext.js"

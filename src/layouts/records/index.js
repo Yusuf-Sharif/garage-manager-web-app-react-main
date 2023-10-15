@@ -4,7 +4,6 @@ import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
 import Grid from '@mui/material/Grid';
 import DataTable from "examples/Tables/DataTable";
 import { useNavigate } from "react-router-dom"
-import { customer1 } from "./record-details/customer1.js"
 import { db, collection, getDocs, query, limit, addDoc, updateDoc, doc } from "../../config/firebase.js"
 import { customers } from "./record-details/customers.js"
 import DeleteRecord from "../../components/DeleteRecord/index.js"
