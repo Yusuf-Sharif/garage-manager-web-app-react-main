@@ -198,7 +198,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
               
               { currentUser.displayName ? 
                 <h4 style={{display: "inline", marginRight: "5px"}}>
-                  Welcome, <span style={{color: "#3E98EF"}}>{currentUser.displayName}</span>
+                  Welcome, <span style={{color: "#3E98EF"}}>{currentUser.displayName}!</span>
                 </h4> 
                 : <span>...</span> 
               }
