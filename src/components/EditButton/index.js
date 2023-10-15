@@ -1,13 +1,12 @@
 import React, { useState } from "react"
-import MDButton from "../MDButton/index.js"
-import { db, doc, updateDoc, addDoc } from "../../config/firebase.js"
 import { useSearchParams } from "react-router-dom"
+
+import MDButton from "../MDButton/index.js"
 
 export default function EditButton( { saveChanges, setterFn, editMode, setEditMode, docId, setError, setSuccess, setDocId } ) {
     const [searchParams, setSearchParams] = useSearchParams()
     
-    
-    const toggleEditMode = () => {
+    function toggleEditMode() {
 
         const setCustomerObj = setterFn
         // If editMode is true and 'newRecord' is in url, add doc to firestore 
@@ -24,9 +23,9 @@ export default function EditButton( { saveChanges, setterFn, editMode, setEditMo
             // Updates local state and firestore
             saveChanges(setCustomerObj, true, docId, setError, setSuccess, setDocId)
         }
-        
-        setEditMode(prevState => !prevState)
 
+        setEditMode(prevState => !prevState)
+        
         }
     
     const editButtonStyles = {

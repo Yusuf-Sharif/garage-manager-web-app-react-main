@@ -1,4 +1,5 @@
 import React from "react"
+
 import { Box } from "@mui/material"
 import Grid from '@mui/material/Grid';
 import { renderTabDetails } from "../../utils.js"
@@ -10,21 +11,21 @@ export default function TabFormDisplay( { title, detailsArray, editMode } ) {
         fontSize: "15px",
         marginTop: "20px",
         padding: "20px",
-        border: "1px solid #e0e0e0", // subtle border
-        borderRadius: "8px", // rounded corners
-        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", // subtle shadow
-        backgroundColor: "#fafafa", // light background
-        "& > p": { // target <p> elements directly inside the box
-          marginBottom: "10px", // spacing between paragraphs
-          fontSize: "1.1em", // slightly bigger font for better readability
-          lineHeight: "1.5", // more space between lines for better readability
-          "& > strong": { // target <strong> elements inside the paragraphs
-            fontWeight: "600", // semi-bold font-weight
-            marginRight: "10px" // spacing between the label and value
+        border: "1px solid #e0e0e0", 
+        borderRadius: "8px", 
+        boxShadow: "0 2px 4px rgba(0, 0, 0, 0.1)", 
+        backgroundColor: "#fafafa", 
+        "& > p": { 
+          marginBottom: "10px", 
+          fontSize: "1.1em", 
+          lineHeight: "1.5", 
+          "& > strong": { 
+            fontWeight: "600", 
+            marginRight: "10px" 
           }
         },
-        "& > p:last-child": { // target the last <p> element
-          marginBottom: "0px" // remove the bottom margin for the last element
+        "& > p:last-child": { 
+          marginBottom: "0px" 
         },
         "& > h2": {
           marginBottom: "5px",

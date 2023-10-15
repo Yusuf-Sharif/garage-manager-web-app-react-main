@@ -6,9 +6,11 @@ export default function CancelButton() {
         position: "absolute", 
         top: "20px",
         right: "20px",       
-        }
+    }
 
-    const goBack = () =>  window.history.back()
+    function goBack() {
+        window.history.back()
+    }
 
     return (
         <MDButton sx={cancelButtonStyles} onClick={goBack}>Cancel</MDButton>
