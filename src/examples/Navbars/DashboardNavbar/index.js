@@ -13,7 +13,10 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+
+// Importing 'Current User' Context
+import { AuthContext } from "../../../AuthContext/AuthContext.js"
 
 // react-router components
 import { useLocation, Link } from "react-router-dom";
@@ -58,6 +61,12 @@ import { signOut } from "../../../AuthContext/AuthContextProvider.js"
 
 
 function DashboardNavbar({ absolute, light, isMini }) {
+  const { currentUser } = useContext(AuthContext)
+
+  console.log("Dashboard navbar currentUser:")
+  console.log(currentUser)
+
+
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
@@ -186,6 +195,14 @@ function DashboardNavbar({ absolute, light, isMini }) {
               >
                 <Icon sx={iconsStyle}>notifications</Icon>
               </IconButton> */}
+              
+              { currentUser.displayName ? 
+                <h4 style={{display: "inline", marginRight: "5px"}}>
+                  Welcome, <span style={{color: "#3E98EF"}}>{currentUser.displayName}</span>
+                </h4> 
+                : <span>...</span> 
+              }
+
               <IconButton
                 size="medium"
                 disableRipple

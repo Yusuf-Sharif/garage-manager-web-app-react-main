@@ -138,10 +138,10 @@ function Cover() {
               <MDButton 
                 variant="gradient" 
                 color="info" 
-                onClick={() => signUp(formDetails.email, formDetails.password)}
+                onClick={() => signUp(formDetails.name, formDetails.email, formDetails.password)}
                 fullWidth
               >
-                sign in
+                sign up
               </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
