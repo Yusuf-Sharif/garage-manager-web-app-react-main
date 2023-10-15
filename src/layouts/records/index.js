@@ -139,7 +139,7 @@ export default function RecordsPage() {
     return (    
         <DashboardLayout>
             <DashboardNavbar />
-            <Icon fontSize="large" title="Add Record" style={{cursor: "pointer", position: "absolute", right: "50%", top: "150px"}} onClick={() => navigate("/MOT-Records/new?newRecord=true&editMode=true")}>add_circle_icon</Icon>
+            { customersArray && <Icon fontSize="large" title="Add Record" style={{cursor: "pointer", position: "absolute", right: "50%", top: "150px"}} onClick={() => navigate("/MOT-Records/new?newRecord=true&editMode=true")}>add_circle_icon</Icon> }
             { customersArray && <Grid 
                 container 
             >
@@ -203,8 +203,12 @@ export default function RecordsPage() {
                 </Snackbar>
             </Grid>
         }
-        <button onClick={() => addCustomer()}>add dummy customer</button>
-        <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button>
+        { customersArray && 
+          <>
+            <button onClick={() => addCustomer()}>add dummy customer</button>
+            <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button>
+          </>
+        }
     </DashboardLayout>        
     )
 }
