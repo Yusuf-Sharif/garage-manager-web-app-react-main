@@ -13,21 +13,13 @@ Coded by www.creative-tim.com
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 */
 
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 // react-router-dom components
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useSearchParams } from "react-router-dom";
 
 // @mui material components
 import Card from "@mui/material/Card";
-import Switch from "@mui/material/Switch";
-import Grid from "@mui/material/Grid";
-import MuiLink from "@mui/material/Link";
-
-// @mui icons
-import FacebookIcon from "@mui/icons-material/Facebook";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import GoogleIcon from "@mui/icons-material/Google";
 
 // Material Dashboard 2 React components
 import MDBox from "components/MDBox";
@@ -42,35 +34,23 @@ import BasicLayout from "layouts/authentication/components/BasicLayout";
 import bgImage from "assets/images/bg-sign-in-basic.jpeg";
 
 import useSignIn from "./hooks/useSignIn.js";
-// import { auth } from "../../../config/firebase.js";
-import { useContext } from "react";
+
+// Importing user authentication from context
 import { AuthContext } from "../../../AuthContext/AuthContext.js"
-import { useSearchParams } from "react-router-dom"
 
 function Basic() {
 
   const navigate = useNavigate()
-
-  console.log("sign in page rendering...")
-
-  // auth.signOut().then( () => console.log("signed out successfully"))
-
-  const { currentUser } = useContext(AuthContext)
-
   const [searchParams, setSearchParams] = useSearchParams()
-
-  const { signIn } = useSignIn()
-
-  const [rememberMe, setRememberMe] = useState(false);
-
-  const handleSetRememberMe = () => setRememberMe(!rememberMe);
-
+  
   const [errorMsg, setErrorMsg] = useState(searchParams.get("error") || null)
-
   const [formDetails, setFormDetails] = useState({
     email: "",
     password: ""
   })
+
+  const { currentUser } = useContext(AuthContext)
+  const { signIn } = useSignIn()
 
   function onChange(event) {
      const { name, value } = event.target;
@@ -82,14 +62,13 @@ function Basic() {
       }
     })
   }
+  
 
-  // (after AuthProviderContext component re-renders from currentUser state change), 
-  // if user is signed in, then redirect to dashboard (logic is inside a useEffect in AuthContextProvider Component)
+  // Redirect to dashboard upon user sign-in is managed in AuthProviderContext
 
-  if (currentUser) {
-    "User exists in context"
-    navigate("/dashboard")
-  }
+    // if (currentUser) {
+    //   navigate("/dashboard")
+    // }
 
   return (
     <BasicLayout image={bgImage}>
@@ -177,7 +156,7 @@ function Basic() {
                   // If theres a sign-in error, store the error message in errorMsg
                   const errorMsg = await signIn(formDetails.email, formDetails.password)
                   if (errorMsg) {
-                    // pass error message to state and re-render component to display error message
+                    // Pass error message to state and re-render component to display error message
                     setErrorMsg(errorMsg)
                   }
                 }}

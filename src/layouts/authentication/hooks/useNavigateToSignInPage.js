@@ -8,7 +8,7 @@ export function useNavigateToSignInPage() {
 
     useEffect( () => {
         if (!currentUser) {
-                navigate("/authentication/sign-in?error=you+must+log+in+first") 
+            navigate("/authentication/sign-in?error=you+must+log+in+first") 
         }       
     }, [])
 }
