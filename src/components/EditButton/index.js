@@ -1,26 +1,15 @@
-import React, { useState } from "react"
-import { useSearchParams } from "react-router-dom"
+import React from "react"
 
 import MDButton from "../MDButton/index.js"
 
 export default function EditButton( { saveChanges, setterFn, editMode, setEditMode, docId, setError, setSuccess, setDocId } ) {
-    const [searchParams, setSearchParams] = useSearchParams()
     
     function toggleEditMode() {
-
         const setCustomerObj = setterFn
-        // If editMode is true and 'newRecord' is in url, add doc to firestore 
-        {
-            // if (editMode && searchParams.has("newRecord")) {
-            //     console.log("adding whole new doc")
-            //     saveChanges(setCustomerObj, true, docId, setError, setSuccess)
-            // }    
-        }
 
-        // if I am in edit mode, and button clicked, that must mean, computer is saving...
-            // so, run 'save' fn when 'save' clicked 
+        // Save edits
         if (editMode) {
-            // Updates local state and firestore
+            // Update local state and firestore
             saveChanges(setCustomerObj, true, docId, setError, setSuccess, setDocId)
         }
 
