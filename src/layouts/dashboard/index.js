@@ -27,9 +27,6 @@ import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
 import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
 import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
 
-// Data
-import reportsLineChartData from "layouts/dashboard/data/reportsLineChartData";
-
 // Importing 'Current User' Context
 import { useContext, useState, useEffect } from "react"
 import { AuthContext } from "../../AuthContext/AuthContext.js"
@@ -47,17 +44,14 @@ import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 
 function Dashboard() {
-  const { sales, tasks } = reportsLineChartData;
 
   const { currentUser } = useContext(AuthContext)
-  console.log("Dashboard, Context value is:")
-  console.log(currentUser)
+
+  const [dashboardData, setDashboardData] = useState(null)
 
   // registering useEffect
   useNavigateToSignInPage()
   // 
-
-  const [dashboardData, setDashboardData] = useState(null)
 
   // 'Next Week's Appointments' count logic
     // download all records 
@@ -124,20 +118,19 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
     
       // Filter the array based on start and end dates
       const nonDeletedRecords = getNonDeletedRecords()
-      console.log("nonDeletedRecords:")
-      console.log(nonDeletedRecords)
+
     
       const nextWeekAppointments = nonDeletedRecords.filter(record => {
     
       const stringBookingDate = record.customerDetails[4].value
-      console.log(stringBookingDate)
+      
     
         const bookingDate = stringToDate(stringBookingDate);  // Convert the string to a Date object
-        console.log(bookingDate >= start && bookingDate <= end ? "True" : "False")
+        
         return bookingDate >= start && bookingDate <= end;
       });
     
-      console.log(nextWeekAppointments);  // Customers with bookings next week
+      
       const nextWeekAppointmentsCount = nextWeekAppointments.length
 
 
@@ -211,8 +204,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       let percentageChange = b * 100
       percentageChange = percentageChange.toFixed(2)
 
-      console.log("percentageChange:")
-      console.log(percentageChange)
+      
 
       return percentageChange 
 
@@ -270,8 +262,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
         }, 0);
 
 
-        console.log("today's total bills:")
-        console.log(totalBillsTodayInteger)
+        
 
 
         // Getting totalSalesPercentageChange
@@ -330,8 +321,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       const totalSalesToday = getTotalSalesToday()
       const totalSalesYesterday = getTotalSalesYesterday()
 
-      console.log("total sales yesterday:")
-      console.log(totalSalesYesterday)
+    
      
 
       // Compare yesterdays sales to today's sales
@@ -370,8 +360,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
         return customer.costsAndBilling[2].value != "" && customer.costsAndBilling[3].value != "Paid"
       })
 
-      console.log("Today's Customers With Bills and Not paid them:")
-      console.log(unpaidInvoicesToday)
+  
 
 
       // For 'This Week's Revenue-Per-Day' Bar Chart component 
@@ -406,7 +395,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       
       const getTotalRevenueOfDay = (dateFetcherFn) => {
         const thisDate = dateFetcherFn()
-        console.log(`ThisDate's Date ${dateFetcherFn()}`)
+      
 
         const thisDateRecords = getNonDeletedRecords().filter( record => {
           // filter records for records of this monday
@@ -548,7 +537,6 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
 
 
   if (!currentUser) {
-    console.log("Error: not signed in. Redirecting to login page")
     return null
   }
   
