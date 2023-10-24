@@ -18,36 +18,33 @@ export default function AuthProvider( { children } ) {
     const navigate = useNavigate()
     const location = useLocation()
 
-    // set up listener for logged in change 
+    // Listens for auth change and updates 'currentUser' context based on auth status
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged((user) => {
+        
         if (user) {
-          setCurrentUser(user); // User is logged in
+          setCurrentUser(user); 
         } else {
-          setCurrentUser(null); // User is logged out
+          setCurrentUser(null); 
         }
         setLoading(false);
+        
       });
   
-      // Cleanup the listener on unmount
       return () => unsubscribe();
     }, []);
 
-  // Auto redirect user to dashboard if already signed in 
-    // This useEffect will run whenever `currentUser` changes.
-    // If user is logged in, and on sign in/sign up pages, redirect them to Dashboard page
-    // else redirect to login page
+  // Handles auto redirection to dashboard or sign in page depending on user auth status
   useEffect(() => {
     if (currentUser) {
-      // Add logic for detecting if the current URL is the sign in or sign up page.
-      // If true, navigate to dashboard.
+      // User is already signed in, so redirect them to dashboard.
       if (location.pathname === "/authentication/sign-up" || location.pathname === "/authentication/sign-in") {
         navigate("/dashboard");
       }
     }
-    // if authStatus (currentUser) has changed and user is logged out, then redirect to sign in page. 
-    // This ensures the user is redirected to sign in page after sign out button is clicked.
+
     if (!currentUser && !loading) {
+      // User has clicked sign out button
       navigate("/authentication/sign-in")
     }
   }, [currentUser]);
