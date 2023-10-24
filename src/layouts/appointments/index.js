@@ -1,7 +1,8 @@
-import React, { useState, useEffect }from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from "react-router-dom"
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
+
 import DashboardLayout from "../../examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
 
@@ -9,7 +10,6 @@ import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
 import { collection, getDocs, db } from "../../config/firebase.js"
 
 // Importing 'Current User' Context
-import { useContext } from "react"
 import { AuthContext } from "../../AuthContext/AuthContext.js"
 
 // Hook to protect non-signed-in access
@@ -21,34 +21,45 @@ import "./calendar-css-edits.css"
 const localizer = momentLocalizer(moment);  // or globalizeLocalizer
 
 
-
 export default function Appointments() {
     const { currentUser } = useContext(AuthContext)
+    const [allNonDeletedRecords, setAllNonDeletedRecords] = useState(null)
+    
+    // Calendar events
+    const events = allNonDeletedRecords?.map( record => {
 
-    // registering useEffect
+      // Convert date string to javasript date object        
+      const dateStr = record.customerDetails[4].value
+      const timeStr = record.customerDetails[5].value
+      const { dateTimeObj, oneHourLater } = stringToDateTime(dateStr, timeStr);
+      
+      // Return a calendar event object 
+      return {
+          start: dateTimeObj, 
+          end: oneHourLater ? oneHourLater : dateTimeObj, 
+          title: `Service with ${record.customerDetails[0].value}`
+      }
+  })
+
+    const navigate = useNavigate()
+
+    // Registering useEffect
     useNavigateToSignInPage()
     // 
 
-    const [allNonDeletedRecords, setAllNonDeletedRecords] = useState(null)
-
-    const CustomDateCellWrapper = ({ children }) => {
+    // Custom date cell wrapper to display tooltip on hover
+    function CustomDateCellWrapper({ children }) {
       return React.cloneElement(React.Children.only(children), {
         title: "Create Booking",
       });
     };   
-    
-    
-
-    // convert date string to javasript date object
+  
+    // Convert date string to javasript date object
     function stringToDateTime(dateString, timeString) {
         const [day, month, year] = dateString.split('/').map(Number);
 
         if (timeString != "") 
         {
-            console.log("using if")
-            console.log(timeString)
-
-
             const [hoursStr, minutesStr, period] = timeString.match(/(\d+):(\d+) (\w+)/).slice(1);
         
             let hours = Number(hoursStr);
@@ -62,7 +73,6 @@ export default function Appointments() {
             }
 
             const dateTimeObj = new Date(year, month - 1, day, hours, minutes)
-
             const oneHourLater = new Date(dateTimeObj.getTime() + 60*60*1000);
         
             // Note: The month parameter of the Date constructor is 0-based.
@@ -74,8 +84,7 @@ export default function Appointments() {
         }
 
         else {
-            // if time is empty, then don't try to manipulate the time
-            
+            // If time is empty, then don't try to manipulate the time
             // Note: The month parameter of the Date constructor is 0-based.
             const dateTimeObj = new Date(year, month - 1, day);
 
@@ -86,39 +95,28 @@ export default function Appointments() {
         }
     }
 
-    
-    const events = allNonDeletedRecords?.map( record => {
+    // const events = allNonDeletedRecords?.map( record => {
 
-        // convert date string to javasript date object        
-        const dateStr = record.customerDetails[4].value
-        const timeStr = record.customerDetails[5].value
-        const { dateTimeObj, oneHourLater } = stringToDateTime(dateStr, timeStr);
+    //     // convert date string to javasript date object        
+    //     const dateStr = record.customerDetails[4].value
+    //     const timeStr = record.customerDetails[5].value
+    //     const { dateTimeObj, oneHourLater } = stringToDateTime(dateStr, timeStr);
 
         
 
-        console.log("dateTimeObj")
-        console.log(dateTimeObj)
+    //     console.log("dateTimeObj")
+    //     console.log(dateTimeObj)
         
-        // Return a calendar event object 
-        return {
-            start: dateTimeObj, 
-            end: oneHourLater ? oneHourLater : dateTimeObj, 
-            title: `Service with ${record.customerDetails[0].value}`
-        }
-    })
-
-    const navigate = useNavigate()
+    //     // Return a calendar event object 
+    //     return {
+    //         start: dateTimeObj, 
+    //         end: oneHourLater ? oneHourLater : dateTimeObj, 
+    //         title: `Service with ${record.customerDetails[0].value}`
+    //     }
+    // })
 
     function handleSlotSelect(slotInfo) {
-      // Overview: 
-        // Format date and start time to record form format
-
-        // Navigate to record creation page
-
-        // Pass date and start time via naviagate state to record creation page
-
-
-      // format date and start time to record form format  
+      // Format date to record format "DD/MM/YYYY"
       function formatDate(date) {
           const day = String(date.getDate()).padStart(2, '0');
           const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-based in JavaScript
@@ -127,6 +125,7 @@ export default function Appointments() {
           return `${day}/${month}/${year}`;
       }
       
+      // Format start time to record format "00:00 AM"
       function formatTime(date) {
         let hours = date.getHours();
         const minutes = String(date.getMinutes()).padStart(2, '0');
@@ -143,17 +142,20 @@ export default function Appointments() {
       const dateRecordFormat = formatDate(slotInfo.start);
       const timeRecordFormat = formatTime(slotInfo.start);
 
+      // Pass date and start time to record creation page via naviagate state to be used to prefill fields
       navigate("/MOT-Records/new?newRecord=true&editMode=true", { state: { dateRecordFormat, timeRecordFormat }  })
       
     }
 
+  // Fetch non-deleted records from Firestore
+  // Todo: Lift this logic up to a function to be reused across the web app (DRY)
   useEffect(() => {
     async function getAllNonDeletedRecords() {
 
-      // download all records 
+      // Download all records 
       const querySnapshot = await getDocs(collection(db, "customers"))
     
-      // filter to keep only displayToUser true records
+      // Filter to keep only displayToUser true records
       const getNonDeletedRecords = () => {
     
         // Filter out docs which are soft deleted
@@ -171,7 +173,8 @@ export default function Appointments() {
     
     }
 
-    setAllNonDeletedRecords(getNonDeletedRecords())
+      // Store non-deleted records in local state
+      setAllNonDeletedRecords(getNonDeletedRecords())
 
     }
 
@@ -180,7 +183,6 @@ export default function Appointments() {
   }, [])
 
   if (!currentUser) {
-    console.log("Error: not signed in. Redirecting to login page")
     return null
   }
 
