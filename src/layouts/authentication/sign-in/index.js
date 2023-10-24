@@ -63,9 +63,6 @@ function Basic() {
     })
   }
   
-
-  // Redirect to dashboard upon user sign-in is managed in AuthProviderContext
-
     if (currentUser) {
       navigate("/dashboard")
     }
