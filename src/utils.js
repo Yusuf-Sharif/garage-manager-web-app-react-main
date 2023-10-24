@@ -5,8 +5,10 @@ import { db, doc, updateDoc, addDoc, collection } from "./config/firebase.js"
 
 function renderTabDetails(details, editMode, title) {
 
-    const getXsValue = (formTitle) => {
-      // if form title === "customer details then return 1"
+     // Calculate space needed between label and value for each tab 
+    function getXsValue(formTitle) {
+      // Todo: Remove unecessary checks here - refer to currently used tab titles
+
       if (
           formTitle === "Customer Details" 
           || formTitle === "Billing & Costs"
@@ -40,10 +42,10 @@ function renderTabDetails(details, editMode, title) {
         </Grid>
         {
           editMode ?
-          <Grid item xs={7} style={{ /* marginLeft: "10px" */}}>
+          <Grid item xs={7} >
             <MDInput defaultValue={detail?.value} />
           </Grid> :
-          <Grid item xs={7} style={{ /* marginLeft: "10px" */}}>
+          <Grid item xs={7} >
             <span>{detail?.value}</span>
           </Grid>
         }
@@ -52,7 +54,7 @@ function renderTabDetails(details, editMode, title) {
   }
 
 
-  const saveChanges = (setCustomerObj, updateFirestore, docId, setError, setSuccess, setDocId) => {
+  function saveChanges (setCustomerObj, updateFirestore, docId, setError, setSuccess, setDocId) {
 
     // To do: split this function into two smaller functions to simplify it (Single Responsibility):
       // saveChangesToLocalState() 

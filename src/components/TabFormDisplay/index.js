@@ -2,6 +2,7 @@ import React from "react"
 
 import { Box } from "@mui/material"
 import Grid from '@mui/material/Grid';
+
 import { renderTabDetails } from "../../utils.js"
 
 export default function TabFormDisplay( { title, detailsArray, editMode } ) {
@@ -60,11 +61,3 @@ export default function TabFormDisplay( { title, detailsArray, editMode } ) {
         </Box>
     )
 }
-
-
-{/* <Box sx={boxStyles}>
-<h2>{title}</h2>
-<div style={{ columnWidth: "100vw", maxHeight: "500px", overflow: "auto"}}>
-  {renderTabDetails(detailsArray, editMode, title)}
-</div>
-</Box> */}

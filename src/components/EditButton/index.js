@@ -9,12 +9,12 @@ export default function EditButton( { saveChanges, setterFn, editMode, setEditMo
 
         // Save edits
         if (editMode) {
-            // Update local state and firestore
+            // Update local state and Firestore
             saveChanges(setCustomerObj, true, docId, setError, setSuccess, setDocId)
         }
 
         setEditMode(prevState => !prevState)
-        
+
         }
     
     const editButtonStyles = {
