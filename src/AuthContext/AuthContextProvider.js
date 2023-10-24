@@ -18,7 +18,7 @@ export default function AuthProvider( { children } ) {
     const navigate = useNavigate()
     const location = useLocation()
 
-    // Listens for auth change and updates 'currentUser' context based on auth status
+    // Listen for auth change and update 'currentUser' context based on auth status
     useEffect(() => {
       const unsubscribe = auth.onAuthStateChanged((user) => {
         
@@ -34,10 +34,10 @@ export default function AuthProvider( { children } ) {
       return () => unsubscribe();
     }, []);
 
-  // Handles auto redirection to dashboard or sign in page depending on user auth status
+  // Handle auto redirection to dashboard or sign in page depending on user auth status
   useEffect(() => {
     if (currentUser) {
-      // User is already signed in, so redirect them to dashboard.
+      // User is already signed in, redirect them to dashboard.
       if (location.pathname === "/authentication/sign-up" || location.pathname === "/authentication/sign-in") {
         navigate("/dashboard");
       }

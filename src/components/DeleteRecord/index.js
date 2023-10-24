@@ -25,26 +25,31 @@ export default function DeleteRecord( { setFetchAgain, row, setOpenSnackbar, isP
     function handleConfirm() {      
         setIsProcessing(true)
 
-        // Update this row's document in firestore to have its property of displayToUser equal to false
+        // Soft delete document in Firestore 
         const documentRef = doc(db, "customers", row.original.documentId)
+
         updateDoc(documentRef, { displayToUser: false })
         .then( () => {
             setFetchAgain(prevState => !prevState)
             setOpenSnackbar(true)
 
-            // Start a timer so that isProcessing is set to false after snackbar has dissapeard
-            // re-enabling all rows' delete button.
+            // Wait for snackbar to disappear then enable all delete buttons
             setTimeout(() => {
                 setIsProcessing(false)
             }, 1700)
         })
         .catch(error => console.log(`Error soft deleting document: ${error}`))
+        
         setOpen(false);
     };
   
     return (
       <div>
-        <Icon title="Delete Record" fontSize="small" style={{cursor: "pointer", marginLeft: "5px"}} onClick={() => {
+        <Icon 
+          title="Delete Record" 
+          fontSize="small" 
+          style={{cursor: "pointer", marginLeft: "5px"}} 
+          onClick={() => {
             if (!isProcessing) {
                 handleClickOpen()
             }
