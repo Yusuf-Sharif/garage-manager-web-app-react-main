@@ -63,10 +63,6 @@ import { signOut } from "../../../AuthContext/AuthContextProvider.js"
 function DashboardNavbar({ absolute, light, isMini }) {
   const { currentUser } = useContext(AuthContext)
 
-  console.log("Dashboard navbar currentUser:")
-  console.log(currentUser)
-
-
   const [navbarType, setNavbarType] = useState();
   const [controller, dispatch] = useMaterialUIController();
   const { miniSidenav, transparentNavbar, fixedNavbar, openConfigurator, darkMode } = controller;
@@ -83,9 +79,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
 
     // A function that sets the transparent state of the navbar.
     function handleTransparentNavbar() {
-      // Disabling this code to prevent bug of search filter being lost when scrolling down 
-
-      // setTransparentNavbar(dispatch, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
+      // Disabled code to fix search filter reset on scroll in Record Details page.
+        // setTransparentNavbar(dispatch, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
     }
 
     /** 
@@ -199,8 +194,8 @@ function DashboardNavbar({ absolute, light, isMini }) {
               { currentUser.displayName ? 
                 <h4 style={{display: "inline", marginRight: "5px"}}>
                   Welcome, <span style={{color: "#3E98EF"}}>{currentUser.displayName}!</span>
-                </h4> 
-                : <span>...</span> 
+                </h4> : 
+                <span>...</span> 
               }
 
               <IconButton
@@ -211,8 +206,6 @@ function DashboardNavbar({ absolute, light, isMini }) {
                 aria-haspopup="false"
                 variant="contained"
                 onClick={() => signOut()}
-                
-                
               >
                 <Icon style={{color: "gray"}}>logout_icon</Icon>
               </IconButton>
