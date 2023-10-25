@@ -504,20 +504,15 @@ function Dashboard() {
       }
 
 
-
-
-      // For 'This Week's Services-Completed-Per-Day' Line Chart component 
-        // function that returns all completed services for any day of the current week 
-          // input: day
-          // output: number of services completed for that day 
-        
+      // ======== Data for "This Week's Services-Completed-Per-Day" Line Chart component ======== // 
+       
           function getCompletedServices(day) {
-          // filter to keep only the specified day's records
+          // Filter to return the specified day's records
             const thisDayRecords = nonDeletedRecords.filter( record => {
             return record.customerDetails[4].value === getDateOfThisWeek(day)
           })
         
-          // filter to only those where the service was completed
+          // Filter to return where the service was completed
             const thisDayRecordsCompletedServices = thisDayRecords.filter( record => {
               return record.motTestDetails[0].value != ""
             })
