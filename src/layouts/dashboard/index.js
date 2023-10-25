@@ -358,7 +358,6 @@ function Dashboard() {
 
       // ======== Comparing Today against Yesterday's Sales ======== //
 
-      // Compare yesterdays sales to today's sales
       const compareYesterdaySalesToTodaySales = () => {
         // const a = totalSalesToday - totalSalesYesterday
         // const b = a / totalSalesYesterday
