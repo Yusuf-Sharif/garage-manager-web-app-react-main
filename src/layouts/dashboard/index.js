@@ -34,53 +34,65 @@ import { AuthContext } from "../../AuthContext/AuthContext.js"
 // Hook to protect non-signed-in access
 import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
 
-// Importing firebase dependencies
-import { collection, getDocs, db } from "../../config/firebase.js"
-
 // Importing MUI Icons
-import ScheduleIcon from '@mui/icons-material/Schedule';
 import CarRepairIcon from '@mui/icons-material/CarRepair';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 import ReceiptLongIcon from '@mui/icons-material/ReceiptLong';
 
+// Importing data fetching hook
+import { useGetNonDeletedRecords } from "../hooks/useGetNonDeletedRecords.js"
+
 function Dashboard() {
 
-  const { currentUser } = useContext(AuthContext)
-
   const [dashboardData, setDashboardData] = useState(null)
+  const [nonDeletedRecords, setNonDeletedRecords] = useState([])
+
+  const { currentUser } = useContext(AuthContext)
+  const { records } = useGetNonDeletedRecords()
 
   // registering useEffect
   useNavigateToSignInPage()
   // 
 
+  // Update state once records have been fetched 
+  useEffect(() => {
+    setNonDeletedRecords(records)
+  }, [records])
+
+
+  
+
   // 'Next Week's Appointments' count logic
     // download all records 
     // filter to keep only displayToUser true records (i.e only records that havent been soft deleted)
     // filter to keep only records where appointment date is next week
+
   
   
   useEffect(() => {
     async function getDashboardData() {
       // download all records 
-        const querySnapshot = await getDocs(collection(db, "customers"))
+        // const querySnapshot = await getDocs(collection(db, "customers"))
     
       // filter to keep only displayToUser true records
-      const getNonDeletedRecords = () => {
+    //   const getNonDeletedRecords = () => {
     
-        // Filter out docs which are soft deleted
-        const filteredRecords = querySnapshot.docs.filter( doc => {
-        const docData = doc.data()
-        return docData.displayToUser   
-      })
+    //     // Filter out docs which are soft deleted
+    //     const filteredRecords = querySnapshot.docs.filter( doc => {
+    //     const docData = doc.data()
+    //     return docData.displayToUser   
+    //   })
     
-      // Extract the actual customer objects from the (filtered) docs
-      const recordDataArray = filteredRecords.map(doc => {
-        return doc.data()
-      })
+    //   // Extract the actual customer objects from the (filtered) docs
+    //   const recordDataArray = filteredRecords.map(doc => {
+    //     return doc.data()
+    //   })
     
-      return recordDataArray
+    //   return recordDataArray
     
-    }
+    // }
+
+   
       
     
       // filter to keep only records where appointment date is next week
@@ -117,7 +129,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       };
     
       // Filter the array based on start and end dates
-      const nonDeletedRecords = getNonDeletedRecords()
+      // const nonDeletedRecords = nonDeletedRecords
 
     
       const nextWeekAppointments = nonDeletedRecords.filter(record => {
@@ -134,6 +146,10 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       const nextWeekAppointmentsCount = nextWeekAppointments.length
 
 
+
+
+
+
       // Calculating number of unpaid invoices due next week
       // This uses the "Payment Status" property of the records to determine if it counts towards the unpaid invoices count.
       const unpaidInvoices = nextWeekAppointments.filter( appointment => {
@@ -141,6 +157,9 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
       })
 
       const unpaidInvoicesCount = unpaidInvoices.length
+
+
+
 
 
       // Calculating Completed Services vs Scheduled Services
@@ -226,6 +245,9 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
         typeOfPercentageChange = "positive"
       }
 
+
+
+      
 
       const getTotalSalesToday = () => {
          // Getting Data for 'Today’s Revenue vs. 30 day Average'
@@ -397,7 +419,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
         const thisDate = dateFetcherFn()
       
 
-        const thisDateRecords = getNonDeletedRecords().filter( record => {
+        const thisDateRecords = nonDeletedRecords.filter( record => {
           // filter records for records of this monday
           return record.customerDetails[4].value === thisDate
         })
@@ -532,7 +554,7 @@ const { start, end } = getStartAndEndOfNextWeek(currentDate);
     }
 
     getDashboardData()
-  }, [])
+  }, [nonDeletedRecords])
 
 
 

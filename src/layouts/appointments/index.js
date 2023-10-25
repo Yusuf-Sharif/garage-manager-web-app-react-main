@@ -6,27 +6,39 @@ import moment from 'moment';
 import DashboardLayout from "../../examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
 
-// Importing firebase dependencies
-import { collection, getDocs, db } from "../../config/firebase.js"
-
 // Importing 'Current User' Context
 import { AuthContext } from "../../AuthContext/AuthContext.js"
 
 // Hook to protect non-signed-in access
 import { useNavigateToSignInPage } from "../authentication/hooks/useNavigateToSignInPage.js"
 
+// Importing data fetching hook
+import { useGetNonDeletedRecords } from "../hooks/useGetNonDeletedRecords.js"
+
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import "./calendar-css-edits.css"
 
-const localizer = momentLocalizer(moment);  // or globalizeLocalizer
+const localizer = momentLocalizer(moment); 
 
 
 export default function Appointments() {
     const { currentUser } = useContext(AuthContext)
-    const [allNonDeletedRecords, setAllNonDeletedRecords] = useState(null)
-    
+    const [nonDeletedRecords, setNonDeletedRecords] = useState([])
+    const { records } = useGetNonDeletedRecords()
+    const navigate = useNavigate()
+
+    // Registering useEffect
+    useNavigateToSignInPage()
+    // 
+
+    // Update state once records have been fetched 
+    useEffect(() => {
+      setNonDeletedRecords(records)
+    }, [records])
+
+
     // Calendar events
-    const events = allNonDeletedRecords?.map( record => {
+    const events = nonDeletedRecords?.map( record => {
 
       // Convert date string to javasript date object        
       const dateStr = record.customerDetails[4].value
@@ -40,12 +52,6 @@ export default function Appointments() {
           title: `Service with ${record.customerDetails[0].value}`
       }
   })
-
-    const navigate = useNavigate()
-
-    // Registering useEffect
-    useNavigateToSignInPage()
-    // 
 
     // Custom date cell wrapper to display tooltip on hover
     function CustomDateCellWrapper({ children }) {
@@ -95,26 +101,6 @@ export default function Appointments() {
         }
     }
 
-    // const events = allNonDeletedRecords?.map( record => {
-
-    //     // convert date string to javasript date object        
-    //     const dateStr = record.customerDetails[4].value
-    //     const timeStr = record.customerDetails[5].value
-    //     const { dateTimeObj, oneHourLater } = stringToDateTime(dateStr, timeStr);
-
-        
-
-    //     console.log("dateTimeObj")
-    //     console.log(dateTimeObj)
-        
-    //     // Return a calendar event object 
-    //     return {
-    //         start: dateTimeObj, 
-    //         end: oneHourLater ? oneHourLater : dateTimeObj, 
-    //         title: `Service with ${record.customerDetails[0].value}`
-    //     }
-    // })
-
     function handleSlotSelect(slotInfo) {
       // Format date to record format "DD/MM/YYYY"
       function formatDate(date) {
@@ -146,41 +132,6 @@ export default function Appointments() {
       navigate("/MOT-Records/new?newRecord=true&editMode=true", { state: { dateRecordFormat, timeRecordFormat }  })
       
     }
-
-  // Fetch non-deleted records from Firestore
-  // Todo: Lift this logic up to a function to be reused across the web app (DRY)
-  useEffect(() => {
-    async function getAllNonDeletedRecords() {
-
-      // Download all records 
-      const querySnapshot = await getDocs(collection(db, "customers"))
-    
-      // Filter to keep only displayToUser true records
-      const getNonDeletedRecords = () => {
-    
-        // Filter out docs which are soft deleted
-        const filteredRecords = querySnapshot.docs.filter( doc => {
-        const docData = doc.data()
-        return docData.displayToUser   
-      })
-    
-      // Extract the actual customer objects from the (filtered) docs
-      const recordDataArray = filteredRecords.map(doc => {
-        return doc.data()
-      })
-
-      return recordDataArray
-    
-    }
-
-      // Store non-deleted records in local state
-      setAllNonDeletedRecords(getNonDeletedRecords())
-
-    }
-
-    getAllNonDeletedRecords()
-
-  }, [])
 
   if (!currentUser) {
     return null
