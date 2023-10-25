@@ -59,14 +59,6 @@ function Dashboard() {
     setNonDeletedRecords(records)
   }, [records])
 
-
-  // 'Next Week's Appointments' count logic
-    // download all records 
-    // filter to keep only displayToUser true records (i.e only records that havent been soft deleted)
-    // filter to keep only records where appointment date is next week
-
-  
-  
   useEffect(() => {
     async function getDashboardData() {
       
