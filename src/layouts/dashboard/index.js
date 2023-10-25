@@ -69,7 +69,9 @@ function Dashboard() {
   
   useEffect(() => {
     async function getDashboardData() {
-    
+      
+      // ======== Calculating number of unpaid invoices due next week ======== // 
+
       function getNextWeekAppointments() {
         // Determines the start (upcoming Sunday) and end of next week based on the given currentDate
         const getStartAndEndOfNextWeek = (date) => {
@@ -115,13 +117,12 @@ function Dashboard() {
       
       const { nextWeekAppointments, nextWeekAppointmentsCount } = getNextWeekAppointments()
 
-      // Calculating number of unpaid invoices due next week
       const unpaidInvoicesDueNextWeek = nextWeekAppointments.filter( appointment => {
         return appointment.costsAndBilling[3].value == "Unpaid"
       })
       const unpaidInvoicesDueNextWeekCount = unpaidInvoicesDueNextWeek.length
 
-      // Calculating Completed Services vs Scheduled Services      
+      // ======== Calculating Completed Services Today vs Scheduled Services ======== //
       function calculateCompletedServicesTodayVsScheduledServicesToday() {
         
         // Get todays date in the format of "DD/MM/YYYY"
@@ -150,7 +151,7 @@ function Dashboard() {
 
       const { completedServicesToday, scheduledServicesToday } = calculateCompletedServicesTodayVsScheduledServicesToday()
 
-      // Computes the percentage change in completed services from yesterday to today
+      // ======== Calculating percentage change from yesterday completed services to today's ======== //
       const calculatePercentageChangeInCompletedServices  = () => {        
         // Get yesterday's date in the format of "DD/MM/YYYY"
         function getYesterdaysDate() {
@@ -172,31 +173,30 @@ function Dashboard() {
         return record.customerDetails[4].value === dateYesterday
       })
 
-      const completedServicesYesterday = scheduledServicesYesterday.filter( record => {
-        return record.motTestDetails[0].value != ""
-      })
+        const completedServicesYesterday = scheduledServicesYesterday.filter( record => {
+          return record.motTestDetails[0].value != ""
+        })
 
-      // const a = completedServicesToday.length - completedServicesYesterday.length
-      // const b = a / completedServicesYesterday.length
-      // let percentageChange = b * 100
-      // percentageChange = percentageChange.toFixed(2)
+        // const a = completedServicesToday.length - completedServicesYesterday.length
+        // const b = a / completedServicesYesterday.length
+        // let percentageChange = b * 100
+        // percentageChange = percentageChange.toFixed(2)
 
-      // Calculate the difference in completed services between today and yesterday
-      const serviceDifference = completedServicesToday.length - completedServicesYesterday.length;
+        // Calculate the difference in completed services between today and yesterday
+        const serviceDifference = completedServicesToday.length - completedServicesYesterday.length;
 
-      // Calculate the percentage change based on yesterday's completed services count
-      const changeRatio = serviceDifference / completedServicesYesterday.length;
-      const percentageChangeValue = changeRatio * 100;
+        // Calculate the percentage change based on yesterday's completed services count
+        const changeRatio = serviceDifference / completedServicesYesterday.length;
+        const percentageChangeValue = changeRatio * 100;
 
-      // Format the percentage change to two decimal places
-      const formattedPercentageChange = percentageChangeValue.toFixed(2);
+        // Format the percentage change to two decimal places
+        const formattedPercentageChange = percentageChangeValue.toFixed(2);
 
-      return formattedPercentageChange 
+        return formattedPercentageChange 
 
       }
 
-  // getDayOverDayComparison
-  
+      // getDayOverDayComparison
   
       // Determine if the percentage change was positive or negative
       let typeOfPercentageChange = Math.sign(calculatePercentageChangeInCompletedServices())
@@ -210,118 +210,180 @@ function Dashboard() {
       else if (typeOfPercentageChange === 0) {
         typeOfPercentageChange = "positive"
       }
-
-
-
       
+      // ======== Calculating Total Sales Today ======== //
+      // const getTotalSalesToday = () => {
+      //   const todaysRecords = scheduledServicesToday
+      //   // map over each record and return the total bill number 
+      //     // log of the result
+      //   // take out the $ sign 
+      //   // convert it the string to a number 
+      //   // have array of numbers
+      //   // add all the numbers up together 
 
-      const getTotalSalesToday = () => {
-         // Getting Data for 'Today’s Revenue vs. 30 day Average'
-        // Get todays revenue
-        const todaysRecords = scheduledServicesToday
-        // map over each record and return the total bill number 
-          // log of the result
-        // take out the $ sign 
-        // convert it the string to a number 
-        // have array of numbers
-        // add all the numbers up together 
+      //   const totalBillsToday = todaysRecords.map( record => {
+      //     // Checks if total bill exists and if bill has actually been paid
+      //     if (record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid") {
+      //       return record.costsAndBilling[2].value
+      //     }
+      //   })
 
-        const totalBillsToday = todaysRecords.map( record => {
-          // Checks if total bill exists and if bill has actually been paid
-          if (record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid") {
-            return record.costsAndBilling[2].value
-          }
-        })
+      //   // filter out the undefineds
+      //   const filteredTotalBillsToday = totalBillsToday.filter( record => {
+      //     return record != undefined
+      //   })
 
-        // filter out the undefineds
-        const filteredTotalBillsToday = totalBillsToday.filter( record => {
-          return record != undefined
-        })
+      //   // take out the $ sign 
+      //   const dollarSignRemovedArray = filteredTotalBillsToday.map(item => item.substring(1));
 
-        // take out the $ sign 
-        const dollarSignRemovedArray = filteredTotalBillsToday.map(item => item.substring(1));
+      //   // convert string numbers to numbers
+      //   const stringsToNumbers = dollarSignRemovedArray.map(item => +item);
 
-        // convert string numbers to numbers
-        const stringsToNumbers = dollarSignRemovedArray.map(item => +item);
-
-        // add up all numbers of totalBillsToday
-        let totalBillsTodayInteger = stringsToNumbers.reduce((accumulator, currentValue) => {
-          return accumulator + currentValue;
-        }, 0);
+      //   // add up all numbers of totalBillsToday
+      //   let totalBillsTodayInteger = stringsToNumbers.reduce((accumulator, currentValue) => {
+      //     return accumulator + currentValue;
+      //   }, 0);
 
 
         
 
 
-        // Getting totalSalesPercentageChange
-        return totalBillsTodayInteger
-      }
-     
-      const getTotalSalesYesterday = () => {
+      //   // Getting totalSalesPercentageChange
+      //   return totalBillsTodayInteger
+      // }
+
+      const getTotalSalesToday = () => {
+        // Filter out records that have valid bill values and are marked as "Paid"
+        const validBills = scheduledServicesToday
+            .filter(record => 
+                record.costsAndBilling[2].value !== "" && 
+                record.costsAndBilling[3].value === "Paid")
+            .map(record => record.costsAndBilling[2].value);
+    
+        // Convert dollar string to number and accumulate total
+        const totalSales = validBills
+            .map(dollarString => parseFloat(dollarString.substring(1)))
+            .reduce((accumulator, value) => accumulator + value, 0);
+    
+        return totalSales;
+    }
+    
+      // const getTotalSalesYesterday = () => {
       
-          // getting yesterdays total sales
-        // get yesterdays scheduled services
+      //     // getting yesterdays total sales
+      //   // get yesterdays scheduled services
+      //   function getYesterdaysDate() {
+      //     const today = new Date();
+      //     const yesterday = new Date(today);
+          
+      //     yesterday.setDate(today.getDate() - 1);
+          
+      //     const day = String(yesterday.getDate()).padStart(2, '0');
+      //     const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
+      //     const year = yesterday.getFullYear();
+          
+      //     return `${day}/${month}/${year}`;
+      //   }
+
+      //   const dateYesterday = getYesterdaysDate()
+      //   const scheduledServicesYesterday = nonDeletedRecords.filter( record => {
+      //   return record.customerDetails[4].value === dateYesterday
+      // })
+
+      // const totalBillsYesterday = scheduledServicesYesterday.map( record => {
+      //   if (record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid") {
+      //     return record.costsAndBilling[2].value
+      //   }
+      // })
+
+      // // filter out the undefineds
+      // const filteredTotalBillsYesterday = totalBillsYesterday.filter( record => {
+      //   return record != undefined
+      // })
+
+      // // take out the $ sign 
+      // const yesterdayDollarSignRemovedArray = filteredTotalBillsYesterday.map(item => item.substring(1));
+
+      // // convert string numbers to numbers
+      // const yesterdayStringsToNumbers = yesterdayDollarSignRemovedArray.map(item => +item);
+
+      // // add up all numbers of totalBillsYesterday
+      // const totalBillsYesterdayInteger = yesterdayStringsToNumbers.reduce((accumulator, currentValue) => {
+      //   return accumulator + currentValue;
+      // }, 0);
+
+
+      // return totalBillsYesterdayInteger
+
+      // }
+
+      const getTotalSalesYesterday = () => {
+        // Returns yesterday's date in DD/MM/YYYY format.
         function getYesterdaysDate() {
-          const today = new Date();
-          const yesterday = new Date(today);
-          
-          yesterday.setDate(today.getDate() - 1);
-          
-          const day = String(yesterday.getDate()).padStart(2, '0');
-          const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-          const year = yesterday.getFullYear();
-          
-          return `${day}/${month}/${year}`;
+            const today = new Date();
+            const yesterday = new Date(today);
+            yesterday.setDate(today.getDate() - 1);
+    
+            const day = String(yesterday.getDate()).padStart(2, '0');
+            const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
+            const year = yesterday.getFullYear();
+    
+            return `${day}/${month}/${year}`;
         }
-
-        const dateYesterday = getYesterdaysDate()
-        const scheduledServicesYesterday = nonDeletedRecords.filter( record => {
-        return record.customerDetails[4].value === dateYesterday
-      })
-
-      const totalBillsYesterday = scheduledServicesYesterday.map( record => {
-        if (record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid") {
-          return record.costsAndBilling[2].value
-        }
-      })
-
-      // filter out the undefineds
-      const filteredTotalBillsYesterday = totalBillsYesterday.filter( record => {
-        return record != undefined
-      })
-
-      // take out the $ sign 
-      const yesterdayDollarSignRemovedArray = filteredTotalBillsYesterday.map(item => item.substring(1));
-
-      // convert string numbers to numbers
-      const yesterdayStringsToNumbers = yesterdayDollarSignRemovedArray.map(item => +item);
-
-      // add up all numbers of totalBillsYesterday
-      const totalBillsYesterdayInteger = yesterdayStringsToNumbers.reduce((accumulator, currentValue) => {
-        return accumulator + currentValue;
-      }, 0);
-
-
-      return totalBillsYesterdayInteger
-
-      }
-
+    
+        // Filter services scheduled for yesterday
+        const dateYesterday = getYesterdaysDate();
+        const scheduledServicesYesterday = nonDeletedRecords.filter(record => 
+            record.customerDetails[4].value === dateYesterday
+        );
+    
+        // Get total bills from yesterday's services which are paid
+        const totalBillsYesterday = scheduledServicesYesterday
+            .filter(record => 
+                record.costsAndBilling[2].value !== "" && record.costsAndBilling[3].value === "Paid"
+            )
+            .map(record => record.costsAndBilling[2].value);
+    
+        // Remove the $ sign from bill amounts
+        const billAmountsWithoutDollarSign = totalBillsYesterday.map(item => item.substring(1));
+    
+        // Convert bill amounts from string to number
+        const billAmountsAsNumbers = billAmountsWithoutDollarSign.map(item => parseFloat(item));
+    
+        // Calculate total sales from yesterday
+        const totalSalesYesterday = billAmountsAsNumbers.reduce((accumulator, currentValue) => 
+            accumulator + currentValue, 
+            0
+        );
+    
+        return totalSalesYesterday;
+    }
+    
       const totalSalesToday = getTotalSalesToday()
       const totalSalesYesterday = getTotalSalesYesterday()
 
-    
-     
+
+      // ======== Comparing Today against Yesterday's Sales ======== //
 
       // Compare yesterdays sales to today's sales
       const compareYesterdaySalesToTodaySales = () => {
-        const a = totalSalesToday - totalSalesYesterday
-        const b = a / totalSalesYesterday
-        let percentageChangeYesterdayToToday = b * 100
-        // fixing decimal to two places
-        percentageChangeYesterdayToToday = +percentageChangeYesterdayToToday.toFixed(2)
-  
+        // const a = totalSalesToday - totalSalesYesterday
+        // const b = a / totalSalesYesterday
+        // let percentageChangeYesterdayToToday = b * 100
+        // // fixing decimal to two places
+        // percentageChangeYesterdayToToday = +percentageChangeYesterdayToToday.toFixed(2)
+
+        // Calculate the difference in sales between today and yesterday
+        const salesDifference = totalSalesToday - totalSalesYesterday;
+
+        // Determine the percentage change based on yesterday's sales
+        const percentageChangeRaw = (salesDifference / totalSalesYesterday) * 100;
+
+        // Format the percentage change to two decimal places and convert back to number
+        const formattedPercentageChangeYesterdayToToday = +percentageChangeRaw.toFixed(2);
+
         // Determine if the percentage change was positive or negative
-        let typeOfPercentageChangeYesterdayToToday = Math.sign(percentageChangeYesterdayToToday)
+        let typeOfPercentageChangeYesterdayToToday = Math.sign(formattedPercentageChangeYesterdayToToday)
         
         if (typeOfPercentageChangeYesterdayToToday === -1) {
           typeOfPercentageChangeYesterdayToToday = "negative"
@@ -333,25 +395,22 @@ function Dashboard() {
           typeOfPercentageChangeYesterdayToToday = "positive"
         }
 
-        return { percentageChangeYesterdayToToday, typeOfPercentageChangeYesterdayToToday }
-
+        return { formattedPercentageChangeYesterdayToToday, typeOfPercentageChangeYesterdayToToday }
+  
       }
       
-      const { percentageChangeYesterdayToToday, typeOfPercentageChangeYesterdayToToday } = compareYesterdaySalesToTodaySales()
+      const { formattedPercentageChangeYesterdayToToday, typeOfPercentageChangeYesterdayToToday } = compareYesterdaySalesToTodaySales()
 
 
-      // For component: "Unpaid Invoices"
+      // ======== Data for component "Unpaid Invoices" ======== / 
       const customersBookedToday = scheduledServicesToday
       const unpaidInvoicesToday = customersBookedToday.filter( customer => {
-        // filter to return customers where a bill exists, but payment is not "Paid"
-
+        // Filter to return customers where a bill exists, but payment is not "Paid"
         return customer.costsAndBilling[2].value != "" && customer.costsAndBilling[3].value != "Paid"
       })
 
   
-
-
-      // For 'This Week's Revenue-Per-Day' Bar Chart component 
+      // ======== Data for "This Week's Revenue-Per-Day" Bar Chart component ======== // 
 
       function getDateOfThisWeek(dayName) {
         const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -384,30 +443,28 @@ function Dashboard() {
       const getTotalRevenueOfDay = (dateFetcherFn) => {
         const thisDate = dateFetcherFn()
       
-
+        // Filter to return records of specified date
         const thisDateRecords = nonDeletedRecords.filter( record => {
-          // filter records for records of this monday
           return record.customerDetails[4].value === thisDate
         })
 
-        // filter customers to those with bills paid 
+        // Filter customers to those with bills paid 
         const thisDateRecordsPaid = thisDateRecords.filter( record => {
           return record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid"
         })
 
-        // gather all customer bills of today into one array 
-          // map over to return just the total bill property
+        // Gather all paid bills of specified date
         const thisDateBillsArray = thisDateRecordsPaid.map( record => {
           return record.costsAndBilling[2].value
         })
 
-        // remove $ sign   
+        // Remove $ sign   
         const thisDateBillsArrayDollarSignRemovedArray = thisDateBillsArray.map(item => item.substring(1));
 
-        // convert string numbers to numbers
+        // Convert string numbers to numbers
         const thisDateBillsArrayStringsToNumbers = thisDateBillsArrayDollarSignRemovedArray.map(item => +item);
 
-        // add up all numbers
+        // Add up all numbers
         const thisDateTotalRevenue = thisDateBillsArrayStringsToNumbers.reduce((accumulator, currentValue) => {
           return accumulator + currentValue;
         }, 0);
@@ -415,7 +472,6 @@ function Dashboard() {
         return thisDateTotalRevenue
 
       }
-
 
       const thisSundayTotalRevenue = getTotalRevenueOfDay(() => getDateOfThisWeek("Sunday"))
 
@@ -508,7 +564,7 @@ function Dashboard() {
         completedServicesPercentageChange: calculatePercentageChangeInCompletedServices(),
         revenue: {
           totalSalesToday,
-          percentageChangeYesterdayToToday,
+          formattedPercentageChangeYesterdayToToday,
           typeOfPercentageChangeYesterdayToToday
         },
         unpaidInvoicesToday,
@@ -545,7 +601,7 @@ function Dashboard() {
                           dashboardData.revenue.typeOfPercentageChangeYesterdayToToday === "positive" ? "success" : "warning" 
                           : "success",
                   amount: dashboardData ? 
-                          dashboardData.revenue.typeOfPercentageChangeYesterdayToToday === "positive" ? `+${dashboardData.revenue.percentageChangeYesterdayToToday}%` : `${dashboardData.revenue.percentageChangeYesterdayToToday}%`
+                          dashboardData.revenue.typeOfPercentageChangeYesterdayToToday === "positive" ? `+${dashboardData.revenue.formattedPercentageChangeYesterdayToToday}%` : `${dashboardData.revenue.formattedPercentageChangeYesterdayToToday}%`
                           : "loading",
                   label: "than yesterday",
                 }}
