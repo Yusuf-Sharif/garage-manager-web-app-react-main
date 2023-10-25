@@ -115,54 +115,44 @@ function Dashboard() {
       
       const { nextWeekAppointments, nextWeekAppointmentsCount } = getNextWeekAppointments()
 
-
-      
-
       // Calculating number of unpaid invoices due next week
-      // This uses the "Payment Status" property of the records to determine if it counts towards the unpaid invoices count.
-      const unpaidInvoices = nextWeekAppointments.filter( appointment => {
+      const unpaidInvoicesDueNextWeek = nextWeekAppointments.filter( appointment => {
         return appointment.costsAndBilling[3].value == "Unpaid"
       })
+      const unpaidInvoicesDueNextWeekCount = unpaidInvoicesDueNextWeek.length
 
-      const unpaidInvoicesCount = unpaidInvoices.length
-
-
-
-
-
-      // Calculating Completed Services vs Scheduled Services
-        // step 1 - gather all bookings for todays date
-      
-      // How can I get todays date in a string in the format of DD/MM/YYYY?
-      function getTodaysDate() {
-        const today = new Date();
+      // Calculating Completed Services vs Scheduled Services      
+      function calculateCompletedServicesTodayVsScheduledServicesToday() {
         
-        const day = String(today.getDate()).padStart(2, '0');
-        const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-        const year = today.getFullYear();
-        
-        return `${day}/${month}/${year}`;
+        // Get todays date in the format of "DD/MM/YYYY"
+        function getTodaysDate() {
+          const today = new Date();
+          
+          const day = String(today.getDate()).padStart(2, '0');
+          const month = String(today.getMonth() + 1).padStart(2, '0'); // Month is 0-based
+          const year = today.getFullYear();
+          
+          return `${day}/${month}/${year}`;
+        }
+
+        const dateToday = getTodaysDate()
+
+        const scheduledServicesToday = nonDeletedRecords.filter( record => {
+          return record.customerDetails[4].value === dateToday
+        })
+
+        const completedServicesToday = scheduledServicesToday.filter( record => {
+          return record.motTestDetails[0].value != ""
+        })
+
+        return { completedServicesToday, scheduledServicesToday }
       }
 
-      const dateToday = getTodaysDate()
+      const { completedServicesToday, scheduledServicesToday } = calculateCompletedServicesTodayVsScheduledServicesToday()
 
-      const scheduledServices = nonDeletedRecords.filter( record => {
-        return record.customerDetails[4].value === dateToday
-      })
-      
-
-    // Step 2 
-
-      // filter to keep only those scheduled services who have "pass" or "fail - 'completed services"
-      const completedServices = scheduledServices.filter( record => {
-        return record.motTestDetails[0].value != ""
-      })
-
-
-      const getDayOverDayComparison = () => {
-        const completedServicesToday = completedServices
-
-        // get yesterdays scheduled services
+      // Computes the percentage change in completed services from yesterday to today
+      const calculatePercentageChangeInCompletedServices  = () => {        
+        // Get yesterday's date in the format of "DD/MM/YYYY"
         function getYesterdaysDate() {
           const today = new Date();
           const yesterday = new Date(today);
@@ -177,31 +167,39 @@ function Dashboard() {
         }
 
         const dateYesterday = getYesterdaysDate()
+
         const scheduledServicesYesterday = nonDeletedRecords.filter( record => {
         return record.customerDetails[4].value === dateYesterday
       })
 
-          // get yesterdays completed services
       const completedServicesYesterday = scheduledServicesYesterday.filter( record => {
         return record.motTestDetails[0].value != ""
       })
 
-      const a = completedServicesToday.length - completedServicesYesterday.length
-      const b = a / completedServicesYesterday.length
-      let percentageChange = b * 100
-      percentageChange = percentageChange.toFixed(2)
+      // const a = completedServicesToday.length - completedServicesYesterday.length
+      // const b = a / completedServicesYesterday.length
+      // let percentageChange = b * 100
+      // percentageChange = percentageChange.toFixed(2)
 
-      
+      // Calculate the difference in completed services between today and yesterday
+      const serviceDifference = completedServicesToday.length - completedServicesYesterday.length;
 
-      return percentageChange 
+      // Calculate the percentage change based on yesterday's completed services count
+      const changeRatio = serviceDifference / completedServicesYesterday.length;
+      const percentageChangeValue = changeRatio * 100;
+
+      // Format the percentage change to two decimal places
+      const formattedPercentageChange = percentageChangeValue.toFixed(2);
+
+      return formattedPercentageChange 
 
       }
 
-      getDayOverDayComparison()
-
-
+  // getDayOverDayComparison
+  
+  
       // Determine if the percentage change was positive or negative
-      let typeOfPercentageChange = Math.sign(getDayOverDayComparison())
+      let typeOfPercentageChange = Math.sign(calculatePercentageChangeInCompletedServices())
       
       if (typeOfPercentageChange === -1) {
         typeOfPercentageChange = "negative"
@@ -220,7 +218,7 @@ function Dashboard() {
       const getTotalSalesToday = () => {
          // Getting Data for 'Today’s Revenue vs. 30 day Average'
         // Get todays revenue
-        const todaysRecords = scheduledServices
+        const todaysRecords = scheduledServicesToday
         // map over each record and return the total bill number 
           // log of the result
         // take out the $ sign 
@@ -343,7 +341,7 @@ function Dashboard() {
 
 
       // For component: "Unpaid Invoices"
-      const customersBookedToday = scheduledServices
+      const customersBookedToday = scheduledServicesToday
       const unpaidInvoicesToday = customersBookedToday.filter( customer => {
         // filter to return customers where a bill exists, but payment is not "Paid"
 
@@ -501,13 +499,13 @@ function Dashboard() {
       setDashboardData(prevState => ({
         ...prevState,
         nextWeekAppointmentsCount,
-        unpaidInvoicesCount,
+        unpaidInvoicesDueNextWeekCount,
         completedServicesVsScheduledServices: {
-          scheduledServices,
-          completedServices,
+          scheduledServicesToday,
+          completedServicesToday,
           typeOfPercentageChange
         },
-        completedServicesPercentageChange: getDayOverDayComparison(),
+        completedServicesPercentageChange: calculatePercentageChangeInCompletedServices(),
         revenue: {
           totalSalesToday,
           percentageChangeYesterdayToToday,
@@ -559,7 +557,7 @@ function Dashboard() {
               <ComplexStatisticsCard
                 icon={<CarRepairIcon />}
                 title="Today's Completed Services"
-                count={dashboardData ? `${dashboardData.completedServicesVsScheduledServices.completedServices.length} / ${dashboardData.completedServicesVsScheduledServices.scheduledServices.length}` : "loading" }
+                count={dashboardData ? `${dashboardData.completedServicesVsScheduledServices.completedServicesToday.length} / ${dashboardData.completedServicesVsScheduledServices.scheduledServicesToday.length}` : "loading" }
                 percentage={{
                   color: dashboardData ? 
                         dashboardData.completedServicesVsScheduledServices.typeOfPercentageChange === "positive" ? "success" : "warning" 
@@ -599,8 +597,8 @@ function Dashboard() {
                 count={dashboardData?.nextWeekAppointmentsCount}
                 percentage={{
                   color: "info",
-                  amount: dashboardData?.unpaidInvoicesCount,
-                  label: `unpaid ${dashboardData?.unpaidInvoicesCount != 1 ? "invoices" : "invoice"} due next week.`,
+                  amount: dashboardData?.unpaidInvoicesDueNextWeekCount,
+                  label: `unpaid ${dashboardData?.unpaidInvoicesDueNextWeek != 1 ? "invoices" : "invoice"} due next week.`,
                 }}
               />
             </MDBox>
