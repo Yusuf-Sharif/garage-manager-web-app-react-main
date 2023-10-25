@@ -60,8 +60,6 @@ function Dashboard() {
   }, [records])
 
 
-  
-
   // 'Next Week's Appointments' count logic
     // download all records 
     // filter to keep only displayToUser true records (i.e only records that havent been soft deleted)
@@ -71,84 +69,54 @@ function Dashboard() {
   
   useEffect(() => {
     async function getDashboardData() {
-      // download all records 
-        // const querySnapshot = await getDocs(collection(db, "customers"))
     
-      // filter to keep only displayToUser true records
-    //   const getNonDeletedRecords = () => {
-    
-    //     // Filter out docs which are soft deleted
-    //     const filteredRecords = querySnapshot.docs.filter( doc => {
-    //     const docData = doc.data()
-    //     return docData.displayToUser   
-    //   })
-    
-    //   // Extract the actual customer objects from the (filtered) docs
-    //   const recordDataArray = filteredRecords.map(doc => {
-    //     return doc.data()
-    //   })
-    
-    //   return recordDataArray
-    
-    // }
-
-   
+      function getNextWeekAppointments() {
+        // Determines the start (upcoming Sunday) and end of next week based on the given currentDate
+        const getStartAndEndOfNextWeek = (date) => {
+          // Calculate days left in the current week
+          const daysUntilNextSunday = 7 - date.getDay();
+  
+          // Set start to the next Sunday
+          const start = new Date(date);
+          start.setDate(start.getDate() + daysUntilNextSunday);
+          start.setHours(0, 0, 0, 0);
+  
+          // Set end to the next Saturday
+          const end = new Date(start);
+          end.setDate(end.getDate() + 6);
+          end.setHours(23, 59, 59, 999);
+  
+          return { start, end };
+        };
+  
+        const currentDate = new Date();
+        const { start, end } = getStartAndEndOfNextWeek(currentDate);
+  
+        // Converts record "DD-MM-YYYY" formatted string to a Date object.
+        const stringToDate = (dateStr) => {
+          const [day, month, year] = dateStr.split("/").map(Number);
+          return new Date(year, month - 1, day);
+        };
       
-    
-      // filter to keep only records where appointment date is next week
+        // Filter the array based on start and end dates    
+        const nextWeekAppointments = nonDeletedRecords.filter(record => {
       
-      // Function to determine the start and end of the next week
-      // This code will ensure that the start date will always be the next Sunday after the given currentDate, 
-      // regardless of what day of the week currentDate is on.
-
-      const getStartAndEndOfNextWeek = (date) => {
-        // Calculate days left in the current week
-        const daysUntilNextSunday = 7 - date.getDay();
-
-        // Set start to the next Sunday
-        const start = new Date(date);
-        start.setDate(start.getDate() + daysUntilNextSunday);
-        start.setHours(0, 0, 0, 0);
-
-        // Set end to the next Saturday
-        const end = new Date(start);
-        end.setDate(end.getDate() + 6);
-        end.setHours(23, 59, 59, 999);
-
-        return { start, end };
-      };
-
-const currentDate = new Date();
-const { start, end } = getStartAndEndOfNextWeek(currentDate);
-
-    
-      // Function to convert "DD-MM-YYYY" string to a Date object
-      const stringToDate = (dateStr) => {
-        const [day, month, year] = dateStr.split("/").map(Number);
-        return new Date(year, month - 1, day);
-      };
-    
-      // Filter the array based on start and end dates
-      // const nonDeletedRecords = nonDeletedRecords
-
-    
-      const nextWeekAppointments = nonDeletedRecords.filter(record => {
-    
-      const stringBookingDate = record.customerDetails[4].value
-      
-    
-        const bookingDate = stringToDate(stringBookingDate);  // Convert the string to a Date object
+        const stringBookingDate = record.customerDetails[4].value
         
-        return bookingDate >= start && bookingDate <= end;
-      });
-    
       
-      const nextWeekAppointmentsCount = nextWeekAppointments.length
+          const bookingDate = stringToDate(stringBookingDate);  // Convert the string to a Date object
+          
+          return bookingDate >= start && bookingDate <= end;
+        });
+      
+        const nextWeekAppointmentsCount = nextWeekAppointments.length
+        return { nextWeekAppointments, nextWeekAppointmentsCount }
+      }
+      
+      const { nextWeekAppointments, nextWeekAppointmentsCount } = getNextWeekAppointments()
 
 
-
-
-
+      
 
       // Calculating number of unpaid invoices due next week
       // This uses the "Payment Status" property of the records to determine if it counts towards the unpaid invoices count.
