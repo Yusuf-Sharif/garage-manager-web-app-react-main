@@ -59,6 +59,7 @@ function Dashboard() {
     setNonDeletedRecords(records)
   }, [records])
 
+  // Prepare data to be displayed once records have been fetched
   useEffect(() => {
     async function getDashboardData() {
       
