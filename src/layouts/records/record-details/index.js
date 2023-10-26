@@ -24,7 +24,7 @@ import { useNavigateToSignInPage } from "../../authentication/hooks/useNavigateT
 
 export default function RecordDetails() {
 
-    // registering useEffect
+    // Handling redirection to sign in if user not logged in
     useNavigateToSignInPage()
     // 
 

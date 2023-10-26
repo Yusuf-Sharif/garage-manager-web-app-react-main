@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom"
+
+import { db, collection, getDocs, addDoc } from "../../config/firebase.js"
+import { customers } from "./record-details/customers.js"
 import DashboardLayout from "../../examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "../../examples/Navbars/DashboardNavbar";
+import DeleteRecord from "../../components/DeleteRecord/index.js"
+
 import Grid from '@mui/material/Grid';
 import DataTable from "examples/Tables/DataTable";
-import { useNavigate } from "react-router-dom"
-import { db, collection, getDocs, query, limit, addDoc, updateDoc, doc } from "../../config/firebase.js"
-import { customers } from "./record-details/customers.js"
-import DeleteRecord from "../../components/DeleteRecord/index.js"
 import Icon from "@mui/material/Icon";
 import Snackbar from '@mui/material/Snackbar';
 import Alert from '@mui/material/Alert';
@@ -32,35 +34,23 @@ async function addCustomer() {
 
 export default function RecordsPage() {
 
-    // registering useEffect
+    // Handling redirection to sign in if user not logged in
     useNavigateToSignInPage()
     // 
 
     const { currentUser } = useContext(AuthContext)
-
-
-    console.log("Records Page rendering....")
-
-    // Component Overview:
-        // This component fetches and renders the Records from firebase
-        // This component also passes a customer object to the Record Details page
-        // when the 'VIEW' or 'EDIT' button is clicked on a record row
-
-
-
     const [customersArray, setCustomersArray] = useState(null)
     const [openSnackbar, setOpenSnackbar] = useState(false);
-
-    // Used to temporarily freeze the delete button when the snackbar is still visible
-    // to avoid interupting the re fetching of data 
-    // because what happens when delete is pressed is
-    // data is refetched and filtered to display
-    // if delete is pressed again, another data fetch is occuring 
-    // filtering and the second fetching and rednering could be interupted by the first 
-    // snackbar finishing and changing state.
-    // I dont know the exact order and it seems complicated.
-    // but for now, this solution seems to be working. 
+    
+    // While the snackbar is visible, delete buttons are disabled to prevent race conditions.
+    // The issue:
+    // 1. Pressing delete triggers a snackbar and fetches updated database snapshot.
+    // 2. Pressing another delete starts a new fetch and re-render to display updated db data.
+    // 3. The first snackbar's close event might cause a premature component re-render,
+    // interrupting the second delete's view update, leading to a potential view-database mismatch.
+    // Temporarily disabling the delete buttons ensures consistent behavior.
     const [isProcessing, setIsProcessing] = useState(false)
+
 
     const handleClose = (event, reason) => {
         if (reason === 'clickaway') {

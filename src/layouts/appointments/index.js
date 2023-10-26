@@ -27,7 +27,7 @@ export default function Appointments() {
     const { records } = useGetNonDeletedRecords()
     const navigate = useNavigate()
 
-    // Registering useEffect
+    // Handling redirection to sign in if user not logged in
     useNavigateToSignInPage()
     // 
 

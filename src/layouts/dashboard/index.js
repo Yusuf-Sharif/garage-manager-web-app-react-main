@@ -50,7 +50,7 @@ function Dashboard() {
   const { currentUser } = useContext(AuthContext)
   const { records } = useGetNonDeletedRecords()
 
-  // registering useEffect
+  // Handling redirection to sign in if user not logged in
   useNavigateToSignInPage()
   // 
 
