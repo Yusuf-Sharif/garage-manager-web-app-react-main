@@ -7,7 +7,7 @@ function renderTabDetails(details, editMode, title) {
 
      // Calculate space needed between label and value for each tab 
     function getXsValue(formTitle) {
-      // Todo: Remove unecessary checks here - refer to currently used tab titles
+      // TODO: Remove unecessary checks here - refer to currently used tab titles
 
       if (
           formTitle === "Customer Details" 
@@ -38,7 +38,7 @@ function renderTabDetails(details, editMode, title) {
         <Grid item xs={getXsValue(title)}>
             <span className="labelSpan" style={{fontWeight: "bold"}}>
               {detail.label}
-            </span>: { /* <-- This is the string ":" */}
+            </span>: {/* <-- This is the string ":" */}
         </Grid>
         {
           editMode ?
@@ -56,12 +56,12 @@ function renderTabDetails(details, editMode, title) {
 
   function saveChanges (setCustomerObj, updateFirestore, docId, setError, setSuccess, setDocId) {
 
-    // To do: split this function into two smaller functions to simplify it (Single Responsibility):
+    // TODO: Refactor into two functions for clarity and single responsibility:
       // saveChangesToLocalState() 
       // saveChangesToFirestore()
 
 
-  // saveChangesToLocalState():
+  // ==== saveChangesToLocalState() ==== //
     // Purpose: Save form edits across tab switching
 
   // Grab the grid container of each label/input pair for selected tab
@@ -104,7 +104,8 @@ function renderTabDetails(details, editMode, title) {
       [objPropertyToUpdate]: newArray
     }
   
-  // saveChangesToFirestore()
+  // ==== saveChangesToFirestore() ==== //
+
     // Update Firestore document if editing an existing record 
     if (updateFirestore && docId) {
       const customerObjRef = doc(db, "customers", docId)
