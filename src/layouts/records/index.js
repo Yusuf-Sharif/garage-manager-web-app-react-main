@@ -41,7 +41,10 @@ export default function RecordsPage() {
     const { currentUser } = useContext(AuthContext)
     const [customersArray, setCustomersArray] = useState(null)
     const [openSnackbar, setOpenSnackbar] = useState(false);
+    const navigate = useNavigate()
     
+    // ==== isProcessing is used to disable delete buttons whilst a deletion is occuring ==== // 
+
     // While the snackbar is visible, delete buttons are disabled to prevent race conditions.
     // The issue:
     // 1. Pressing delete triggers a snackbar and fetches updated database snapshot.
@@ -52,26 +55,33 @@ export default function RecordsPage() {
     const [isProcessing, setIsProcessing] = useState(false)
 
 
-    const handleClose = (event, reason) => {
+    // Triggers re-fetching of customer data when a Record is deleted
+    const [fetchAgain, setFetchAgain] = useState(null)
+
+    let customersRowsArray
+    let filteredCustomersRowsArray
+
+    // Fetches customer data and stores it in state
+    useEffect(() => {
+        async function getCustomersArray() {
+            const customersArray = await getDocs(collection(db, "customers"))
+            setCustomersArray(customersArray.docs)
+        }
+
+        getCustomersArray()
+        
+    }, [fetchAgain])
+
+    function handleClose(event, reason){
         if (reason === 'clickaway') {
         return;
         }
         setOpenSnackbar(false);
     };
-
-    // State to trigger the useEffect to fetch again 
-    // when user deletes a Record 
-    const [fetchAgain, setFetchAgain] = useState(null)
-
-
-    let customersRowsArray
-    let filteredCustomersRowsArray
-
-     // Map over each customer and return a row object 
-     // update 'rows:' property's value to customersRowsArray variable
+   
+    // Preparing customer rows data
     if (customersArray) {
         customersRowsArray = customersArray.map( (customer, index) => {
-
             const { customerDetails,
                     vehicleDetails,
                     motTestDetails,
@@ -104,24 +114,7 @@ export default function RecordsPage() {
         })
     }
 
-    // Fetch the array of customers details from firestore
-    // store the array of customer details in state
-    useEffect(() => {
-        console.log("Fetching records from firestore...")
-
-        async function getCustomersArray() {
-            const customersArray = await getDocs(collection(db, "customers"))
-            setCustomersArray(customersArray.docs)
-        }
-
-        getCustomersArray()
-
-    }, [fetchAgain])
-
-    const navigate = useNavigate()
-
     if (!currentUser) {
-        console.log("Error: not signed in. Redirecting to login page")
         return null
     }
             
@@ -145,8 +138,6 @@ export default function RecordsPage() {
                                 { Header: "Booking Time", accessor: "booking_time", width: "8%" },
                                 { Header: "MOT Status", accessor: "mot_status", width: "7%" },
                                 { Header: "Payment", accessor: "payment", width: "9.9%" },
-                                // { Header: "Assigned Inspector", accessor: "assigned_inspector", width: "9.9%" },
-                                // { Header: "Additional Work Notes", accessor: "additional_work_notes", width: "9.9%" },
                                 { Header: "",
                                   accessor: "view_details", 
                                   disableFilters: true,
