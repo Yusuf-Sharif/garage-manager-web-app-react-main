@@ -37,6 +37,12 @@ export default function RecordDetails() {
     const { id } = useParams()
     const location = useLocation()
     const { dateRecordFormat, timeRecordFormat } = location.state || {}
+
+    const { customerDetails,
+      vehicleDetails,
+      motTestDetails,
+      costsAndBilling,
+     } = customerObj || {} // In case firestore hasnt returned the customer object yet, fall back to empty object to prevent onscreen error
             
     // Fetch 'new record template' or customer data based on the URL parameter.
     useEffect(() => {
@@ -83,12 +89,6 @@ export default function RecordDetails() {
       }
 
 }, [])
-
-    const { customerDetails,
-            vehicleDetails,
-            motTestDetails,
-            costsAndBilling,
-           } = customerObj || {} // In case firestore hasnt returned the customer object yet, fall back to empty object to prevent onscreen error
 
     function handleChange(event, newValue) {
         // If in editmode, when I go to another tab, save edits to state
