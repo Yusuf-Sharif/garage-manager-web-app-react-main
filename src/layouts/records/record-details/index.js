@@ -20,8 +20,6 @@ import { AuthContext } from "../../../AuthContext/AuthContext"
 // Hook to protect non-signed-in access
 import { useNavigateToSignInPage } from "../../authentication/hooks/useNavigateToSignInPage.js"
 
-import "./selected-tab.css"
-
 export default function RecordDetails() {
 
     // Handling redirection to sign in if user not logged in
