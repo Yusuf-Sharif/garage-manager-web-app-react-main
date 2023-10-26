@@ -6,16 +6,12 @@ import DashboardNavbar from "../../../examples/Navbars/DashboardNavbar";
 import EditButton from "../../../components/EditButton/index.js"
 import CancelButton from "../../../components/CancelButton/index.js"
 import TabFormDisplay from "../../../components/TabFormDisplay/index.js"
-import MDInput from "../../../components/MDInput/index.js"
 
 import { saveChanges } from "../../../utils.js"
 import { db, collection, getDocs } from "../../../config/firebase.js"
 
 import { Tabs, Tab, Box } from "@mui/material"
 import Grid from '@mui/material/Grid';
-
-import Icon from "@mui/material/Icon";
-import { customers } from "./customers.js"
 
 // Importing 'Current User' Context
 import { useContext } from "react"
