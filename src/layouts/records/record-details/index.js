@@ -1,19 +1,21 @@
 import React, { useState, useEffect } from "react"
+import { useParams, useSearchParams, useLocation } from "react-router-dom"
+
 import DashboardLayout from "../../../examples/LayoutContainers/DashboardLayout";
 import DashboardNavbar from "../../../examples/Navbars/DashboardNavbar";
-import MDInput from "../../../components/MDInput/index.js"
-import { Tabs, Tab, Box } from "@mui/material"
-import Grid from '@mui/material/Grid';
 import EditButton from "../../../components/EditButton/index.js"
 import CancelButton from "../../../components/CancelButton/index.js"
 import TabFormDisplay from "../../../components/TabFormDisplay/index.js"
-import Icon from "@mui/material/Icon";
-import { customers } from "./customers.js"
-import { useParams, useSearchParams, useLocation } from "react-router-dom"
+import MDInput from "../../../components/MDInput/index.js"
+
 import { saveChanges } from "../../../utils.js"
 import { db, collection, getDocs } from "../../../config/firebase.js"
-import "./selected-tab.css"
 
+import { Tabs, Tab, Box } from "@mui/material"
+import Grid from '@mui/material/Grid';
+
+import Icon from "@mui/material/Icon";
+import { customers } from "./customers.js"
 
 // Importing 'Current User' Context
 import { useContext } from "react"
@@ -22,103 +24,80 @@ import { AuthContext } from "../../../AuthContext/AuthContext"
 // Hook to protect non-signed-in access
 import { useNavigateToSignInPage } from "../../authentication/hooks/useNavigateToSignInPage.js"
 
+import "./selected-tab.css"
+
 export default function RecordDetails() {
 
     // Handling redirection to sign in if user not logged in
     useNavigateToSignInPage()
     // 
 
-    const { currentUser } = useContext(AuthContext)
-
-    console.log("Record Details Page rendering...")
-
-    const { id } = useParams()
-    const [searchParams, setSearchParams] = useSearchParams()
-    const location = useLocation()
     const [value, setValue] = useState(0)
+    const [searchParams, setSearchParams] = useSearchParams()
     const [editMode, setEditMode] = useState(searchParams.has("editMode"))
-
-    const { dateRecordFormat, timeRecordFormat } = location.state || {}
-            
-    // Steps:
-      // Fetches the data
-
-      // Updates its own state
-      
-      // Updates firestore 
-      
-      // Updates its own state 
-
-
     const [customerObj, setCustomerObj] = useState(null)
     const [error, setError] = useState(null)
     const [success, setSuccess] = useState(null)
-
-    console.log("error state:")
-    console.log(error)
     const [docId, setDocId] = useState(null)
-
-    // console.log("Customer DOC ID:")
-    // console.log(docId)
-    
-    // Fetch the array of customers details from firestore
-    // store the array of customer details in customerObj state
+    const { currentUser } = useContext(AuthContext)
+    const { id } = useParams()
+    const location = useLocation()
+    const { dateRecordFormat, timeRecordFormat } = location.state || {}
+            
+    // Fetch 'new record template' or customer data based on the URL parameter.
     useEffect(() => {
+
+      // The function currently handles multiple responsibilities due to its reliance on async data. A more modular approach is sought in the future.
       async function getCustomersArray() {
-          const customersArray = await getDocs(collection(db, "customers"))
-
-        // update customer object state with selected customer's obj
-        setCustomerObj(customersArray.docs[id].data())
-
-        // set selected customer's firestore document id in state
-        setDocId(customersArray.docs[id].id)
-      }
-
-      // function to fetch customerObj template from firestore (just labels with empty values)
-      async function getRecordTemplate() {
-        const recordTemplateFirestoreObject = await getDocs(collection(db, "record-template"))
-        const recordTemplateObject = recordTemplateFirestoreObject.docs[0].data()
-
-        console.log("Record Template:")
-        console.log(recordTemplateObject)
-
-        // if date and time exists in location state then modify the template object to prefill it
-        if (dateRecordFormat && timeRecordFormat) {
-          recordTemplateObject.customerDetails[4].value = dateRecordFormat
-          
-          if (timeRecordFormat != "12:00 AM") {
-            recordTemplateObject.customerDetails[5].value = timeRecordFormat
-          }
-        }
-
-        setCustomerObj(recordTemplateObject)
-      }
       
+      // Fetch all customer records from firestore
+      const customersArray = await getDocs(collection(db, "customers"))
+      
+      // Update customerObj state with selected customer's object data
+      setCustomerObj(customersArray.docs[id].data())
 
-      // If user isnt trying to add a new record, then fetch the records from firestore.
-      if (searchParams.has("newRecord") === false) {
-        getCustomersArray()
-      }
-      else {
-          // User is trying to add a new record, 
-          // so update customerObj with just labels and empty values
-          getRecordTemplate()
+      // Set selected customer's Firestore document id in state
+      setDocId(customersArray.docs[id].id)
+
+    }
+
+    // Function retrieves a customerObj template from Firestore, consisting of labels with no values.
+    async function getRecordTemplate() {
+      const recordTemplateFirestoreObject = await getDocs(collection(db, "record-template"))
+      const recordTemplateObject = recordTemplateFirestoreObject.docs[0].data()
+
+      // Prefill the template object with Date and Time if they exist in the location state.
+      if (dateRecordFormat && timeRecordFormat) {
+        recordTemplateObject.customerDetails[4].value = dateRecordFormat
+        
+        if (timeRecordFormat != "12:00 AM") {
+          recordTemplateObject.customerDetails[5].value = timeRecordFormat
         }
+      }
 
-  }, [])
+      setCustomerObj(recordTemplateObject)
+    }
+    
+    // Fetch records from Firestore if the user isn't attempting to add a new one; they're accessing an existing record
+    if (searchParams.has("newRecord") === false) {
+      getCustomersArray()
+    }
+    
+    // Update customerObj with the 'new customer record' template to display an empty form for entry.
+    else {
+        getRecordTemplate()
+      }
+
+}, [])
 
     const { customerDetails,
-            vehicleIdentification,
             vehicleDetails,
             motTestDetails,
-            testResultsAndAdvisories,
-            previousTestResults,
-            additionalWorkDone,
             costsAndBilling,
            } = customerObj || {} // In case firestore hasnt returned the customer object yet, fall back to empty object to prevent onscreen error
 
-    const handleChange = (event, newValue) => {
-        // If in editmode, when I go to another tab, save edits to state (but dont update the server's object as user hasnt clicked save yet)
+    function handleChange(event, newValue) {
+        // If in editmode, when I go to another tab, save edits to state
         if (editMode) {
           saveChanges(setCustomerObj)
         }
@@ -129,7 +108,6 @@ export default function RecordDetails() {
       
       
     if (!currentUser) {
-      console.log("Error: not signed in. Redirecting to login page")
       return null
     }
       
@@ -140,10 +118,10 @@ export default function RecordDetails() {
             { customerObj && <Grid container>
                 <Grid item xs={12}>
                     <Tabs value={value} onChange={handleChange}>
-                        <Tab label="Customer"  sx={{ fontSize: '0.8rem'}}/>
-                        <Tab label="Vehicle Specs"  sx={{ fontSize: '0.8rem'}}/>
-                        <Tab label="MOT Test Overview"  sx={{ fontSize: '0.8rem'}}/>
-                        <Tab label="Billing & Costs"  sx={{ fontSize: '0.8rem'}}/>
+                        <Tab label="Customer"  sx={{ fontSize: '0.95rem'}}/>
+                        <Tab label="Vehicle Specs"  sx={{ fontSize: '0.95rem'}}/>
+                        <Tab label="MOT Test Overview"  sx={{ fontSize: '0.95rem'}}/>
+                        <Tab label="Billing & Costs"  sx={{ fontSize: '0.95rem'}}/>
                     </Tabs>
                   
                   <div style={{position: "relative"}}> 
