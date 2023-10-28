@@ -145,7 +145,7 @@ function Dashboard() {
       const { completedServicesToday, scheduledServicesToday } = calculateCompletedServicesTodayVsScheduledServicesToday()
 
       // ======== Calculating percentage change from yesterday completed services to today's ======== //
-      const calculatePercentageChangeInCompletedServices  = () => {        
+      function calculatePercentageChangeInCompletedServices() {        
         // Get yesterday's date in the format of "DD/MM/YYYY"
         function getYesterdaysDate() {
           const today = new Date();
@@ -205,47 +205,8 @@ function Dashboard() {
       }
       
       // ======== Calculating Total Sales Today ======== //
-      // const getTotalSalesToday = () => {
-      //   const todaysRecords = scheduledServicesToday
-      //   // map over each record and return the total bill number 
-      //     // log of the result
-      //   // take out the $ sign 
-      //   // convert it the string to a number 
-      //   // have array of numbers
-      //   // add all the numbers up together 
 
-      //   const totalBillsToday = todaysRecords.map( record => {
-      //     // Checks if total bill exists and if bill has actually been paid
-      //     if (record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid") {
-      //       return record.costsAndBilling[2].value
-      //     }
-      //   })
-
-      //   // filter out the undefineds
-      //   const filteredTotalBillsToday = totalBillsToday.filter( record => {
-      //     return record != undefined
-      //   })
-
-      //   // take out the $ sign 
-      //   const dollarSignRemovedArray = filteredTotalBillsToday.map(item => item.substring(1));
-
-      //   // convert string numbers to numbers
-      //   const stringsToNumbers = dollarSignRemovedArray.map(item => +item);
-
-      //   // add up all numbers of totalBillsToday
-      //   let totalBillsTodayInteger = stringsToNumbers.reduce((accumulator, currentValue) => {
-      //     return accumulator + currentValue;
-      //   }, 0);
-
-
-        
-
-
-      //   // Getting totalSalesPercentageChange
-      //   return totalBillsTodayInteger
-      // }
-
-      const getTotalSalesToday = () => {
+      function getTotalSalesToday() {
         // Filter out records that have valid bill values and are marked as "Paid"
         const validBills = scheduledServicesToday
             .filter(record => 
@@ -261,56 +222,8 @@ function Dashboard() {
         return totalSales;
     }
     
-      // const getTotalSalesYesterday = () => {
-      
-      //     // getting yesterdays total sales
-      //   // get yesterdays scheduled services
-      //   function getYesterdaysDate() {
-      //     const today = new Date();
-      //     const yesterday = new Date(today);
-          
-      //     yesterday.setDate(today.getDate() - 1);
-          
-      //     const day = String(yesterday.getDate()).padStart(2, '0');
-      //     const month = String(yesterday.getMonth() + 1).padStart(2, '0'); // Month is 0-based
-      //     const year = yesterday.getFullYear();
-          
-      //     return `${day}/${month}/${year}`;
-      //   }
 
-      //   const dateYesterday = getYesterdaysDate()
-      //   const scheduledServicesYesterday = nonDeletedRecords.filter( record => {
-      //   return record.customerDetails[4].value === dateYesterday
-      // })
-
-      // const totalBillsYesterday = scheduledServicesYesterday.map( record => {
-      //   if (record.costsAndBilling[2].value != "" && record.costsAndBilling[3].value === "Paid") {
-      //     return record.costsAndBilling[2].value
-      //   }
-      // })
-
-      // // filter out the undefineds
-      // const filteredTotalBillsYesterday = totalBillsYesterday.filter( record => {
-      //   return record != undefined
-      // })
-
-      // // take out the $ sign 
-      // const yesterdayDollarSignRemovedArray = filteredTotalBillsYesterday.map(item => item.substring(1));
-
-      // // convert string numbers to numbers
-      // const yesterdayStringsToNumbers = yesterdayDollarSignRemovedArray.map(item => +item);
-
-      // // add up all numbers of totalBillsYesterday
-      // const totalBillsYesterdayInteger = yesterdayStringsToNumbers.reduce((accumulator, currentValue) => {
-      //   return accumulator + currentValue;
-      // }, 0);
-
-
-      // return totalBillsYesterdayInteger
-
-      // }
-
-      const getTotalSalesYesterday = () => {
+      function getTotalSalesYesterday() {
         // Returns yesterday's date in DD/MM/YYYY format.
         function getYesterdaysDate() {
             const today = new Date();
@@ -358,13 +271,7 @@ function Dashboard() {
 
       // ======== Comparing Today against Yesterday's Sales ======== //
 
-      const compareYesterdaySalesToTodaySales = () => {
-        // const a = totalSalesToday - totalSalesYesterday
-        // const b = a / totalSalesYesterday
-        // let percentageChangeYesterdayToToday = b * 100
-        // // fixing decimal to two places
-        // percentageChangeYesterdayToToday = +percentageChangeYesterdayToToday.toFixed(2)
-
+      function compareYesterdaySalesToTodaySales() {
         // Calculate the difference in sales between today and yesterday
         const salesDifference = totalSalesToday - totalSalesYesterday;
 
