@@ -79,7 +79,7 @@ function DashboardNavbar({ absolute, light, isMini }) {
 
     // A function that sets the transparent state of the navbar.
     function handleTransparentNavbar() {
-      // Disabled code to fix search filter reset on scroll in Record Details page.
+      // Disabled code to fix search filter reset on scroll in Record Details page: //
         // setTransparentNavbar(dispatch, (fixedNavbar && window.scrollY === 0) || !fixedNavbar);
     }
 
