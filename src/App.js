@@ -56,7 +56,6 @@ import { AuthContext } from "./AuthContext/AuthContext.js"
 import { useContext } from "react"
 
 export default function App() {
-  // consume Authentication Context
   const { currentUser }  = useContext(AuthContext)
 
   const [controller, dispatch] = useMaterialUIController();
