@@ -146,7 +146,7 @@ export default function RecordsPage() {
                                   width: "5%", 
                                   Cell: ( { row } ) => (
                                     <div style={{display: "flex"}}>
-                                        <Icon title="View Record" fontSize="small" style={{cursor: "pointer", marginLeft: "5px"}} onClick={() => navigate(`/MOT-Records/${row.original.id}`)}
+                                        <Icon title="View Record" fontSize="small" style={{cursor: "pointer", marginRight: "5px"}} onClick={() => navigate(`/MOT-Records/${row.original.id}`)}
                                         >
                                             visibility_icon 
                                         </Icon>
