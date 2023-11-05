@@ -146,13 +146,13 @@ export default function RecordsPage() {
                                   width: "5%", 
                                   Cell: ( { row } ) => (
                                     <div style={{display: "flex"}}>
-                                        <Icon title="Edit Record" fontSize="small" style={{cursor: "pointer"}} onClick={() => navigate(`/MOT-Records/${row.original.id}?editMode=true`)}
-                                        >
-                                            edit_icon
-                                        </Icon>
                                         <Icon title="View Record" fontSize="small" style={{cursor: "pointer", marginLeft: "5px"}} onClick={() => navigate(`/MOT-Records/${row.original.id}`)}
                                         >
                                             visibility_icon 
+                                        </Icon>
+                                        <Icon title="Edit Record" fontSize="small" style={{cursor: "pointer"}} onClick={() => navigate(`/MOT-Records/${row.original.id}?editMode=true`)}
+                                        >
+                                            edit_icon
                                         </Icon>
                                         <DeleteRecord 
                                             row={row}
