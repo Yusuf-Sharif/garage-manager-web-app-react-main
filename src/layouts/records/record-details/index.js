@@ -112,10 +112,10 @@ export default function RecordDetails() {
             { customerObj && <Grid container>
                 <Grid item xs={12}>
                     <Tabs value={value} onChange={handleChange}>
-                        <Tab label="Customer"  sx={{ fontSize: '0.95rem'}}/>
-                        <Tab label="Vehicle Specs"  sx={{ fontSize: '0.95rem'}}/>
-                        <Tab label="MOT Test Overview"  sx={{ fontSize: '0.95rem'}}/>
-                        <Tab label="Billing & Costs"  sx={{ fontSize: '0.95rem'}}/>
+                        <Tab label="Customer"  sx={{ fontSize: '0.9rem'}}/>
+                        <Tab label="Vehicle Specs"  sx={{ fontSize: '0.9rem'}}/>
+                        <Tab label="MOT Test Overview"  sx={{ fontSize: '0.9rem'}}/>
+                        <Tab label="Billing & Costs"  sx={{ fontSize: '0.9rem'}}/>
                     </Tabs>
                   
                   <div style={{position: "relative"}}> 
