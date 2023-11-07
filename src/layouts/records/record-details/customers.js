@@ -463,27 +463,27 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "Aria Stark"
+                "value": "Amelia Earhart"
               },
               {
                 "label": "Address",
-                "value": "456 Elm St, Rivertown"
+                "value": "123 Main St, Springfield"
               },
               {
                 "label": "Email",
-                "value": "lucas.hedges@example.com"
+                "value": "jackson.pollock@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 845-201-6215"
+                "value": "+1 218-544-3971"
               },
               {
                 "label": "Booking Date",
-                "value": "26/10/2023"
+                "value": "13/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "06:00 PM"
+                "value": "03:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -497,23 +497,23 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A498132"
+                "value": "1HGCM82633A397863"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 878"
+                "value": "XYZ 148"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "1994"
+                "value": "1992"
               },
               {
                 "label": "Manufacturer",
-                "value": "Toyota"
+                "value": "Honda"
               },
               {
                 "label": "Model",
-                "value": "Camry"
+                "value": "Civic"
               },
               {
                 "label": "Derivative",
@@ -559,15 +559,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "14/10/2024"
+                "value": "28/07/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "26/10/2023"
+                "value": "13/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT20334296"
+                "value": "MOT99624352"
               },
               {
                 "label": "Reasons for Failure",
@@ -595,7 +595,381 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "27/02/2024"
+                "value": "11/05/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Ava DuVernay"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "emma.brown@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 569-143-9022"
+              },
+              {
+                "label": "Booking Date",
+                "value": "12/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "07:00 AM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A668147"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 600"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2002"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Red"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "16/10/2023"
+              },
+              {
+                "label": "Date of Test",
+                "value": "12/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT65633632"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "27/10/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Ella Fitzgerald"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "harper.lee@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 984-282-9114"
+              },
+              {
+                "label": "Booking Date",
+                "value": "18/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "12:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A347721"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 435"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2002"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Ford"
+              },
+              {
+                "label": "Model",
+                "value": "Camry"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "01/05/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "18/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT99720268"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "24/04/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -654,23 +1028,23 @@ export const customers = [
               },
               {
                 "label": "Address",
-                "value": "456 Elm St, Rivertown"
+                "value": "123 Main St, Springfield"
               },
               {
                 "label": "Email",
-                "value": "john.doe@example.com"
+                "value": "isabella.rossellini@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 210-928-7006"
+                "value": "+1 428-146-9763"
               },
               {
                 "label": "Booking Date",
-                "value": "03/11/2023"
+                "value": "05/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "04:00 PM"
+                "value": "07:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -684,23 +1058,23 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A481033"
+                "value": "1HGCM82633A811845"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 853"
+                "value": "XYZ 958"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2004"
+                "value": "2003"
               },
               {
                 "label": "Manufacturer",
-                "value": "Toyota"
+                "value": "Honda"
               },
               {
                 "label": "Model",
-                "value": "Mustang"
+                "value": "Civic"
               },
               {
                 "label": "Derivative",
@@ -716,7 +1090,7 @@ export const customers = [
               },
               {
                 "label": "Vehicle Color",
-                "value": "Blue"
+                "value": "Green"
               },
               {
                 "label": "Engine Size",
@@ -746,15 +1120,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "14/05/2024"
+                "value": "06/09/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "03/11/2023"
+                "value": "05/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT62555345"
+                "value": "MOT44847369"
               },
               {
                 "label": "Reasons for Failure",
@@ -782,7 +1156,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "04/09/2024"
+                "value": "23/02/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -841,23 +1215,23 @@ export const customers = [
               },
               {
                 "label": "Address",
-                "value": "456 Elm St, Rivertown"
+                "value": "123 Main St, Springfield"
               },
               {
                 "label": "Email",
-                "value": "daniel.day-lewis@example.com"
+                "value": "alice.johnson@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 472-469-8942"
+                "value": "+1 257-965-2343"
               },
               {
                 "label": "Booking Date",
-                "value": "29/10/2023"
+                "value": "08/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "07:00 AM"
+                "value": "09:00 AM"
               },
               {
                 "label": "Historical Data",
@@ -871,23 +1245,210 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A225740"
+                "value": "1HGCM82633A276546"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 770"
+                "value": "XYZ 670"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "1992"
+                "value": "1995"
               },
               {
                 "label": "Manufacturer",
-                "value": "Toyota"
+                "value": "Honda"
               },
               {
                 "label": "Model",
                 "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Green"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "17/11/2023"
+              },
+              {
+                "label": "Date of Test",
+                "value": "08/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT82870357"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "11/04/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Ethan Hawke"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "daniel.day-lewis@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 467-965-3923"
+              },
+              {
+                "label": "Booking Date",
+                "value": "12/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "05:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A665623"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 213"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2009"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
               },
               {
                 "label": "Derivative",
@@ -933,15 +1494,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "15/11/2023"
+                "value": "31/12/2023"
               },
               {
                 "label": "Date of Test",
-                "value": "29/10/2023"
+                "value": "12/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT84326530"
+                "value": "MOT81962734"
               },
               {
                 "label": "Reasons for Failure",
@@ -969,7 +1530,194 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "22/03/2024"
+                "value": "15/03/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Daniel Day-Lewis"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "benjamin.bratt@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 840-494-1168"
+              },
+              {
+                "label": "Booking Date",
+                "value": "11/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "03:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A445976"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 363"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "1992"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Ford"
+              },
+              {
+                "label": "Model",
+                "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Green"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "24/08/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "11/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT19743878"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "07/08/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -1028,23 +1776,23 @@ export const customers = [
               },
               {
                 "label": "Address",
-                "value": "123 Main St, Springfield"
+                "value": "456 Elm St, Rivertown"
               },
               {
                 "label": "Email",
-                "value": "sophia.turner@example.com"
+                "value": "amelia.earhart@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 605-209-5100"
+                "value": "+1 217-297-3200"
               },
               {
                 "label": "Booking Date",
-                "value": "23/10/2023"
+                "value": "11/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "03:00 PM"
+                "value": "01:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -1058,15 +1806,202 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A855130"
+                "value": "1HGCM82633A469496"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 653"
+                "value": "XYZ 599"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2010"
+                "value": "2019"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Ford"
+              },
+              {
+                "label": "Model",
+                "value": "Camry"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "09/05/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "11/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT68075182"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "09/07/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Bob Brown"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "noah.baumbach@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 285-230-5382"
+              },
+              {
+                "label": "Booking Date",
+                "value": "11/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "07:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A532985"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 830"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "1994"
               },
               {
                 "label": "Manufacturer",
@@ -1120,15 +2055,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "05/12/2023"
+                "value": "22/06/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "23/10/2023"
+                "value": "11/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT63909586"
+                "value": "MOT40879993"
               },
               {
                 "label": "Reasons for Failure",
@@ -1156,7 +2091,194 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "22/11/2024"
+                "value": "30/10/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Sophia Turner"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "michael.york@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 595-444-5283"
+              },
+              {
+                "label": "Booking Date",
+                "value": "07/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "10:00 AM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A399633"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 983"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2010"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Ford"
+              },
+              {
+                "label": "Model",
+                "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Red"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "19/12/2023"
+              },
+              {
+                "label": "Date of Test",
+                "value": "07/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT14374912"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "06/03/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -1219,19 +2341,19 @@ export const customers = [
               },
               {
                 "label": "Email",
-                "value": "lucas.hedges@example.com"
+                "value": "ella.fitzgerald@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 845-312-8531"
+                "value": "+1 542-610-3359"
               },
               {
                 "label": "Booking Date",
-                "value": "29/10/2023"
+                "value": "16/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "02:00 PM"
+                "value": "06:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -1245,15 +2367,15 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A581169"
+                "value": "1HGCM82633A288389"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 394"
+                "value": "XYZ 580"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "1997"
+                "value": "2017"
               },
               {
                 "label": "Manufacturer",
@@ -1261,7 +2383,194 @@ export const customers = [
               },
               {
                 "label": "Model",
-                "value": "Camry"
+                "value": "Civic"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Red"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "25/11/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "16/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT95598900"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "18/03/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Isabella Rossellini"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "logan.lerman@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 957-260-8792"
+              },
+              {
+                "label": "Booking Date",
+                "value": "07/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "06:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A997333"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 617"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "1990"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
               },
               {
                 "label": "Derivative",
@@ -1307,389 +2616,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "02/11/2024"
+                "value": "14/07/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "29/10/2023"
+                "value": "07/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT63296710"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "29/12/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "John Doe"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "harper.lee@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 596-601-8534"
-              },
-              {
-                "label": "Booking Date",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "11:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A828585"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 354"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2000"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Mustang"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Green"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "06/10/2023"
-              },
-              {
-                "label": "Date of Test",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT33376969"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "11/08/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Olivia Wilde"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "noah.baumbach@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 245-575-6914"
-              },
-              {
-                "label": "Booking Date",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "01:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A275394"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 605"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2012"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Green"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "26/07/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT90823845"
+                "value": "MOT24942399"
               },
               {
                 "label": "Reasons for Failure",
@@ -1772,23 +2707,23 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "Ella Fitzgerald"
+                "value": "Noah Baumbach"
               },
               {
                 "label": "Address",
-                "value": "456 Elm St, Rivertown"
+                "value": "123 Main St, Springfield"
               },
               {
                 "label": "Email",
-                "value": "logan.lerman@example.com"
+                "value": "noah.baumbach@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 861-179-2961"
+                "value": "+1 293-748-5604"
               },
               {
                 "label": "Booking Date",
-                "value": "25/10/2023"
+                "value": "17/11/2023"
               },
               {
                 "label": "Booking Time",
@@ -1806,23 +2741,23 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A505441"
+                "value": "1HGCM82633A893426"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 461"
+                "value": "XYZ 467"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "1999"
+                "value": "1997"
               },
               {
                 "label": "Manufacturer",
-                "value": "Honda"
+                "value": "Toyota"
               },
               {
                 "label": "Model",
-                "value": "Mustang"
+                "value": "Camry"
               },
               {
                 "label": "Derivative",
@@ -1868,15 +2803,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "20/08/2024"
+                "value": "18/04/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "25/10/2023"
+                "value": "17/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT81396194"
+                "value": "MOT20207555"
               },
               {
                 "label": "Reasons for Failure",
@@ -1904,7 +2839,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "20/09/2024"
+                "value": "07/07/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -1959,194 +2894,7 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "Amelia Earhart"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "harper.lee@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 901-758-2239"
-              },
-              {
-                "label": "Booking Date",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "10:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A531201"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 353"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2008"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Red"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "Date of Test",
-                "value": "22/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT97350960"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "09/09/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Amelia Earhart"
+                "value": "Noah Baumbach"
               },
               {
                 "label": "Address",
@@ -2154,202 +2902,15 @@ export const customers = [
               },
               {
                 "label": "Email",
-                "value": "john.doe@example.com"
+                "value": "bob.brown@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 684-324-9604"
+                "value": "+1 467-368-4310"
               },
               {
                 "label": "Booking Date",
-                "value": "23/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "09:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A847852"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 410"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "1995"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Green"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "17/01/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "23/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT94287840"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "21/07/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Michael York"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "jane.smith@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 811-902-2373"
-              },
-              {
-                "label": "Booking Date",
-                "value": "28/10/2023"
+                "value": "13/11/2023"
               },
               {
                 "label": "Booking Time",
@@ -2367,385 +2928,11 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A476662"
+                "value": "1HGCM82633A735612"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 619"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2004"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Civic"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Blue"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "27/10/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "28/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT89693620"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "27/10/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Benjamin Bratt"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "ava.duvernay@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 526-457-1439"
-              },
-              {
-                "label": "Booking Date",
-                "value": "24/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "01:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A153994"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 683"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "1999"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Civic"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Green"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "13/11/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "24/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT70271734"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "25/05/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Amelia Earhart"
-              },
-              {
-                "label": "Address",
-                "value": "456 Elm St, Rivertown"
-              },
-              {
-                "label": "Email",
-                "value": "james.mason@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 444-333-8800"
-              },
-              {
-                "label": "Booking Date",
-                "value": "24/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "07:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A680858"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 457"
+                "value": "XYZ 863"
               },
               {
                 "label": "Year of Manufacture",
@@ -2757,1689 +2944,6 @@ export const customers = [
               },
               {
                 "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Red"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "26/06/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "24/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT22910135"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "10/01/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Logan Lerman"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "emma.brown@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 789-582-9539"
-              },
-              {
-                "label": "Booking Date",
-                "value": "25/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "07:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A198541"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 390"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2002"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Toyota"
-              },
-              {
-                "label": "Model",
-                "value": "Mustang"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Green"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "28/02/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "25/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT53095514"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "16/04/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Aria Stark"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "logan.lerman@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 338-456-8506"
-              },
-              {
-                "label": "Booking Date",
-                "value": "30/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "03:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A168147"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 784"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2007"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Toyota"
-              },
-              {
-                "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Red"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "09/12/2023"
-              },
-              {
-                "label": "Date of Test",
-                "value": "30/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT31318236"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "17/10/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "John Doe"
-              },
-              {
-                "label": "Address",
-                "value": "456 Elm St, Rivertown"
-              },
-              {
-                "label": "Email",
-                "value": "mia.wasikowska@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 359-917-4940"
-              },
-              {
-                "label": "Booking Date",
-                "value": "25/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "07:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A892523"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 174"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "1993"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Toyota"
-              },
-              {
-                "label": "Model",
-                "value": "Mustang"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Blue"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "25/01/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "25/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT24648608"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "23/09/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Daniel Day-Lewis"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "alice.johnson@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 999-561-4768"
-              },
-              {
-                "label": "Booking Date",
-                "value": "30/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "04:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A935208"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 699"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2002"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Mustang"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Red"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "06/12/2023"
-              },
-              {
-                "label": "Date of Test",
-                "value": "30/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT89100719"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "15/07/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Sophia Turner"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "jackson.pollock@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 374-229-9561"
-              },
-              {
-                "label": "Booking Date",
-                "value": "03/11/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "12:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A801717"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 724"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2000"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Ford"
-              },
-              {
-                "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Blue"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "25/04/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "03/11/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT46707775"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "25/05/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Amelia Earhart"
-              },
-              {
-                "label": "Address",
-                "value": "456 Elm St, Rivertown"
-              },
-              {
-                "label": "Email",
-                "value": "harper.lee@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 249-241-6234"
-              },
-              {
-                "label": "Booking Date",
-                "value": "01/11/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "10:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A278292"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 311"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2022"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Honda"
-              },
-              {
-                "label": "Model",
-                "value": "Camry"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Red"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "17/10/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "01/11/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT36849359"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "21/12/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "John Doe"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "james.mason@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 422-286-7147"
-              },
-              {
-                "label": "Booking Date",
-                "value": "27/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "09:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A163849"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 230"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2007"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Honda"
-              },
-              {
-                "label": "Model",
-                "value": "Mustang"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Blue"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "16/11/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "27/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT14205827"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "19/05/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Ava DuVernay"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "isabella.rossellini@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 836-934-6612"
-              },
-              {
-                "label": "Booking Date",
-                "value": "24/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "08:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A248523"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 792"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "1991"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Honda"
-              },
-              {
-                "label": "Model",
-                "value": "Mustang"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Red"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
-                "value": "09/04/2024"
-              },
-              {
-                "label": "Date of Test",
-                "value": "24/10/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT78216771"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "02/02/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Mia Wasikowska"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "emma.brown@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 483-768-7289"
-              },
-              {
-                "label": "Booking Date",
-                "value": "27/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "07:00 PM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A998364"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 871"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2003"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Toyota"
-              },
-              {
-                "label": "Model",
                 "value": "Civic"
               },
               {
@@ -4486,15 +2990,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "09/10/2023"
+                "value": "03/12/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "27/10/2023"
+                "value": "13/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT90172527"
+                "value": "MOT32633149"
               },
               {
                 "label": "Reasons for Failure",
@@ -4522,7 +3026,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "20/10/2024"
+                "value": "27/02/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -4581,23 +3085,23 @@ export const customers = [
               },
               {
                 "label": "Address",
-                "value": "123 Main St, Springfield"
+                "value": "456 Elm St, Rivertown"
               },
               {
                 "label": "Email",
-                "value": "ella.fitzgerald@example.com"
+                "value": "michael.york@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 424-207-6007"
+                "value": "+1 466-883-8700"
               },
               {
                 "label": "Booking Date",
-                "value": "27/10/2023"
+                "value": "17/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "08:00 AM"
+                "value": "10:00 AM"
               },
               {
                 "label": "Historical Data",
@@ -4611,15 +3115,15 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A955759"
+                "value": "1HGCM82633A516620"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 725"
+                "value": "XYZ 931"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2015"
+                "value": "1997"
               },
               {
                 "label": "Manufacturer",
@@ -4627,7 +3131,7 @@ export const customers = [
               },
               {
                 "label": "Model",
-                "value": "Mustang"
+                "value": "Camry"
               },
               {
                 "label": "Derivative",
@@ -4643,7 +3147,7 @@ export const customers = [
               },
               {
                 "label": "Vehicle Color",
-                "value": "Blue"
+                "value": "Green"
               },
               {
                 "label": "Engine Size",
@@ -4673,15 +3177,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "14/11/2024"
+                "value": "10/08/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "27/10/2023"
+                "value": "17/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT19713684"
+                "value": "MOT43303613"
               },
               {
                 "label": "Reasons for Failure",
@@ -4764,27 +3268,27 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "Amelia Earhart"
+                "value": "Bob Brown"
               },
               {
                 "label": "Address",
-                "value": "123 Main St, Springfield"
+                "value": "456 Elm St, Rivertown"
               },
               {
                 "label": "Email",
-                "value": "james.mason@example.com"
+                "value": "daniel.day-lewis@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 330-464-1768"
+                "value": "+1 783-406-2053"
               },
               {
                 "label": "Booking Date",
-                "value": "29/10/2023"
+                "value": "11/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "08:00 AM"
+                "value": "02:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -4798,15 +3302,15 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A849930"
+                "value": "1HGCM82633A624121"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 493"
+                "value": "XYZ 808"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2013"
+                "value": "1997"
               },
               {
                 "label": "Manufacturer",
@@ -4814,7 +3318,7 @@ export const customers = [
               },
               {
                 "label": "Model",
-                "value": "Mustang"
+                "value": "Camry"
               },
               {
                 "label": "Derivative",
@@ -4830,7 +3334,7 @@ export const customers = [
               },
               {
                 "label": "Vehicle Color",
-                "value": "Green"
+                "value": "Blue"
               },
               {
                 "label": "Engine Size",
@@ -4860,15 +3364,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "21/05/2024"
+                "value": "14/04/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "29/10/2023"
+                "value": "11/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT28866838"
+                "value": "MOT78859667"
               },
               {
                 "label": "Reasons for Failure",
@@ -4896,7 +3400,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "25/08/2024"
+                "value": "26/05/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -4951,7 +3455,7 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "Logan Lerman"
+                "value": "Isabella Rossellini"
               },
               {
                 "label": "Address",
@@ -4959,19 +3463,19 @@ export const customers = [
               },
               {
                 "label": "Email",
-                "value": "emma.brown@example.com"
+                "value": "ethan.hawke@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 486-797-1269"
+                "value": "+1 770-799-9548"
               },
               {
                 "label": "Booking Date",
-                "value": "01/11/2023"
+                "value": "05/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "01:00 PM"
+                "value": "08:00 AM"
               },
               {
                 "label": "Historical Data",
@@ -4985,23 +3489,23 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A786773"
+                "value": "1HGCM82633A997882"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 380"
+                "value": "XYZ 927"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "1995"
+                "value": "1996"
               },
               {
                 "label": "Manufacturer",
-                "value": "Toyota"
+                "value": "Honda"
               },
               {
                 "label": "Model",
-                "value": "Camry"
+                "value": "Civic"
               },
               {
                 "label": "Derivative",
@@ -5017,7 +3521,7 @@ export const customers = [
               },
               {
                 "label": "Vehicle Color",
-                "value": "Red"
+                "value": "Blue"
               },
               {
                 "label": "Engine Size",
@@ -5047,15 +3551,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "19/10/2023"
+                "value": "10/03/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "01/11/2023"
+                "value": "05/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT34064745"
+                "value": "MOT99244000"
               },
               {
                 "label": "Reasons for Failure",
@@ -5083,7 +3587,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "30/09/2024"
+                "value": "13/09/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -5142,19 +3646,580 @@ export const customers = [
               },
               {
                 "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "bob.brown@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 395-572-8139"
+              },
+              {
+                "label": "Booking Date",
+                "value": "05/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "07:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A108529"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 604"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2012"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Ford"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Red"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "02/12/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "05/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT98021115"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "01/08/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Michael York"
+              },
+              {
+                "label": "Address",
                 "value": "456 Elm St, Rivertown"
               },
               {
                 "label": "Email",
-                "value": "harper.lee@example.com"
+                "value": "ethan.hawke@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 629-340-5648"
+                "value": "+1 505-144-7698"
               },
               {
                 "label": "Booking Date",
-                "value": "04/11/2023"
+                "value": "17/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "10:00 AM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A970767"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 952"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2001"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "31/08/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "17/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT93942008"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "19/11/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Noah Baumbach"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "aria.stark@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 281-665-8102"
+              },
+              {
+                "label": "Booking Date",
+                "value": "05/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "11:00 AM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A394961"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 527"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2021"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Toyota"
+              },
+              {
+                "label": "Model",
+                "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Green"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "20/04/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "05/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT61904987"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "18/04/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Sophia Turner"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "ethan.hawke@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 449-631-9416"
+              },
+              {
+                "label": "Booking Date",
+                "value": "17/11/2023"
               },
               {
                 "label": "Booking Time",
@@ -5172,15 +4237,389 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A100704"
+                "value": "1HGCM82633A621900"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 418"
+                "value": "XYZ 265"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2023"
+                "value": "2011"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Camry"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "04/11/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "17/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT28295001"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "01/02/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Liam Hemsworth"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "michael.york@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 932-820-9424"
+              },
+              {
+                "label": "Booking Date",
+                "value": "09/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "05:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A290744"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 499"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2013"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Toyota"
+              },
+              {
+                "label": "Model",
+                "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Green"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "07/09/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "09/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT27629859"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "27/03/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "John Doe"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "amelia.earhart@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 573-225-8397"
+              },
+              {
+                "label": "Booking Date",
+                "value": "08/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "04:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A654191"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 200"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2017"
               },
               {
                 "label": "Manufacturer",
@@ -5234,202 +4673,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "23/08/2024"
+                "value": "08/03/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "04/11/2023"
-              },
-              {
-                "label": "MOT Test Number",
-                "value": "MOT75963540"
-              },
-              {
-                "label": "Reasons for Failure",
-                "value": "N/A"
-              },
-              {
-                "label": "Advisory Notes",
-                "value": "All good"
-              },
-              {
-                "label": "Inspector's Name",
-                "value": "Inspector John"
-              },
-              {
-                "label": "Additional Work Notes",
-                "value": "Oil change recommended"
-              },
-              {
-                "label": "Categories of defects",
-                "value": "None"
-              },
-              {
-                "label": "Recommendations",
-                "value": "N/A"
-              },
-              {
-                "label": "Next Service Date",
-                "value": "13/04/2024"
-              },
-              {
-                "label": "Maintenance & Repairs",
-                "value": "Changed brake pads"
-              },
-              {
-                "label": "Future Maintenance Tips",
-                "value": "Regular oil changes"
-              }
-            ],
-            "costsAndBilling": [
-              {
-                "label": "Test Cost",
-                "value": "$100"
-              },
-              {
-                "label": "Repair Costs",
-                "value": "$50"
-              },
-              {
-                "label": "Total Bill",
-                "value": "$150"
-              },
-              {
-                "label": "Payment Status",
-                "value": "Unpaid"
-              }
-            ],
-            "displayToUser": true,
-            "emissionDetails": [
-              {
-                "label": "CO2 Emissions",
-                "value": "150g/km"
-              },
-              {
-                "label": "Emission Test Results",
-                "value": "Pass"
-              }
-            ],
-            "inspectorsNotes": [
-              {
-                "label": "Personal Observations",
-                "value": "Vehicle in good condition"
-              },
-              {
-                "label": "Tester's Name and Signature",
-                "value": "John Smith, Signature: JS"
-              }
-            ]
-          },
-          {
-            "customerDetails": [
-              {
-                "label": "Name",
-                "value": "Olivia Wilde"
-              },
-              {
-                "label": "Address",
-                "value": "123 Main St, Springfield"
-              },
-              {
-                "label": "Email",
-                "value": "aria.stark@example.com"
-              },
-              {
-                "label": "Phone",
-                "value": "+1 805-597-9550"
-              },
-              {
-                "label": "Booking Date",
-                "value": "23/10/2023"
-              },
-              {
-                "label": "Booking Time",
-                "value": "11:00 AM"
-              },
-              {
-                "label": "Historical Data",
-                "value": "No previous data available"
-              },
-              {
-                "label": "Retests",
-                "value": "None"
-              }
-            ],
-            "vehicleDetails": [
-              {
-                "label": "V.I.N",
-                "value": "1HGCM82633A981919"
-              },
-              {
-                "label": "License Plate",
-                "value": "XYZ 209"
-              },
-              {
-                "label": "Year of Manufacture",
-                "value": "2006"
-              },
-              {
-                "label": "Manufacturer",
-                "value": "Toyota"
-              },
-              {
-                "label": "Model",
-                "value": "Civic"
-              },
-              {
-                "label": "Derivative",
-                "value": "LE"
-              },
-              {
-                "label": "Fuel Type",
-                "value": "Petrol"
-              },
-              {
-                "label": "Vehicle Category",
-                "value": "Sedan"
-              },
-              {
-                "label": "Vehicle Color",
-                "value": "Green"
-              },
-              {
-                "label": "Engine Size",
-                "value": "2.5L"
-              },
-              {
-                "label": "Drive Type",
-                "value": "FWD"
-              },
-              {
-                "label": "Body Type",
-                "value": "Sedan"
-              },
-              {
-                "label": "Number of Doors",
-                "value": "4"
-              },
-              {
-                "label": "Number of Seats",
-                "value": "5"
-              }
-            ],
-            "motTestDetails": [
-              {
-                "label": "Test Result",
-                "value": "Passed"
-              },
-              {
-                "label": "Expiry Date",
                 "value": "08/11/2023"
               },
               {
-                "label": "Date of Test",
-                "value": "23/10/2023"
-              },
-              {
                 "label": "MOT Test Number",
-                "value": "MOT24849094"
+                "value": "MOT35451573"
               },
               {
                 "label": "Reasons for Failure",
@@ -5457,7 +4709,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "16/10/2024"
+                "value": "13/07/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -5512,7 +4764,7 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "Harper Lee"
+                "value": "Jackson Pollock"
               },
               {
                 "label": "Address",
@@ -5520,19 +4772,19 @@ export const customers = [
               },
               {
                 "label": "Email",
-                "value": "ella.fitzgerald@example.com"
+                "value": "ava.duvernay@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 854-299-4066"
+                "value": "+1 413-518-9285"
               },
               {
                 "label": "Booking Date",
-                "value": "26/10/2023"
+                "value": "12/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "07:00 AM"
+                "value": "02:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -5546,15 +4798,15 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A338533"
+                "value": "1HGCM82633A206209"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 470"
+                "value": "XYZ 220"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2012"
+                "value": "1998"
               },
               {
                 "label": "Manufacturer",
@@ -5562,7 +4814,7 @@ export const customers = [
               },
               {
                 "label": "Model",
-                "value": "Civic"
+                "value": "Mustang"
               },
               {
                 "label": "Derivative",
@@ -5578,7 +4830,7 @@ export const customers = [
               },
               {
                 "label": "Vehicle Color",
-                "value": "Green"
+                "value": "Blue"
               },
               {
                 "label": "Engine Size",
@@ -5612,11 +4864,11 @@ export const customers = [
               },
               {
                 "label": "Date of Test",
-                "value": "26/10/2023"
+                "value": "12/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT46385692"
+                "value": "MOT70956206"
               },
               {
                 "label": "Reasons for Failure",
@@ -5644,7 +4896,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "23/04/2024"
+                "value": "05/11/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -5707,19 +4959,19 @@ export const customers = [
               },
               {
                 "label": "Email",
-                "value": "james.mason@example.com"
+                "value": "olivia.wilde@example.com"
               },
               {
                 "label": "Phone",
-                "value": "+1 720-671-1379"
+                "value": "+1 846-644-8982"
               },
               {
                 "label": "Booking Date",
-                "value": "25/10/2023"
+                "value": "07/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "03:00 PM"
+                "value": "02:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -5733,23 +4985,23 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A407465"
+                "value": "1HGCM82633A506342"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 856"
+                "value": "XYZ 169"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2017"
+                "value": "2013"
               },
               {
                 "label": "Manufacturer",
-                "value": "Ford"
+                "value": "Honda"
               },
               {
                 "label": "Model",
-                "value": "Camry"
+                "value": "Mustang"
               },
               {
                 "label": "Derivative",
@@ -5795,15 +5047,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "13/01/2024"
+                "value": "22/10/2023"
               },
               {
                 "label": "Date of Test",
-                "value": "25/10/2023"
+                "value": "07/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT94205399"
+                "value": "MOT93959894"
               },
               {
                 "label": "Reasons for Failure",
@@ -5831,7 +5083,7 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "19/09/2024"
+                "value": "29/03/2024"
               },
               {
                 "label": "Maintenance & Repairs",
@@ -5886,11 +5138,11 @@ export const customers = [
             "customerDetails": [
               {
                 "label": "Name",
-                "value": "James Mason"
+                "value": "Ella Fitzgerald"
               },
               {
                 "label": "Address",
-                "value": "456 Elm St, Rivertown"
+                "value": "123 Main St, Springfield"
               },
               {
                 "label": "Email",
@@ -5898,15 +5150,15 @@ export const customers = [
               },
               {
                 "label": "Phone",
-                "value": "+1 783-402-9382"
+                "value": "+1 247-777-2866"
               },
               {
                 "label": "Booking Date",
-                "value": "22/10/2023"
+                "value": "10/11/2023"
               },
               {
                 "label": "Booking Time",
-                "value": "11:00 AM"
+                "value": "03:00 PM"
               },
               {
                 "label": "Historical Data",
@@ -5920,15 +5172,202 @@ export const customers = [
             "vehicleDetails": [
               {
                 "label": "V.I.N",
-                "value": "1HGCM82633A826718"
+                "value": "1HGCM82633A851656"
               },
               {
                 "label": "License Plate",
-                "value": "XYZ 974"
+                "value": "XYZ 854"
               },
               {
                 "label": "Year of Manufacture",
-                "value": "2020"
+                "value": "2006"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Ford"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "20/04/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "10/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT41243075"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "26/09/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Alice Johnson"
+              },
+              {
+                "label": "Address",
+                "value": "456 Elm St, Rivertown"
+              },
+              {
+                "label": "Email",
+                "value": "alice.johnson@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 990-278-4748"
+              },
+              {
+                "label": "Booking Date",
+                "value": "12/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "06:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A590482"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 337"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2022"
               },
               {
                 "label": "Manufacturer",
@@ -5936,7 +5375,194 @@ export const customers = [
               },
               {
                 "label": "Model",
-                "value": "Mustang"
+                "value": "Civic"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "20/08/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "12/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT31617003"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "10/12/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Ethan Hawke"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "isabella.rossellini@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 526-802-3646"
+              },
+              {
+                "label": "Booking Date",
+                "value": "05/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "04:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A465144"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 105"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "1993"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
               },
               {
                 "label": "Derivative",
@@ -5982,15 +5608,15 @@ export const customers = [
               },
               {
                 "label": "Expiry Date",
-                "value": "13/11/2023"
+                "value": "22/12/2024"
               },
               {
                 "label": "Date of Test",
-                "value": "22/10/2023"
+                "value": "05/11/2023"
               },
               {
                 "label": "MOT Test Number",
-                "value": "MOT34535241"
+                "value": "MOT90669957"
               },
               {
                 "label": "Reasons for Failure",
@@ -6018,7 +5644,381 @@ export const customers = [
               },
               {
                 "label": "Next Service Date",
-                "value": "20/10/2024"
+                "value": "25/11/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Jackson Pollock"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "daniel.day-lewis@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 550-184-2163"
+              },
+              {
+                "label": "Booking Date",
+                "value": "08/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "05:00 PM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A837688"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 765"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2006"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Toyota"
+              },
+              {
+                "label": "Model",
+                "value": "Mustang"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Blue"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "24/06/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "08/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT13881593"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "22/08/2024"
+              },
+              {
+                "label": "Maintenance & Repairs",
+                "value": "Changed brake pads"
+              },
+              {
+                "label": "Future Maintenance Tips",
+                "value": "Regular oil changes"
+              }
+            ],
+            "costsAndBilling": [
+              {
+                "label": "Test Cost",
+                "value": "$100"
+              },
+              {
+                "label": "Repair Costs",
+                "value": "$50"
+              },
+              {
+                "label": "Total Bill",
+                "value": "$150"
+              },
+              {
+                "label": "Payment Status",
+                "value": "Unpaid"
+              }
+            ],
+            "displayToUser": true,
+            "emissionDetails": [
+              {
+                "label": "CO2 Emissions",
+                "value": "150g/km"
+              },
+              {
+                "label": "Emission Test Results",
+                "value": "Pass"
+              }
+            ],
+            "inspectorsNotes": [
+              {
+                "label": "Personal Observations",
+                "value": "Vehicle in good condition"
+              },
+              {
+                "label": "Tester's Name and Signature",
+                "value": "John Smith, Signature: JS"
+              }
+            ]
+          },
+          {
+            "customerDetails": [
+              {
+                "label": "Name",
+                "value": "Olivia Wilde"
+              },
+              {
+                "label": "Address",
+                "value": "123 Main St, Springfield"
+              },
+              {
+                "label": "Email",
+                "value": "mia.wasikowska@example.com"
+              },
+              {
+                "label": "Phone",
+                "value": "+1 535-260-9737"
+              },
+              {
+                "label": "Booking Date",
+                "value": "17/11/2023"
+              },
+              {
+                "label": "Booking Time",
+                "value": "10:00 AM"
+              },
+              {
+                "label": "Historical Data",
+                "value": "No previous data available"
+              },
+              {
+                "label": "Retests",
+                "value": "None"
+              }
+            ],
+            "vehicleDetails": [
+              {
+                "label": "V.I.N",
+                "value": "1HGCM82633A781091"
+              },
+              {
+                "label": "License Plate",
+                "value": "XYZ 910"
+              },
+              {
+                "label": "Year of Manufacture",
+                "value": "2002"
+              },
+              {
+                "label": "Manufacturer",
+                "value": "Honda"
+              },
+              {
+                "label": "Model",
+                "value": "Civic"
+              },
+              {
+                "label": "Derivative",
+                "value": "LE"
+              },
+              {
+                "label": "Fuel Type",
+                "value": "Petrol"
+              },
+              {
+                "label": "Vehicle Category",
+                "value": "Sedan"
+              },
+              {
+                "label": "Vehicle Color",
+                "value": "Green"
+              },
+              {
+                "label": "Engine Size",
+                "value": "2.5L"
+              },
+              {
+                "label": "Drive Type",
+                "value": "FWD"
+              },
+              {
+                "label": "Body Type",
+                "value": "Sedan"
+              },
+              {
+                "label": "Number of Doors",
+                "value": "4"
+              },
+              {
+                "label": "Number of Seats",
+                "value": "5"
+              }
+            ],
+            "motTestDetails": [
+              {
+                "label": "Test Result",
+                "value": "Passed"
+              },
+              {
+                "label": "Expiry Date",
+                "value": "11/08/2024"
+              },
+              {
+                "label": "Date of Test",
+                "value": "17/11/2023"
+              },
+              {
+                "label": "MOT Test Number",
+                "value": "MOT45578971"
+              },
+              {
+                "label": "Reasons for Failure",
+                "value": "N/A"
+              },
+              {
+                "label": "Advisory Notes",
+                "value": "All good"
+              },
+              {
+                "label": "Inspector's Name",
+                "value": "Inspector John"
+              },
+              {
+                "label": "Additional Work Notes",
+                "value": "Oil change recommended"
+              },
+              {
+                "label": "Categories of defects",
+                "value": "None"
+              },
+              {
+                "label": "Recommendations",
+                "value": "N/A"
+              },
+              {
+                "label": "Next Service Date",
+                "value": "31/08/2024"
               },
               {
                 "label": "Maintenance & Repairs",

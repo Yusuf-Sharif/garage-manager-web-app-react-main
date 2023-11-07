@@ -185,8 +185,8 @@ export default function RecordsPage() {
         }
         { customersArray && 
           <>
-            <button onClick={() => addCustomer()}>add dummy customer</button>
-            <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button>
+            {/* <button onClick={() => addCustomer()}>add dummy customer</button>
+            <button onClick={() => addDoc(collection(db, "record-template"), customers[1])}>Add Record template to firestore</button> */}
           </>
         }
     </DashboardLayout>        
