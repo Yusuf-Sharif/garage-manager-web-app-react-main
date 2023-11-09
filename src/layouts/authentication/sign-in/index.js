@@ -160,6 +160,17 @@ function Basic() {
               >
                 sign in
               </MDButton>
+              {/* For demonstration purposes */}
+              <MDButton 
+                sx={{marginTop: "20px"}}
+                fullWidth
+                onClick={() => signIn("guest@gmail.com", "123456")}
+                color="success"
+                size="large"
+                variant="gradient"
+              >
+                Skip login
+              </MDButton>
             </MDBox>
             <MDBox mt={3} mb={1} textAlign="center">
               <MDTypography variant="button" color="text">
